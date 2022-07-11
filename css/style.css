@@ -1,0 +1,82 @@
+*{
+    color: aliceblue;
+}
+body{
+    background-image: url(/img/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.collapse ul li a{
+    color: aliceblue;
+}
+.bandera{
+    width: 30px;
+    height: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.icono{
+    width: 50px;
+    height: 50px;
+}
+
+.grupo{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    margin-top: 15px;
+}
+.banderaGrupo{
+    border: solid 0.15px black;
+    
+}
+.tituloGrupos{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partidoGrupos{
+    border: solid 2px black;
+    margin-left: 25px;
+    }
+.fechaHora, .estadio{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.partido{
+    justify-content: center;
+    height: 40px;
+
+}
+.equipoL{
+    height: 40px;
+    vertical-align: middle;
+}
+input{
+    height: 25px;
+    width: 25px;
+    color: black;
+}
+.guion{
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.alignmentPartidoGrupos{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ganador{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.botones{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:10px;
+}

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html"><img class="icono" src="../img/icono.png" alt="icono"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="grupos.html">Grupos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Octavos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cuartos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Semi Final</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Final</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <!-- GRUPO A -->
+        <div class="grupo ">
+            <div>
+                <h3 class="tituloGrupos">Grupo A</h3>
+            </div>
+            <div class="banderas d-flex">
+                <div class="senegal d-flex">
+                    <h4>Senegal</h4>
+                    <img class="bandera banderaGrupo" src="../img/senegal.png" alt="banderasenegal">
+                </div>
+                <div class="holanda d-flex">
+                    <h4>Holanda</h4>
+                    <img class="bandera banderaGrupo" src="../img/holanda.png" alt="banderaHolanda">
+                </div>
+                <div class="Qatar d-flex">
+                    <h4>Qatar</h4>
+                    <img class="bandera banderaGrupo" src="../img/qatar.png" alt="banderaQatar">
+                </div>
+                <div class="Ecuador d-flex">
+                    <h4>Ecuador</h4>
+                    <img class="bandera banderaGrupo" src="../img/ecuador.png" alt="banderaEcuador">
+                </div>
+            </div>
+
+        </div>
+        <!-- partidos1,2 -->
+        <div class="contenedor d-flex">
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido1 Senegal - Holanda -->
+                <div class="partidoGrupos ">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 1 - Lunes 21/11 07:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Al Thumama</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Senegal</h6><img class="bandera" src="../img/senegal.png"
+                            alt="banderasenegal">
+                        <input type="value" name="resultadoL1" id="resultadoL1" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV1" id="resultadoV1" size="1">
+                        <img class="bandera" src="../img/holanda.png" alt="banderaHolanda">
+                        <h6 class="equipoV">Holanda</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador1" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp1"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+                <!-- partido 2 Ecuador - Qatar-->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 1 - Lunes 21/11 13:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Al Bayt</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Qatar</h6><img class="bandera" src="../img/qatar.png" alt="banderaQatar">
+                        <input type="value" name="resultadoL2" id="resultadoL2" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV2" id="resultadoV2" size="1">
+                        <img class="bandera" src="../img/ecuador.png" alt="banderaEcuador">
+                        <h6 class="equipoV">Ecuador</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador2" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp2"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- partidos 3 y 4 -->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido 3 Qatar-Senegal -->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 2 - Viernes 25/11 10:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Al Thumama</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Qatar</h6><img class="bandera" src="../img/qatar.png" alt="banderaQatar">
+                        <input type="value" name="resultadoL3" id="resultadoL3" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV3" id="resultadoV3" size="1">
+                        <img class="bandera" src="../img/senegal.png" alt="banderasenegal">
+                        <h6 class="equipoV">Senegal</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador3" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp3"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+                <!-- partido 4 Ecuador Holanda -->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 2 - Viernes 25/11 13:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Int Khalifa</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Ecuador</h6><img class="bandera" src="../img/ecuador.png"
+                            alt="banderaHolanda">
+                        <input type="value" name="resultadoL4" id="resultadoL4" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV4" id="resultadoV4" size="1">
+                        <img class="bandera" src="../img/holanda.png" alt="banderaHolanda">
+                        <h6 class="equipoV">Holanda</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador4" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp4"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- partidos 5,6 -->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido 5  Qatar - Holanda -->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 3 - Martes 29/11 12:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Al Thumama</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Qatar</h6><img class="bandera" src="../img/qatar.png" alt="banderaQatar">
+                        <input type="value" name="resultadoL5" id="resultadoL5" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV5" id="resultadoV5" size="1">
+                        <img class="bandera" src="../img/holanda.png" alt="banderaHolanda">
+                        <h6 class="equipoV">Holanda</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador5" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp5"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+                <!-- Partido 6 Ecuador - Senegal-->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 3 - Martes 29/11 12:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Al Thumama</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Ecuador</h6><img class="bandera" src="../img/ecuador.png" alt="Ecuador">
+                        <input type="value" name="resultadoL6" id="resultadoL6" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV6" id="resultadoV6" size="1">
+                        <img class="bandera" src="../img/senegal.png" alt="banderasenegal">
+                        <h6 class="equipoV">Senegal</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador6" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp6"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="botones mt-3"><button type="button" id="botongA" class="btn btn-outline-success">Enviar</button>
+        </div>
+        <!-- tabla grupo A -->
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Seleccion</th>
+                        <th scope="col">Pts</th>
+                        <th scope="col">Dif Goles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td id="seleA1"></td>
+                        <td id="ptosA1"></td>
+                        <td id="difA1"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td id="seleA2"></td>
+                        <td id="ptosA2"></td>
+                        <td id="difA2"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td id="seleA3"></td>
+                        <td id="ptosA3"></td>
+                        <td id="difA3"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td id="seleA4"></td>
+                        <td id="ptosA4"></td>
+                        <td id="difA4"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- GRUPÖ B -->
+        <div class="grupo">
+            <div>
+                <h3 class="tituloGrupos">Grupo B</h3>
+            </div>
+            <div class="banderas d-flex">
+                <div class="inglaterra d-flex">
+                    <h4>Inglaterra</h4>
+                    <img class="bandera banderaGrupo" src="../img/inglaterra.png" alt="banderaInglaterra">
+                </div>
+                <div class="iran d-flex">
+                    <h4>Iran</h4>
+                    <img class="bandera banderaGrupo" src="../img/iran.png" alt="banderaIran">
+                </div>
+                <div class="eeuu d-flex">
+                    <h4>Estados Unidos</h4>
+                    <img class="bandera banderaGrupo" src="../img/eeuu.png" alt="banderaEEUU">
+                </div>
+                <div class="gales d-flex">
+                    <h4>Gales</h4>
+                    <img class="bandera banderaGrupo" src="../img/gales.png" alt="banderaGales">
+                </div>
+            </div>
+
+        </div>
+        <div class="contenedor d-flex">
+            <!-- partido7,8 -->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido7 inglaterra-iran -->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 1 - Lunes 21/11 10:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Int Khalifa</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Inglaterra</h6><img class="bandera" src="../img/inglaterra.png"
+                            alt="banderaInglaterra">
+                        <input type="value" name="resultadoL7" id="resultadoL7" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV7" id="resultadoV7" size="1">
+                        <img class="bandera" src="../img/iran.png" alt="banderaIran">
+                        <h6 class="equipoV">Iran</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador7" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp7"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+                <!-- partido 8 EEUU - Gales -->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 1 - Lunes 21/11 16:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Ahmad Bin Ali</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">EEUU</h6><img class="bandera" src="../img/eeuu.png" alt="banderaEEUU">
+                        <input type="value" name="resultadoL8" id="resultadoL8" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV8" id="resultadoV8" size="1">
+                        <img class="bandera" src="../img/gales.png" alt="banderaGales">
+                        <h6 class="equipoV">Gales</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador8" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp8"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- partidos 9-10 -->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido 9  gales - iran-->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 2 - viernes 25/11 07:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Ahmad Bin Ali</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Iran</h6><img class="bandera" src="../img/iran.png" alt="banderaIran">
+                        <input type="value" name="resultadoL9" id="resultadoL9" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV9" id="resultadoV9" size="1">
+                        <img class="bandera" src="../img/gales.png" alt="banderaGales">
+                        <h6 class="equipoV">Gales</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador9" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp9"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+
+                <!-- partido 10 ]Inglaterra -EEUU -->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 2 - Viernes 25/11 16:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Al Bayt</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Inglaterra</h6><img class="bandera" src="../img/inglaterra.png"
+                            alt="banderaInglaterra">
+                        <input type="value" name="resultadoL10" id="resultadoL10" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV10" id="resultadoV10" size="1">
+                        <img class="bandera" src="../img/eeuu.png" alt="banderaEEUU">
+                        <h6 class="equipoV">EEUU</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador10" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp10"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- partidos 11-12 -->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido 11 Inglaterra - Gales  -->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 3 - Martes 29/11 07:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Ahmad Bin Ali</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Inglaterra</h6><img class="bandera" src="../img/inglaterra.png"
+                            alt="banderaInglaterra">
+                        <input type="value" name="resultadoL11" id="resultadoL11" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV11" id="resultadoV11" size="1">
+                        <img class="bandera" src="../img/gales.png" alt="banderaGales">
+                        <h6 class="equipoV">Gales</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador11" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp11"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+                <!-- Partido 12 Iran - EEUU -->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 3 - Martes 29/11 07:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Al Thumama</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Iran</h6><img class="bandera" src="../img/iran.png" alt="banderaIran">
+                        <input type="value" name="resultadoL12" id="resultadoL12" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV12" id="resultadoV12" size="1">
+                        <img class="bandera" src="../img/eeuu.png" alt="banderaEEUU">
+                        <h6 class="equipoV">EEUU</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador12" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp12"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="botones mt-3"><button type="button" id="botongB" class="btn btn-outline-success">Enviar</button>
+        </div>
+        <!-- tabla grupoB -->
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Seleccion</th>
+                        <th scope="col">Pts</th>
+                        <th scope="col">Dif Goles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td id="seleB1"></td>
+                        <td id="ptosB1"></td>
+                        <td id="difB1"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td id="seleB2"></td>
+                        <td id="ptosB2"></td>
+                        <td id="difB2"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td id="seleB3"></td>
+                        <td id="ptosB3"></td>
+                        <td id="difB3"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td id="seleB4"></td>
+                        <td id="ptosB4"></td>
+                        <td id="difB4"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- GRUPO C -->
+        <div class="grupo">
+            <div>
+                <h3 class="tituloGrupos">Grupo C</h3>
+            </div>
+            <div class="banderas d-flex">
+                <div class="argentina d-flex">
+                    <h4>Argentina</h4>
+                    <img class="bandera banderaGrupo" src="../img/argentina.png" alt="banderaArgentina">
+                </div>
+                <div class="arabiaSaudita d-flex">
+                    <h4>Arabia Saudita</h4>
+                    <img class="bandera banderaGrupo" src="../img/arabiasaudita.png" alt="banderaArabia">
+                </div>
+                <div class="mexico d-flex">
+                    <h4>Mexico</h4>
+                    <img class="bandera banderaGrupo" src="../img/mexico.png" alt="banderaMexico">
+                </div>
+                <div class="polonia d-flex">
+                    <h4>Polonia</h4>
+                    <img class="bandera banderaGrupo" src="../img/polonia.png" alt="banderaPolonia">
+                </div>
+            </div>
+
+        </div>
+        <div class="contenedor d-flex">
+            <!-- partido 13, 14 -->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido 13 Argentina - Arabia -->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 1 - Martes 22/11 07:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Lusail</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Argentina</h6><img class="bandera" src="../img/argentina.png"
+                            alt="banderaArgentina">
+                        <input type="value" name="resultadoL13" id="resultadoL13" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV13" id="resultadoV13" size="1">
+                        <img class="bandera" src="../img/arabiasaudita.png" alt="banderaArabia">
+                        <h6 class="equipoV">Arabia Saudita</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador13" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp13"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+                <!-- partido 14 Mexico - polonia -->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 1 - Martes 22/11 13:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio 974</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Mexico</h6><img class="bandera" src="../img/mexico.png" alt="banderaMexico">
+                        <input type="value" name="resultadoL14" id="resultadoL14" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV14" id="resultadoV14" size="1">
+                        <img class="bandera" src="../img/polonia.png" alt="banderaPolonia">
+                        <h6 class="equipoV">Polonia</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador14" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp14"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- partidos 15-16 -->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido 15  arabia - Polonia-->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 2 - Sabado 26/11 07:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Ciudad Educacion</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Arabia Saudita</h6><img class="bandera" src="../img/arabiasaudita.png"
+                            alt="banderaArabia">
+                        <input type="value" name="resultadoL15" id="resultadoL15" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV15" id="resultadoV15" size="1">
+                        <img class="bandera" src="../img/polonia.png" alt="banderaPolonia">
+                        <h6 class="equipoV">Polonia</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador15" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp15"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+
+                <!-- partido 16 ]Argentina -Mexico -->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 2 - Sabado 26/11 07:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Lusail</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Argentina</h6><img class="bandera" src="../img/argentina.png"
+                            alt="banderaArgentina">
+                        <input type="value" name="resultadoL16" id="resultadoL16" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV16" id="resultadoV16" size="1">
+                        <img class="bandera" src="../img/mexico.png" alt="banderaMexico">
+                        <h6 class="equipoV">Mexico</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador16" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp16"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- partidos 17-18-->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido 17 Argentina - Polonia  -->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 3 - Miercoles 30/11 16:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio 974</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Argentina</h6><img class="bandera" src="../img/argentina.png"
+                            alt="banderaArgentina">
+                        <input type="value" name="resultadoL17" id="resultadoL17" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV17" id="resultadoV17" size="1">
+                        <img class="bandera" src="../img/polonia.png" alt="banderaPolonia">
+                        <h6 class="equipoV">Polonia</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador17" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp17"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+                <!-- Partido 18 Arabia - Mexico-->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 3 - Miercoles 30/11 16:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Lusail</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Arabia Saudita</h6><img class="bandera" src="../img/arabiasaudita.png"
+                            alt="banderaArabia">
+                        <input type="value" name="resultadoL18" id="resultadoL18" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV18" id="resultadoV18" size="1">
+                        <img class="bandera" src="../img/mexico.png" alt="banderaMexico">
+                        <h6 class="equipoV">Mexico</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador18" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp18"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="botones mt-3"><button type="button" id="botongC" class="btn btn-outline-success">Enviar</button>
+        </div>
+        <!-- tabla grupoC -->
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Seleccion</th>
+                        <th scope="col">Pts</th>
+                        <th scope="col">Dif Goles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td id="seleC1"></td>
+                        <td id="ptosC1"></td>
+                        <td id="difC1"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td id="seleC2"></td>
+                        <td id="ptosC2"></td>
+                        <td id="difC2"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td id="seleC3"></td>
+                        <td id="ptosC3"></td>
+                        <td id="difC3"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td id="seleC4"></td>
+                        <td id="ptosC4"></td>
+                        <td id="difC4"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- GRUPO D -->
+        <div class="grupo">
+            <div>
+                <h3 class="tituloGrupos">Grupo D</h3>
+            </div>
+            <div class="banderas d-flex">
+                <div class="argentina d-flex">
+                    <h4>Francia</h4>
+                    <img class="bandera banderaGrupo" src="../img/francia.png" alt="banderaFrancia">
+                </div>
+                <div class="arabiaSaudita d-flex">
+                    <h4>Australia</h4>
+                    <img class="bandera banderaGrupo" src="../img/australia.png" alt="banderaAustralia">
+                </div>
+                <div class="mexico d-flex">
+                    <h4>Dinamarca</h4>
+                    <img class="bandera banderaGrupo" src="../img/dinamarca.png" alt="banderaDinamarca">
+                </div>
+                <div class="polonia d-flex">
+                    <h4>Tunez</h4>
+                    <img class="bandera banderaGrupo" src="../img/tunes.png" alt="banderaTunez">
+                </div>
+            </div>
+
+        </div>
+        <div class="contenedor d-flex">
+            <!-- partido 19, 20 -->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido 19 Dinamarca - Tunez -->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 1 - Martes 22/11 10:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Ciudad Educacion</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Dinamarca</h6><img class="bandera" src="../img/dinamarca.png"
+                            alt="banderaDinamarca">
+                        <input type="value" name="resultadoL19" id="resultadoL19" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV19" id="resultadoV19" size="1">
+                        <img class="bandera" src="../img/tunes.png" alt="banderaTunez">
+                        <h6 class="equipoV">Tunez</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador19" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp19"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+                <!-- partido 20 Francia - Australia -->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 1 - Martes 22/11 16:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Al Janoub</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Francia</h6><img class="bandera" src="../img/francia.png" alt="banderaFrancia">
+                        <input type="value" name="resultadoL20" id="resultadoL20" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV20" id="resultadoV20" size="1">
+                        <img class="bandera" src="../img/australia.png" alt="banderaAustralia">
+                        <h6 class="equipoV">Australia</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador20" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp20"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- partidos 21-22 -->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido 21  Australia - Tunez-->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 2 - Sabado 26/11 07:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Ciudad Educacion</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Australia</h6><img class="bandera" src="../img/australia.png"
+                            alt="banderaAustralia">
+                        <input type="value" name="resultadoL21" id="resultadoL21" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV21" id="resultadoV21" size="1">
+                        <img class="bandera" src="../img/tunes.png" alt="banderatunez">
+                        <h6 class="equipoV">Tunez</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador21" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp21"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+
+                <!-- partido 22 Francia - Dinamarca -->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 2 - Sabado 26/11 13:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio 974</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Francia</h6><img class="bandera" src="../img/francia.png"
+                            alt="banderaFrancia">
+                        <input type="value" name="resultadoL22" id="resultadoL22" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV22" id="resultadoV22" size="1">
+                        <img class="bandera" src="../img/dinamarca.png" alt="banderaDinamarca">
+                        <h6 class="equipoV">Dinamarca</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador22" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp22"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- partidos 23-24-->
+            <div class="mt-3 alignmentPartidoGrupos">
+                <!-- partido 23 Australia - Dinamarca  -->
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 3 - Miercoles 30/11 12:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Al Janoub</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Australia</h6><img class="bandera" src="../img/australia.png"
+                            alt="banderaAustralia">
+                        <input type="value" name="resultadoL23" id="resultadoL23" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV23" id="resultadoV23" size="1">
+                        <img class="bandera" src="../img/dinamarca.png" alt="banderaDinamarca">
+                        <h6 class="equipoV">Dinamarca</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador23" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp23"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+
+                </div>
+                <!-- Partido 24 Francia - Tunez-->
+                <div class="partidoGrupos mt-3">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 3 - Miercoles 30/11 12:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Ciudad Educacion</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Francia</h6><img class="bandera" src="../img/francia.png"
+                            alt="banderaFrancia">
+                        <input type="value" name="resultadoL24" id="resultadoL24" size="1">
+                        <p class="guion">-</p><input type="value" name="resultadoV24" id="resultadoV24" size="1">
+                        <img class="bandera" src="../img/tunes.png" alt="banderaTunez">
+                        <h6 class="equipoV">Tunez</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador24" class="mx-3"></p>
+                    </div>
+                    <div class="botones"><button type="button" id="botonp24"
+                            class="btn btn-outline-success">Enviar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="botones mt-3"><button type="button" id="botongD" class="btn btn-outline-success">Enviar</button>
+        </div>
+        <!-- tabla grupo gitD -->
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Seleccion</th>
+                        <th scope="col">Pts</th>
+                        <th scope="col">Dif Goles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td id="seleD1"></td>
+                        <td id="ptosD1"></td>
+                        <td id="difD1"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td id="seleD2"></td>
+                        <td id="ptosD2"></td>
+                        <td id="difD2"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td id="seleD3"></td>
+                        <td id="ptosD3"></td>
+                        <td id="difD3"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td id="seleD4"></td>
+                        <td id="ptosD4"></td>
+                        <td id="difD4"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
