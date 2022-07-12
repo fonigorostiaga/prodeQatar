@@ -82,3 +82,27 @@ input{
     margin-right: auto;
     margin-bottom:10px;
 }
+@media screen and (max-width: 768px) {
+    .banderas{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .fechaHora{
+        display: flex;
+
+    }
+    .fechaHora h5{
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: smaller;
+    }
+    .partido{
+        margin-top: 25px;
+    }
+    .partido h6{
+        font-size: smaller;
+    }
+    .estadio{
+        display: none;
+    }
+}
