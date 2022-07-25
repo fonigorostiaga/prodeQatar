@@ -340,6 +340,15 @@ const dif2H= document.querySelector("#difH2");
 const dif3H= document.querySelector("#difH3");
 const dif4H= document.querySelector("#difH4");
 const btngH=document.querySelector("#botongH");
+const A1=document.querySelector("#A1");
+const B1=document.querySelector("#B1");
+const C1=document.querySelector("#C1");
+const D1=document.querySelector("#D1");
+const E1=document.querySelector("#E1");
+const F1=document.querySelector("#F1");
+const G1=document.querySelector("#G1");
+const H1=document.querySelector("#H1");
+
 //funciones
 //modifica Objetos del partido
 function partidoGrupo(golesL,golesV,equipoL,equipoV){
@@ -356,7 +365,8 @@ function partidoGrupo(golesL,golesV,equipoL,equipoV){
         equipoL.difgol=equipoL.difgol-(golesV-golesL);
     }
 }
-//ordenar grupo post zona Grupos
+
+// //ordenar grupo post zona Grupos
 function ordenar(grupo){
     grupo.sort((a,b)=>{
         if(a.puntos>b.puntos){
@@ -380,74 +390,33 @@ btnp1.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL1.value,resV1.value,senegal, holanda)
     golesL=parseInt(resL1.value);
     golesV=parseInt(resV1.value);
-    if(golesL>golesV){
-        ganador(senegal,ganador1)
-    }else if(golesL==golesV){
-        empate(ganador1)
-    }else{
-        ganador(holanda,ganador1)
-    }
-})
+    golesL>golesV ? ganador(senegal,ganador1) : golesL==golesV ? empate(ganador1) : ganador(holanda,ganador1)})
+    
 btnp2.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL2.value,resV2.value,qatar,ecuador)
     golesL=parseInt(resL2.value);
     golesV=parseInt(resV2.value);
-    if(golesL>golesV){
-        ganador(qatar,ganador2)
-    }else if(golesL==golesV){
-        empate(ganador2)
-    }else{
-        ganador(ecuador,ganador2)
-    }
-})
+    golesL>golesV ? ganador(qatar,ganador2) : golesL==golesV ? empate(ganador2) : ganador(ecuador,ganador2)})
 btnp3.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL3.value,resV3.value,qatar,senegal)
     golesL=parseInt(resL3.value);
     golesV=parseInt(resV3.value);
-    if(golesL>golesV){
-        ganador(qatar,ganador3)
-    }else if(golesL==golesV){
-        empate(ganador3)
-    }else{
-        ganador(senegal,ganador3)
-    }
-})
+    golesL>golesV ?  ganador(qatar,ganador3): golesL==golesV ? empate(ganador3): ganador(senegal,ganador3)})
 btnp4.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL4.value,resV4.value,ecuador,holanda)
     golesL=parseInt(resL4.value);
     golesV=parseInt(resV4.value);
-    if(golesL>golesV){
-        ganador(ecuador,ganador4)
-    }else if(golesL==golesV){
-        empate(ganador4)
-    }else{
-        ganador(holanda,ganador4)
-    }
-})
+    golesL>golesV ?  ganador(ecuador,ganador4): golesL==golesV ? empate(ganador4):ganador(holanda,ganador4)})
 btnp5.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL5.value,resV5.value,qatar,holanda)
     golesL=parseInt(resL5.value);
     golesV=parseInt(resV5.value);
-    if(golesL>golesV){
-        ganador(qatar,ganador5)
-    }else if(golesL==golesV){
-        empate(ganador5)
-    }else{
-        ganador(holanda,ganador5)
-    }
-})
+    golesL>golesV ?  ganador(qatar,ganador5): golesL==golesV ?empate(ganador5):ganador(holanda,ganador5)})
 btnp6.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL6.value,resV6.value,ecuador,senegal)
     golesL=parseInt(resL6.value);
     golesV=parseInt(resV6.value);
-    if(golesL>golesV){
-        ganador(ecuador,ganador6)
-    }else if(golesL==golesV){
-        empate(ganador6)
-    }else{
-        ganador(senegal,ganador6)
-    }
-})
+    golesL>golesV ?   ganador(ecuador,ganador6) : golesL==golesV ? empate(ganador6) : ganador(senegal,ganador6)})
 btngA.addEventListener("click",()=>{
     ordenar(grupoA)
     console.log(grupoA)
@@ -463,80 +432,47 @@ btngA.addEventListener("click",()=>{
     dif2A.innerHTML=grupoA[1].difgol;
     dif3A.innerHTML=grupoA[2].difgol;
     dif4A.innerHTML=grupoA[3].difgol;
+    const primeroA=JSON.stringify(grupoA[0]);
+    localStorage.setItem("ganadorA",primeroA);
+    const ganadorA=JSON.parse(primeroA);
+    localStorage.getItem("ganadorA");
+    const segundoA=JSON.stringify(grupoA[1]);
+    localStorage.setItem("runnerA",segundoA);
+    const runnerA=JSON.parse(segundoA);
+    localStorage.getItem("runnerA");
+    A1.innerText=ganadorA.pais
 })
 
 btnp7.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL7.value,resV7.value,inglaterra, iran)
     golesL=parseInt(resL7.value);
     golesV=parseInt(resV7.value);
-    if(golesL>golesV){
-        ganador(inglaterra,ganador7)
-    }else if(golesL==golesV){
-        empate(ganador7)
-    }else{
-        ganador(iran,ganador7)
-    }
-})
+    golesL>golesV ?    ganador(inglaterra,ganador7): golesL==golesV ? empate(ganador7) : ganador(iran,ganador7)})
 btnp8.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL8.value,resV8.value,eeuu, gales)
     golesL=parseInt(resL8.value);
     golesV=parseInt(resV8.value);
-    if(golesL>golesV){
-        ganador(eeuu,ganador8)
-    }else if(golesL==golesV){
-        empate(ganador8)
-    }else{
-        ganador(gales,ganador8)
-    }
-})
+    golesL>golesV ?    ganador(eeuu,ganador8) : golesL==golesV ? empate(ganador8) : ganador(gales,ganador8)})
 btnp9.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL9.value,resV9.value,iran,gales)
     golesL=parseInt(resL9.value);
     golesV=parseInt(resV9.value);
-    if(golesL>golesV){
-        ganador(iran,ganador9)
-    }else if(golesL==golesV){
-        empate(ganador9)
-    }else{
-        ganador(gales,ganador9)
-    }
-})
+    golesL>golesV ? ganador(iran,ganador9) : golesL==golesV ? empate(ganador9) : ganador(gales,ganador9)})
 btnp10.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL10.value,resV10.value,inglaterra,eeuu)
     golesL=parseInt(resL10.value);
     golesV=parseInt(resV10.value);
-    if(golesL>golesV){
-        ganador(inglaterra,ganador10)
-    }else if(golesL==golesV){
-        empate(ganador10)
-    }else{
-        ganador(eeuu,ganador10)
-    }
-})
+    golesL>golesV ? ganador(inglaterra,ganador10) : golesL==golesV ? empate(ganador10):        ganador(eeuu,ganador10)})
 btnp11.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL11.value,resV11.value,inglaterra,gales)
     golesL=parseInt(resL11.value);
     golesV=parseInt(resV11.value);
-    if(golesL>golesV){
-        ganador(inglaterra,ganador11)
-    }else if(golesL==golesV){
-        empate(ganador11)
-    }else{
-        ganador(gales,ganador11)
-    }
-})
+    golesL>golesV ? ganador(inglaterra,ganador11) : golesL==golesV ? empate(ganador11): ganador(gales,ganador11)})
 btnp12.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL12.value,resV12.value,iran,eeuu)
     golesL=parseInt(resL12.value);
     golesV=parseInt(resV12.value);
-    if(golesL>golesV){
-        ganador(iran,ganador12)
-    }else if(golesL==golesV){
-        empate(ganador12)
-    }else{
-        ganador(eeuu,ganador12)
-    }
-})
+    golesL>golesV ? ganador(iran,ganador12) : golesL==golesV ? empate(ganador12) : ganador(eeuu,ganador12)})
 btngB.addEventListener("click",()=>{
     ordenar(grupoB)
     console.log(grupoA)
@@ -552,79 +488,46 @@ btngB.addEventListener("click",()=>{
     dif2B.innerHTML=grupoB[1].difgol;
     dif3B.innerHTML=grupoB[2].difgol;
     dif4B.innerHTML=grupoB[3].difgol;
+    const primeroB=JSON.stringify(grupoB[0])
+    localStorage.setItem("ganadorB",primeroB);
+    const ganadorB=JSON.parse(primeroB)
+    localStorage.getItem("ganadorB")
+    const segundoB=JSON.stringify(grupoB[1])
+    localStorage.setItem("runnerB",segundoB);
+    const runnerB=JSON.parse(segundoB)
+    localStorage.getItem("runnerB")
+    B1.innerText=ganadorB.pais
 })
 btnp13.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL13.value,resV13.value,argentina, arabia)
     golesL=parseInt(resL13.value);
     golesV=parseInt(resV13.value);
-    if(golesL>golesV){
-        ganador(argentina,ganador13)
-    }else if(golesL==golesV){
-        empate(ganador13)
-    }else{
-        ganador(arabia,ganador13)
-    }
-})
+golesL>golesV ?  ganador(argentina,ganador13) : golesL==golesV ? empate(ganador13): ganador(arabia,ganador13)})
 btnp14.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL14.value,resV14.value,mexico, polonia)
     golesL=parseInt(resL14.value);
     golesV=parseInt(resV14.value);
-    if(golesL>golesV){
-        ganador(mexico,ganador14)
-    }else if(golesL==golesV){
-        empate(ganador14)
-    }else{
-        ganador(polonia,ganador14)
-    }
-})
+    golesL>golesV ?  ganador(mexico,ganador14)        : golesL==golesV ? empate(ganador14): ganador(polonia,ganador14)})
 btnp15.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL15.value,resV9.value,arabia,polonia)
     golesL=parseInt(resL15.value);
     golesV=parseInt(resV15.value);
-    if(golesL>golesV){
-        ganador(arabia,ganador15)
-    }else if(golesL==golesV){
-        empate(ganador15)
-    }else{
-        ganador(polonia,ganador15)
-    }
-})
+golesL>golesV ? ganador(arabia,ganador15) : golesL==golesV ? empate(ganador15) : ganador(polonia,ganador15)})
 btnp16.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL16.value,resV16.value,argentina,mexico)
     golesL=parseInt(resL16.value);
     golesV=parseInt(resV16.value);
-    if(golesL>golesV){
-        ganador(argentina,ganador16)
-    }else if(golesL==golesV){
-        empate(ganador16)
-    }else{
-        ganador(mexico,ganador16)
-    }
-})
+    golesL>golesV ? ganador(argentina,ganador16) : golesL==golesV ? empate(ganador16) : ganador(mexico,ganador16)})
 btnp17.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL17.value,resV17.value,argentina,polonia)
     golesL=parseInt(resL17.value);
     golesV=parseInt(resV17.value);
-    if(golesL>golesV){
-        ganador(argentina,ganador17)
-    }else if(golesL==golesV){
-        empate(ganador17)
-    }else{
-        ganador(polonia,ganador17)
-    }
-})
+    golesL>golesV ? ganador(argentina,ganador17): golesL==golesV ? empate(ganador17): ganador(polonia,ganador17)})
 btnp18.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL18.value,resV18.value,arabia,mexico)
     golesL=parseInt(resL18.value);
     golesV=parseInt(resV18.value);
-    if(golesL>golesV){
-        ganador(arabia,ganador18)
-    }else if(golesL==golesV){
-        empate(ganador18)
-    }else{
-        ganador(mexico,ganador18)
-    }
-})
+    golesL>golesV ?ganador(arabia,ganador18) : golesL==golesV ? empate(ganador18):ganador(mexico,ganador18)})
 btngC.addEventListener("click",()=>{
     ordenar(grupoB)
     console.log(grupoA)
@@ -640,79 +543,46 @@ btngC.addEventListener("click",()=>{
     dif2C.innerHTML=grupoC[1].difgol;
     dif3C.innerHTML=grupoC[2].difgol;
     dif4C.innerHTML=grupoC[3].difgol;
+    const primeroC=JSON.stringify(grupoC[0])
+    localStorage.setItem("ganadorC",primeroC);
+    const ganadorC=JSON.parse(primeroC)
+    localStorage.getItem("ganadorC")
+    const segundoC=JSON.stringify(grupoC[1])
+    localStorage.setItem("runnerC",segundoC);
+    const runnerC=JSON.parse(segundoC)
+    localStorage.getItem("runnerC")
+    C1.innerText=ganadorC.pais
 })
 btnp19.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL19.value,resV19.value,dinamarca, tunez)
     golesL=parseInt(resL19.value);
     golesV=parseInt(resV19.value);
-    if(golesL>golesV){
-        ganador(dinamarca,ganador19)
-    }else if(golesL==golesV){
-        empate(ganador19)
-    }else{
-        ganador(tunez,ganador19)
-    }
-})
+    golesL>golesV ? ganador(dinamarca,ganador19): golesL==golesV ? empate(ganador19): ganador(tunez,ganador19)})
 btnp20.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL20.value,resV20.value,francia, australia)
     golesL=parseInt(resL20.value);
     golesV=parseInt(resV20.value);
-    if(golesL>golesV){
-        ganador(francia,ganador20)
-    }else if(golesL==golesV){
-        empate(ganador20)
-    }else{
-        ganador(australia,ganador20)
-    }
-})
+    golesL>golesV ? ganador(francia,ganador20) : golesL==golesV ? empate(ganador20): ganador(australia,ganador20)})
 btnp21.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL21.value,resV21.value,australia,tunez)
     golesL=parseInt(resL21.value);
     golesV=parseInt(resV21.value);
-    if(golesL>golesV){
-        ganador(australia,ganador21)
-    }else if(golesL==golesV){
-        empate(ganador21)
-    }else{
-        ganador(tunez,ganador21)
-    }
-})
+    golesL>golesV ? ganador(australia,ganador21): golesL==golesV ? empate(ganador21) : ganador(tunez,ganador21)})
 btnp22.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL22.value,resV22.value,francia,dinamarca)
     golesL=parseInt(resL22.value);
     golesV=parseInt(resV22.value);
-    if(golesL>golesV){
-        ganador(francia,ganador22)
-    }else if(golesL==golesV){
-        empate(ganador22)
-    }else{
-        ganador(dinamarca,ganador22)
-    }
-})
+    golesL>golesV ? ganador(francia,ganador22): golesL==golesV ?         empate(ganador22): ganador(dinamarca,ganador22)})
 btnp23.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL23.value,resV23.value,australia,dinamarca)
     golesL=parseInt(resL23.value);
-    golesV=parseInt(resV23.value);
-    if(golesL>golesV){
-        ganador(australia,ganador23)
-    }else if(golesL==golesV){
-        empate(ganador23)
-    }else{
-        ganador(dinamarca,ganador23)
-    }
-})
+    golesV=parseInt(resV23.value); 
+    golesL>golesV ? ganador(australia,ganador23): golesL>golesV ? empate(ganador23): ganador(dinamarca,ganador23)})
 btnp24.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL24.value,resV24.value,francia,tunez)
     golesL=parseInt(resL24.value);
     golesV=parseInt(resV24.value);
-    if(golesL>golesV){
-        ganador(francia,ganador24)
-    }else if(golesL==golesV){
-        empate(ganador24)
-    }else{
-        ganador(tunez,ganador24)
-    }
-})
+    golesL>golesV ? ganador(francia,ganador24): golesL==golesV ?  empate(ganador24): ganador(tunez,ganador24)})
 btngD.addEventListener("click",()=>{
     ordenar(grupoD)
     console.log(grupoA)
@@ -728,79 +598,46 @@ btngD.addEventListener("click",()=>{
     dif2D.innerHTML=grupoD[1].difgol;
     dif3D.innerHTML=grupoD[2].difgol;
     dif4D.innerHTML=grupoD[3].difgol;
+    const primeroD=JSON.stringify(grupoD[0])
+    localStorage.setItem("ganadorD",primeroD);
+    const ganadorD=JSON.parse(primeroD)
+    localStorage.getItem("ganadorD")
+    const segundoD=JSON.stringify(grupoD[1])
+    localStorage.setItem("runnerD",segundoD);
+    const runnerD=JSON.parse(segundoD)
+    localStorage.getItem("runnerD");
+    D1.innerText=ganadorD.pais
 })
 btnp25.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL25.value,resV25.value,alemania, japon)
     golesL=parseInt(resL25.value);
     golesV=parseInt(resV25.value);
-    if(golesL>golesV){
-        ganador(alemania,ganador25)
-    }else if(golesL==golesV){
-        empate(ganador25)
-    }else{
-        ganador(japon,ganador25)
-    }
-})
+    golesL>golesV ? ganador(alemania,ganador25): golesL==golesV ? empate(ganador25): ganador(japon,ganador25)})
 btnp26.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL26.value,resV26.value,espana, costarica)
     golesL=parseInt(resL26.value);
     golesV=parseInt(resV26.value);
-    if(golesL>golesV){
-        ganador(espana,ganador26)
-    }else if(golesL==golesV){
-        empate(ganador26)
-    }else{
-        ganador(costarica,ganador26)
-    }
-})
+    golesL>golesV ? ganador(espana,ganador26): golesL==golesV ? empate(ganador26): ganador(costarica,ganador26)})
 btnp27.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL27.value,resV27.value,costarica,japon)
     golesL=parseInt(resL27.value);
     golesV=parseInt(resV27.value);
-    if(golesL>golesV){
-        ganador(costarica,ganador27)
-    }else if(golesL==golesV){
-        empate(ganador27)
-    }else{
-        ganador(japon,ganador27)
-    }
-})
+    golesL>golesV ? ganador(costarica,ganador27): golesL==golesV ? empate(ganador27): ganador(japon,ganador27)})
 btnp28.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL28.value,resV28.value,espana,alemania)
     golesL=parseInt(resL28.value);
     golesV=parseInt(resV28.value);
-    if(golesL>golesV){
-        ganador(espana,ganador28)
-    }else if(golesL==golesV){
-        empate(ganador28)
-    }else{
-        ganador(alemania,ganador28)
-    }
-})
+    golesL>golesV ? ganador(espana,ganador28): golesL==golesV ? empate(ganador28): ganador(alemania,ganador28)})
 btnp29.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL29.value,resV29.value,espana,japon)
     golesL=parseInt(resL29.value);
     golesV=parseInt(resV29.value);
-    if(golesL>golesV){
-        ganador(espana,ganador29)
-    }else if(golesL==golesV){
-        empate(ganador29)
-    }else{
-        ganador(japon,ganador29)
-    }
-})
+    golesL>golesV ? ganador(espana,ganador29): golesL==golesV ? empate(ganador29): ganador(japon,ganador29)})
 btnp30.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL30.value,resV30.value,costarica,alemania)
     golesL=parseInt(resL30.value);
     golesV=parseInt(resV30.value);
-    if(golesL>golesV){
-        ganador(costarica,ganador30)
-    }else if(golesL==golesV){
-        empate(ganador30)
-    }else{
-        ganador(alemania,ganador30)
-    }
-})
+    golesL>golesV ? ganador(costarica,ganador30): golesL==golesV ? empate(ganador30): ganador(alemania,ganador30)})
 btngE.addEventListener("click",()=>{
     ordenar(grupoE)
     console.log(grupoA)
@@ -816,79 +653,46 @@ btngE.addEventListener("click",()=>{
     dif2E.innerHTML=grupoE[1].difgol;
     dif3E.innerHTML=grupoE[2].difgol;
     dif4E.innerHTML=grupoE[3].difgol;
+    const primeroE=JSON.stringify(grupoE[0])
+    localStorage.setItem("ganadorE",primeroE);
+    const ganadorE=JSON.parse(primeroE)
+    localStorage.getItem("ganadorE")
+    const segundoE=JSON.stringify(grupoE[1])
+    localStorage.setItem("runnerE",segundoE);
+    const runnerE=JSON.parse(segundoE)
+    localStorage.getItem("runnerE");
+    E1.innerText=ganadorE.pais
 })
 btnp31.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL31.value,resV31.value,marruecos, croacia)
     golesL=parseInt(resL31.value);
     golesV=parseInt(resV31.value);
-    if(golesL>golesV){
-        ganador(marruecos,ganador31)
-    }else if(golesL==golesV){
-        empate(ganador31)
-    }else{
-        ganador(croacia,ganador31)
-    }
-})
+    golesL>golesV ? ganador(marruecos,ganador31): golesL==golesV ? empate(ganador31): ganador(croacia,ganador31)})
 btnp32.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL32.value,resV32.value,belgica, canada)
     golesL=parseInt(resL32.value);
     golesV=parseInt(resV32.value);
-    if(golesL>golesV){
-        ganador(belgica,ganador32)
-    }else if(golesL==golesV){
-        empate(ganador32)
-    }else{
-        ganador(canada,ganador32)
-    }
-})
+    golesL>golesV ? ganador(belgica,ganador32): golesL==golesV ? empate(ganador32): ganador(canada,ganador32)})
 btnp33.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL33.value,resV33.value,belgica,marruecos)
     golesL=parseInt(resL33.value);
     golesV=parseInt(resV33.value);
-    if(golesL>golesV){
-        ganador(belgica,ganador33)
-    }else if(golesL==golesV){
-        empate(ganador33)
-    }else{
-        ganador(marruecos,ganador33)
-    }
-})
+    golesL>golesV ? ganador(belgica,ganador33): golesL==golesV ? empate(ganador33): ganador(marruecos,ganador33)})
 btnp34.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL34.value,resV34.value,canada,marruecos)
     golesL=parseInt(resL34.value);
     golesV=parseInt(resV34.value);
-    if(golesL>golesV){
-        ganador(canada,ganador34)
-    }else if(golesL==golesV){
-        empate(ganador34)
-    }else{
-        ganador(marruecos,ganador34)
-    }
-})
+    golesL>golesV ? ganador(canada,ganador34): golesL==golesV ? empate(ganador34): ganador(marruecos,ganador34)})
 btnp35.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL35.value,resV35.value,belgica,croacia)
     golesL=parseInt(resL35.value);
     golesV=parseInt(resV35.value);
-    if(golesL>golesV){
-        ganador(belgica,ganador35)
-    }else if(golesL==golesV){
-        empate(ganador35)
-    }else{
-        ganador(croacia,ganador35)
-    }
-})
+    golesL>golesV ? ganador(belgica,ganador35): golesL==golesV ? empate(ganador35): ganador(croacia,ganador35)})
 btnp36.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL36.value,resV36.value,canada,marruecos)
     golesL=parseInt(resL36.value);
     golesV=parseInt(resV36.value);
-    if(golesL>golesV){
-        ganador(canada,ganador36)
-    }else if(golesL==golesV){
-        empate(ganador36)
-    }else{
-        ganador(marruecos,ganador36)
-    }
-})
+    golesL>golesV ?  ganador(canada,ganador36): golesL==golesV ? empate(ganador36): ganador(marruecos,ganador36)})
 btngF.addEventListener("click",()=>{
     ordenar(grupoF)
     console.log(grupoA)
@@ -904,79 +708,46 @@ btngF.addEventListener("click",()=>{
     dif2F.innerHTML=grupoF[1].difgol;
     dif3F.innerHTML=grupoF[2].difgol;
     dif4F.innerHTML=grupoF[3].difgol;
+    const primeroF=JSON.stringify(grupoF[0])
+    localStorage.setItem("ganadorF",primeroF);
+    const ganadorF=JSON.parse(primeroF)
+    localStorage.getItem("ganadorA")
+    const segundoF=JSON.stringify(grupoF[1])
+    localStorage.setItem("runnerF",segundoF);
+    const runnerF=JSON.parse(segundoF);
+    localStorage.getItem("runnerF");
+    F1.innerText=ganadorF.pais
 })
 btnp37.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL37.value,resV37.value,suiza, camerun)
     golesL=parseInt(resL37.value);
     golesV=parseInt(resV37.value);
-    if(golesL>golesV){
-        ganador(suiza,ganador37)
-    }else if(golesL==golesV){
-        empate(ganador37)
-    }else{
-        ganador(camerun,ganador37)
-    }
-})
+    golesL>golesV ? ganador(suiza,ganador37): golesL==golesV ? empate(ganador37): ganador(camerun,ganador37)})
 btnp38.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL38.value,resV38.value,brasil, serbia)
     golesL=parseInt(resL38.value);
     golesV=parseInt(resV38.value);
-    if(golesL>golesV){
-        ganador(brasil,ganador38)
-    }else if(golesL==golesV){
-        empate(ganador38)
-    }else{
-        ganador(serbia,ganador38)
-    }
-})
+    golesL>golesV ? ganador(brasil,ganador38): golesL==golesV ? empate(ganador38): ganador(serbia,ganador38)})
 btnp39.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL39.value,resV39.value,serbia,camerun)
     golesL=parseInt(resL39.value);
     golesV=parseInt(resV39.value);
-    if(golesL>golesV){
-        ganador(serbia,ganador39)
-    }else if(golesL==golesV){
-        empate(ganador39)
-    }else{
-        ganador(camerun,ganador39)
-    }
-})
+    golesL>golesV ? ganador(serbia,ganador39): golesL==golesV ? empate(ganador39): ganador(camerun,ganador39)})
 btnp40.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL40.value,resV40.value,brasil,suiza)
     golesL=parseInt(resL40.value);
     golesV=parseInt(resV40.value);
-    if(golesL>golesV){
-        ganador(brasil,ganador40)
-    }else if(golesL==golesV){
-        empate(ganador40)
-    }else{
-        ganador(suiza,ganador40)
-    }
-})
+    golesL>golesV ? ganador(brasil,ganador40): golesL==golesV ? empate(ganador40): ganador(suiza,ganador40)})
 btnp41.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL41.value,resV41.value,brasil,camerun)
     golesL=parseInt(resL41.value);
     golesV=parseInt(resV41.value);
-    if(golesL>golesV){
-        ganador(brasil,ganador41)
-    }else if(golesL==golesV){
-        empate(ganador41)
-    }else{
-        ganador(camerun,ganador41)
-    }
-})
+    golesL>golesV ? ganador(brasil,ganador41): golesL==golesV ? empate(ganador41): ganador(camerun,ganador41)})
 btnp42.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL42.value,resV42.value,serbia,suiza)
     golesL=parseInt(resL42.value);
     golesV=parseInt(resV42.value);
-    if(golesL>golesV){
-        ganador(serbia,ganador42)
-    }else if(golesL==golesV){
-        empate(ganador42)
-    }else{
-        ganador(suiza,ganador42)
-    }
-})
+    golesL>golesV ? ganador(serbia,ganador42): golesL==golesV ? empate(ganador42): ganador(suiza,ganador42)})
 btngG.addEventListener("click",()=>{
     ordenar(grupoG)
     console.log(grupoG)
@@ -992,79 +763,46 @@ btngG.addEventListener("click",()=>{
     dif2G.innerHTML=grupoG[1].difgol;
     dif3G.innerHTML=grupoG[2].difgol;
     dif4G.innerHTML=grupoG[3].difgol;
+    const primeroG=JSON.stringify(grupoG[0])
+    localStorage.setItem("ganadorG",primeroG);
+    const ganadorG=JSON.parse(primeroG)
+    localStorage.getItem("ganadorG")
+    const segundoG=JSON.stringify(grupoG[1])
+    localStorage.setItem("runnerG",segundoG);
+    const runnerG=JSON.parse(segundoG)
+    localStorage.getItem("runnerG");
+    G1.innerText=ganadorG.pais;
 })
 btnp43.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL43.value,resV43.value,uruguay, corea)
     golesL=parseInt(resL43.value);
     golesV=parseInt(resV43.value);
-    if(golesL>golesV){
-        ganador(uruguay,ganador43)
-    }else if(golesL==golesV){
-        empate(ganador43)
-    }else{
-        ganador(corea,ganador43)
-    }
-})
+    golesL>golesV ? ganador(uruguay,ganador43): golesL==golesV ? empate(ganador43): ganador(corea,ganador43)})
 btnp44.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL44.value,resV44.value,portugal, ghana)
     golesL=parseInt(resL44.value);
     golesV=parseInt(resV44.value);
-    if(golesL>golesV){
-        ganador(portugal,ganador44)
-    }else if(golesL==golesV){
-        empate(ganador44)
-    }else{
-        ganador(ghana,ganador44)
-    }
-})
+    golesL>golesV ? ganador(portugal,ganador44): golesL==golesV ? empate(ganador44): ganador(ghana,ganador44)})
 btnp45.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL45.value,resV45.value,ghana,corea)
     golesL=parseInt(resL45.value);
     golesV=parseInt(resV45.value);
-    if(golesL>golesV){
-        ganador(ghana,ganador45)
-    }else if(golesL==golesV){
-        empate(ganador45)
-    }else{
-        ganador(corea,ganador45)
-    }
-})
+    golesL>golesV ? ganador(ghana,ganador45): golesL==golesV ? empate(ganador45): ganador(corea,ganador45)})
 btnp46.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL46.value,resV46.value,portugal,uruguay)
     golesL=parseInt(resL46.value);
     golesV=parseInt(resV46.value);
-    if(golesL>golesV){
-        ganador(portugal,ganador46)
-    }else if(golesL==golesV){
-        empate(ganador46)
-    }else{
-        ganador(uruguay,ganador46)
-    }
-})
+    golesL>golesV ?  ganador(portugal,ganador46): golesL==golesV ? empate(ganador46): ganador(uruguay,ganador46)})
 btnp47.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL47.value,resV47.value,portugal,corea)
     golesL=parseInt(resL47.value);
     golesV=parseInt(resV47.value);
-    if(golesL>golesV){
-        ganador(portugal,ganador47)
-    }else if(golesL==golesV){
-        empate(ganador47)
-    }else{
-        ganador(corea,ganador47)
-    }
-})
+    golesL>golesV ? ganador(portugal,ganador47): golesL==golesV ? empate(ganador47): ganador(corea,ganador47)})
 btnp48.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL48.value,resV48.value,ghana,uruguay)
     golesL=parseInt(resL48.value);
     golesV=parseInt(resV48.value);
-    if(golesL>golesV){
-        ganador(ghana,ganador48)
-    }else if(golesL==golesV){
-        empate(ganador48)
-    }else{
-        ganador(uruguay,ganador48)
-    }
-})
+    golesL>golesV ? ganador(ghana,ganador48): golesL==golesV ? empate(ganador48): ganador(uruguay,ganador48)})
 btngH.addEventListener("click",()=>{
     ordenar(grupoH)
     console.log(grupoH)
@@ -1080,6 +818,15 @@ btngH.addEventListener("click",()=>{
     dif2H.innerHTML=grupoH[1].difgol;
     dif3H.innerHTML=grupoH[2].difgol;
     dif4H.innerHTML=grupoH[3].difgol;
+    const primeroH=JSON.stringify(grupoH[0])
+    localStorage.setItem("ganadorH",primeroH);
+    const ganadorH=JSON.parse(primeroH)
+    localStorage.getItem("ganadorH")
+    const segundoH=JSON.stringify(grupoH[1])
+    localStorage.setItem("runnerH",segundoH);
+    const runnerH=JSON.parse(segundoH)
+    localStorage.getItem("runnerH");
+    H1.innerText=ganadorH.pais
 })
 const octavosAB=[grupoA[0],grupoB[1]];
 const octavosBA=[grupoA[1],grupoB[0]];
@@ -1089,3 +836,4 @@ const octavosEF=[grupoE[0],grupoF[1]];
 const octavosFE=[grupoE[1],grupoF[0]];
 const octavosGH=[grupoG[0],grupoH[1]];
 const octavosHG=[grupoG[1],grupoH[0]];
+
