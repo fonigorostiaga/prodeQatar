@@ -2,38 +2,38 @@ const puntosganador=3
 const puntosempate=1;
 
 //array [Pais, grupo, Puntos, DifGoles!]
-const arabia= {pais:"Arabia", grupo:"C", puntos:0,difgol:0};
-const alemania={pais:"Alemania",grupo:"E",puntos:0,difgol:0};
-const argentina= {pais:"Argentina", grupo:"C", puntos:0,difgol:0};
-const australia={pais:"Australia", grupo:"D", puntos:0,difgol:0};
-const belgica={pais:"Belgica",grupo:"F",puntos:0,difgol:0};
-const brasil={pais:"Brasil",grupo:"G",puntos:0,difgol:0};
-const camerun={pais:"Camerun",grupo:"G",puntos:0,difgol:0};
-const canada={pais:"Canada",grupo:"F",puntos:0,difgol:0};
-const corea={pais:"Corea",grupo:"H",puntos:0,difgol:0};
-const costarica={pais:"Costa Rica",grupo:"E",puntos:0,difgol:0};
-const croacia={pais:"Croacia",grupo:"F",puntos:0,difgol:0};
-const dinamarca={pais:"Dinamarca", grupo:"D", puntos:0,difgol:0};
-const ecuador={pais:"Ecuador", grupo:"A", puntos:0,difgol:0};
-const eeuu={pais:"EEUU", grupo:"B", puntos:0,difgol:0};
-const espana={pais:"España",grupo:"E",puntos:0,difgol:0};
-const francia={pais:"Francia", grupo:"D", puntos:0,difgol:0};
-const gales={pais:"Gales", grupo:"B", puntos:0,difgol:0};
-const ghana={pais:"Ghana",grupo:"H",puntos:0,difgol:0};
-const holanda={pais:"Holanda", grupo:"A", puntos:0,difgol:0}
-const inglaterra={pais:"Inglaterra", grupo:"B", puntos:0,difgol:0};
-const iran={pais:"Iran", grupo:"B", puntos:0,difgol:0};
-const japon={pais:"Japon",grupo:"E",puntos:0,difgol:0};
-const marruecos={pais:"Marruecos",grupo:"F",puntos:0,difgol:0};
-const mexico= {pais:"Mexico", grupo:"C", puntos:0,difgol:0};
-const polonia= {pais:"Polonia", grupo:"C", puntos:0,difgol:0};
-const portugal={pais:"Portugal",grupo:"H",puntos:0,difgol:0};
-const qatar={pais:"Qatar", grupo:"A", puntos:0,difgol:0}
-const senegal={pais:"Senegal", grupo:"A", puntos:0,difgol:0}
-const serbia={pais:"Serbia",grupo:"G",puntos:0,difgol:0};
-const suiza={pais:"Suiza",grupo:"G",puntos:0,difgol:0};
-const tunez={pais:"Tunez", grupo:"D", puntos:0,difgol:0};
-const uruguay={pais:"Uruguay",grupo:"H",puntos:0,difgol:0};
+const arabia= {pais:"Arabia", grupo:"C", puntos:0,difgol:0, bandera:'../img/arabiasaudita.png'};
+const alemania={pais:"Alemania",grupo:"E",puntos:0,difgol:0, bandera:'../img/alemania.png'};
+const argentina= {pais:"Argentina", grupo:"C", puntos:0,difgol:0, bandera:'../img/argentina.png'};
+const australia={pais:"Australia", grupo:"D", puntos:0,difgol:0, bandera:'../img/australia.png'};
+const belgica={pais:"Belgica",grupo:"F",puntos:0,difgol:0, bandera:'../img/belgica.png'};
+const brasil={pais:"Brasil",grupo:"G",puntos:0,difgol:0, bandera:'../img/brasil.png'};
+const camerun={pais:"Camerun",grupo:"G",puntos:0,difgol:0, bandera:'../img/camerun.png'};
+const canada={pais:"Canada",grupo:"F",puntos:0,difgol:0, bandera:'../img/canada.png'};
+const corea={pais:"Corea",grupo:"H",puntos:0,difgol:0, bandera:'../img/corea.png'};
+const costarica={pais:"Costa Rica",grupo:"E",puntos:0,difgol:0, bandera:'../img/costarica.png'};
+const croacia={pais:"Croacia",grupo:"F",puntos:0,difgol:0, bandera:'../img/croacia.png'};
+const dinamarca={pais:"Dinamarca", grupo:"D", puntos:0,difgol:0, bandera:'../img/dinamarca.png'};
+const ecuador={pais:"Ecuador", grupo:"A", puntos:0,difgol:0, bandera:'../img/ecuador.png'};
+const eeuu={pais:"EEUU", grupo:"B", puntos:0,difgol:0, bandera:'../img/eeuu.png'};
+const espana={pais:"España",grupo:"E",puntos:0,difgol:0, bandera:'../img/espana.png'};
+const francia={pais:"Francia", grupo:"D", puntos:0,difgol:0, bandera:'../img/francia.png'};
+const gales={pais:"Gales", grupo:"B", puntos:0,difgol:0, bandera:'../img/gales.png'};
+const ghana={pais:"Ghana",grupo:"H",puntos:0,difgol:0, bandera:'../img/ghana.png'};
+const holanda={pais:"Holanda", grupo:"A", puntos:0,difgol:0, bandera:'../img/holanda.png'};
+const inglaterra={pais:"Inglaterra", grupo:"B", puntos:0,difgol:0, bandera:'../img/inglaterra.png'};
+const iran={pais:"Iran", grupo:"B", puntos:0,difgol:0, bandera:'../img/iran.png'};
+const japon={pais:"Japon",grupo:"E",puntos:0,difgol:0, bandera:'../img/japon.png'};
+const marruecos={pais:"Marruecos",grupo:"F",puntos:0,difgol:0, bandera:'../img/marruecos.png'};
+const mexico= {pais:"Mexico", grupo:"C", puntos:0,difgol:0, bandera:'../img/mexico.png'};
+const polonia= {pais:"Polonia", grupo:"C", puntos:0,difgol:0, bandera:'../img/polonia.png'};
+const portugal={pais:"Portugal",grupo:"H",puntos:0,difgol:0, bandera:'../img/portugal.png'};
+const qatar={pais:"Qatar", grupo:"A", puntos:0,difgol:0, bandera:'../img/qatar.png'};
+const senegal={pais:"Senegal", grupo:"A", puntos:0,difgol:0, bandera:'../img/senegal.png'};
+const serbia={pais:"Serbia",grupo:"G",puntos:0,difgol:0, bandera:'../img/serbia.png'};
+const suiza={pais:"Suiza",grupo:"G",puntos:0,difgol:0, bandera:'../img/suiza.png'};
+const tunez={pais:"Tunez", grupo:"D", puntos:0,difgol:0, bandera:'../img/tunez.png'};
+const uruguay={pais:"Uruguay",grupo:"H",puntos:0,difgol:0, bandera:'../img/uruguay.png'};
 //Grupos desordenados
 const grupoA=[qatar, ecuador, senegal, holanda];
 const grupoB=[inglaterra, iran, eeuu, gales];
@@ -340,14 +340,6 @@ const dif2H= document.querySelector("#difH2");
 const dif3H= document.querySelector("#difH3");
 const dif4H= document.querySelector("#difH4");
 const btngH=document.querySelector("#botongH");
-const A1=document.querySelector("#A1");
-const B1=document.querySelector("#B1");
-const C1=document.querySelector("#C1");
-const D1=document.querySelector("#D1");
-const E1=document.querySelector("#E1");
-const F1=document.querySelector("#F1");
-const G1=document.querySelector("#G1");
-const H1=document.querySelector("#H1");
 
 //funciones
 //modifica Objetos del partido
@@ -357,8 +349,8 @@ function partidoGrupo(golesL,golesV,equipoL,equipoV){
         equipoL.difgol=equipoL.difgol+(golesL-golesV);
         equipoV.difgol=equipoV.difgol-(golesL-golesV);
     }else if(golesL==golesV){
-       equipoL.puntos=equipoL.puntos+puntosempate;
-       equipoV.puntos=equipoV.puntos+puntosempate;
+        equipoL.puntos=equipoL.puntos+puntosempate;
+        equipoV.puntos=equipoV.puntos+puntosempate;
     }else{
         equipoV.puntos=equipoV.puntos+puntosganador;
         equipoV.difgol=equipoV.difgol+(golesV-golesL);
@@ -420,10 +412,10 @@ btnp6.addEventListener("click",partido=(golesL,golesV)=>{
 btngA.addEventListener("click",()=>{
     ordenar(grupoA)
     console.log(grupoA)
-    sele1A.innerHTML=grupoA[0].pais;
-    sele2A.innerHTML=grupoA[1].pais;
-    sele3A.innerHTML=grupoA[2].pais;
-    sele4A.innerHTML=grupoA[3].pais;
+    sele1A.innerHTML=grupoA[0].pais+`<img src="${grupoA[0].bandera}" class="banderaGrupo bandera">`;
+    sele2A.innerHTML=grupoA[1].pais+`<img src="${grupoA[1].bandera}" class="banderaGrupo bandera">`;
+    sele3A.innerHTML=grupoA[2].pais+`<img src="${grupoA[2].bandera}" class="banderaGrupo bandera">`;
+    sele4A.innerHTML=grupoA[3].pais+`<img src="${grupoA[3].bandera}" class="banderaGrupo bandera">`;
     ptos1A.innerHTML=grupoA[0].puntos;
     ptos2A.innerHTML=grupoA[1].puntos;
     ptos3A.innerHTML=grupoA[2].puntos;
@@ -440,7 +432,8 @@ btngA.addEventListener("click",()=>{
     localStorage.setItem("runnerA",segundoA);
     const runnerA=JSON.parse(segundoA);
     localStorage.getItem("runnerA");
-    A1.innerText=ganadorA.pais
+    // A1.innerText=ganadorA.pais
+
 })
 
 btnp7.addEventListener("click",partido=(golesL,golesV)=>{
@@ -496,7 +489,7 @@ btngB.addEventListener("click",()=>{
     localStorage.setItem("runnerB",segundoB);
     const runnerB=JSON.parse(segundoB)
     localStorage.getItem("runnerB")
-    B1.innerText=ganadorB.pais
+    // B1.innerText=ganadorB.pais
 })
 btnp13.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL13.value,resV13.value,argentina, arabia)
@@ -529,7 +522,7 @@ btnp18.addEventListener("click",partido=(golesL,golesV)=>{
     golesV=parseInt(resV18.value);
     golesL>golesV ?ganador(arabia,ganador18) : golesL==golesV ? empate(ganador18):ganador(mexico,ganador18)})
 btngC.addEventListener("click",()=>{
-    ordenar(grupoB)
+    ordenar(grupoC)
     console.log(grupoA)
     sele1C.innerHTML=grupoC[0].pais;
     sele2C.innerHTML=grupoC[1].pais;
@@ -551,7 +544,7 @@ btngC.addEventListener("click",()=>{
     localStorage.setItem("runnerC",segundoC);
     const runnerC=JSON.parse(segundoC)
     localStorage.getItem("runnerC")
-    C1.innerText=ganadorC.pais
+    // C1.innerText=ganadorC.pais
 })
 btnp19.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL19.value,resV19.value,dinamarca, tunez)
@@ -606,7 +599,7 @@ btngD.addEventListener("click",()=>{
     localStorage.setItem("runnerD",segundoD);
     const runnerD=JSON.parse(segundoD)
     localStorage.getItem("runnerD");
-    D1.innerText=ganadorD.pais
+    // D1.innerText=ganadorD.pais
 })
 btnp25.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL25.value,resV25.value,alemania, japon)
@@ -661,7 +654,7 @@ btngE.addEventListener("click",()=>{
     localStorage.setItem("runnerE",segundoE);
     const runnerE=JSON.parse(segundoE)
     localStorage.getItem("runnerE");
-    E1.innerText=ganadorE.pais
+    // E1.innerText=ganadorE.pais
 })
 btnp31.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL31.value,resV31.value,marruecos, croacia)
@@ -716,7 +709,7 @@ btngF.addEventListener("click",()=>{
     localStorage.setItem("runnerF",segundoF);
     const runnerF=JSON.parse(segundoF);
     localStorage.getItem("runnerF");
-    F1.innerText=ganadorF.pais
+    // F1.innerText=ganadorF.pais
 })
 btnp37.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL37.value,resV37.value,suiza, camerun)
@@ -771,7 +764,7 @@ btngG.addEventListener("click",()=>{
     localStorage.setItem("runnerG",segundoG);
     const runnerG=JSON.parse(segundoG)
     localStorage.getItem("runnerG");
-    G1.innerText=ganadorG.pais;
+    // G1.innerText=ganadorG.pais;
 })
 btnp43.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL43.value,resV43.value,uruguay, corea)
@@ -826,14 +819,4 @@ btngH.addEventListener("click",()=>{
     localStorage.setItem("runnerH",segundoH);
     const runnerH=JSON.parse(segundoH)
     localStorage.getItem("runnerH");
-    H1.innerText=ganadorH.pais
 })
-const octavosAB=[grupoA[0],grupoB[1]];
-const octavosBA=[grupoA[1],grupoB[0]];
-const octavosCD=[grupoC[0],grupoD[1]];
-const octavosDC=[grupoC[1],grupoD[0]];
-const octavosEF=[grupoE[0],grupoF[1]];
-const octavosFE=[grupoE[1],grupoF[0]];
-const octavosGH=[grupoG[0],grupoH[1]];
-const octavosHG=[grupoG[1],grupoH[0]];
-
