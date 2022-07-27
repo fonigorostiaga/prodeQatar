@@ -412,10 +412,10 @@ btnp6.addEventListener("click",partido=(golesL,golesV)=>{
 btngA.addEventListener("click",()=>{
     ordenar(grupoA)
     console.log(grupoA)
-    sele1A.innerHTML=grupoA[0].pais+`<img src="${grupoA[0].bandera}" class="banderaGrupo bandera">`;
-    sele2A.innerHTML=grupoA[1].pais+`<img src="${grupoA[1].bandera}" class="banderaGrupo bandera">`;
-    sele3A.innerHTML=grupoA[2].pais+`<img src="${grupoA[2].bandera}" class="banderaGrupo bandera">`;
-    sele4A.innerHTML=grupoA[3].pais+`<img src="${grupoA[3].bandera}" class="banderaGrupo bandera">`;
+    sele1A.innerHTML=`<img src="${grupoA[0].bandera}" class="banderaGrupo bandera">`+grupoA[0].pais;
+    sele2A.innerHTML=`<img src="${grupoA[1].bandera}" class="banderaGrupo bandera">`+grupoA[1].pais;
+    sele3A.innerHTML=`<img src="${grupoA[2].bandera}" class="banderaGrupo bandera">`+grupoA[2].pais;
+    sele4A.innerHTML=`<img src="${grupoA[3].bandera}" class="banderaGrupo bandera">`+grupoA[3].pais;
     ptos1A.innerHTML=grupoA[0].puntos;
     ptos2A.innerHTML=grupoA[1].puntos;
     ptos3A.innerHTML=grupoA[2].puntos;
@@ -469,10 +469,10 @@ btnp12.addEventListener("click",partido=(golesL,golesV)=>{
 btngB.addEventListener("click",()=>{
     ordenar(grupoB)
     console.log(grupoA)
-    sele1B.innerHTML=grupoB[0].pais;
-    sele2B.innerHTML=grupoB[1].pais;
-    sele3B.innerHTML=grupoB[2].pais;
-    sele4B.innerHTML=grupoB[3].pais;
+    sele1B.innerHTML=`<img src="${grupoB[0].bandera}" class="banderaGrupo bandera">`+grupoB[0].pais;
+    sele2B.innerHTML=`<img src="${grupoB[1].bandera}" class="banderaGrupo bandera">`+grupoB[1].pais;
+    sele3B.innerHTML=`<img src="${grupoB[2].bandera}" class="banderaGrupo bandera">`+grupoB[2].pais;
+    sele4B.innerHTML=`<img src="${grupoB[3].bandera}" class="banderaGrupo bandera">`+grupoB[3].pais;
     ptos1B.innerHTML=grupoB[0].puntos;
     ptos2B.innerHTML=grupoB[1].puntos;
     ptos3B.innerHTML=grupoB[2].puntos;
@@ -524,10 +524,10 @@ btnp18.addEventListener("click",partido=(golesL,golesV)=>{
 btngC.addEventListener("click",()=>{
     ordenar(grupoC)
     console.log(grupoA)
-    sele1C.innerHTML=grupoC[0].pais;
-    sele2C.innerHTML=grupoC[1].pais;
-    sele3C.innerHTML=grupoC[2].pais;
-    sele4C.innerHTML=grupoC[3].pais;
+    sele1C.innerHTML=`<img src="${grupoC[0].bandera}" class="banderaGrupo bandera">`+grupoC[0].pais;
+    sele2C.innerHTML=`<img src="${grupoC[1].bandera}" class="banderaGrupo bandera">`+grupoC[1].pais;
+    sele3C.innerHTML=`<img src="${grupoC[2].bandera}" class="banderaGrupo bandera">`+grupoC[2].pais;
+    sele4C.innerHTML=`<img src="${grupoC[3].bandera}" class="banderaGrupo bandera">`+grupoC[3].pais;
     ptos1C.innerHTML=grupoC[0].puntos;
     ptos2C.innerHTML=grupoC[1].puntos;
     ptos3C.innerHTML=grupoC[2].puntos;
@@ -579,10 +579,10 @@ btnp24.addEventListener("click",partido=(golesL,golesV)=>{
 btngD.addEventListener("click",()=>{
     ordenar(grupoD)
     console.log(grupoA)
-    sele1D.innerHTML=grupoD[0].pais;
-    sele2D.innerHTML=grupoD[1].pais;
-    sele3D.innerHTML=grupoD[2].pais;
-    sele4D.innerHTML=grupoD[3].pais;
+    sele1D.innerHTML=`<img src="${grupoD[0].bandera}" class="banderaGrupo bandera">`+grupoD[0].pais;
+    sele2D.innerHTML=`<img src="${grupoD[1].bandera}" class="banderaGrupo bandera">`+grupoD[1].pais;
+    sele3D.innerHTML=`<img src="${grupoD[2].bandera}" class="banderaGrupo bandera">`+grupoD[2].pais;
+    sele4D.innerHTML=`<img src="${grupoD[3].bandera}" class="banderaGrupo bandera">`+grupoD[3].pais;
     ptos1D.innerHTML=grupoD[0].puntos;
     ptos2D.innerHTML=grupoD[1].puntos;
     ptos3D.innerHTML=grupoD[2].puntos;
@@ -634,10 +634,10 @@ btnp30.addEventListener("click",partido=(golesL,golesV)=>{
 btngE.addEventListener("click",()=>{
     ordenar(grupoE)
     console.log(grupoA)
-    sele1E.innerHTML=grupoE[0].pais;
-    sele2E.innerHTML=grupoE[1].pais;
-    sele3E.innerHTML=grupoE[2].pais;
-    sele4E.innerHTML=grupoE[3].pais;
+    sele1E.innerHTML=`<img src="${grupoE[0].bandera}" class="banderaGrupo bandera">`+grupoE[0].pais;
+    sele2E.innerHTML=`<img src="${grupoE[1].bandera}" class="banderaGrupo bandera">`+grupoE[1].pais;
+    sele3E.innerHTML=`<img src="${grupoE[2].bandera}" class="banderaGrupo bandera">`+grupoE[2].pais;
+    sele4E.innerHTML=`<img src="${grupoE[3].bandera}" class="banderaGrupo bandera">`+grupoE[3].pais;
     ptos1E.innerHTML=grupoE[0].puntos;
     ptos2E.innerHTML=grupoE[1].puntos;
     ptos3E.innerHTML=grupoE[2].puntos;
@@ -689,10 +689,10 @@ btnp36.addEventListener("click",partido=(golesL,golesV)=>{
 btngF.addEventListener("click",()=>{
     ordenar(grupoF)
     console.log(grupoA)
-    sele1F.innerHTML=grupoF[0].pais;
-    sele2F.innerHTML=grupoF[1].pais;
-    sele3F.innerHTML=grupoF[2].pais;
-    sele4F.innerHTML=grupoF[3].pais;
+    sele1F.innerHTML=`<img src="${grupoF[0].bandera}" class="banderaGrupo bandera">`+grupoF[0].pais;
+    sele2F.innerHTML=`<img src="${grupoF[1].bandera}" class="banderaGrupo bandera">`+grupoF[1].pais;
+    sele3F.innerHTML=`<img src="${grupoF[2].bandera}" class="banderaGrupo bandera">`+grupoF[2].pais;
+    sele4F.innerHTML=`<img src="${grupoF[3].bandera}" class="banderaGrupo bandera">`+grupoF[3].pais;
     ptos1F.innerHTML=grupoF[0].puntos;
     ptos2F.innerHTML=grupoF[1].puntos;
     ptos3F.innerHTML=grupoF[2].puntos;
@@ -744,10 +744,10 @@ btnp42.addEventListener("click",partido=(golesL,golesV)=>{
 btngG.addEventListener("click",()=>{
     ordenar(grupoG)
     console.log(grupoG)
-    sele1G.innerHTML=grupoG[0].pais;
-    sele2G.innerHTML=grupoG[1].pais;
-    sele3G.innerHTML=grupoG[2].pais;
-    sele4G.innerHTML=grupoG[3].pais;
+    sele1G.innerHTML=`<img src="${grupoG[0].bandera}" class="banderaGrupo bandera">`+grupoG[0].pais;
+    sele2G.innerHTML=`<img src="${grupoG[1].bandera}" class="banderaGrupo bandera">`+grupoG[1].pais;
+    sele3G.innerHTML=`<img src="${grupoG[2].bandera}" class="banderaGrupo bandera">`+grupoG[2].pais;
+    sele4G.innerHTML=`<img src="${grupoG[3].bandera}" class="banderaGrupo bandera">`+grupoG[3].pais;
     ptos1G.innerHTML=grupoG[0].puntos;
     ptos2G.innerHTML=grupoG[1].puntos;
     ptos3G.innerHTML=grupoG[2].puntos;
@@ -799,10 +799,10 @@ btnp48.addEventListener("click",partido=(golesL,golesV)=>{
 btngH.addEventListener("click",()=>{
     ordenar(grupoH)
     console.log(grupoH)
-    sele1H.innerHTML=grupoH[0].pais;
-    sele2H.innerHTML=grupoH[1].pais;
-    sele3H.innerHTML=grupoH[2].pais;
-    sele4H.innerHTML=grupoH[3].pais;
+    sele1H.innerHTML=`<img src="${grupoH[0].bandera}" class="banderaGrupo bandera">`+grupoH[0].pais;
+    sele2H.innerHTML=`<img src="${grupoH[1].bandera}" class="banderaGrupo bandera">`+grupoH[1].pais;
+    sele3H.innerHTML=`<img src="${grupoH[2].bandera}" class="banderaGrupo bandera">`+grupoH[2].pais;
+    sele4H.innerHTML=`<img src="${grupoH[3].bandera}" class="banderaGrupo bandera">`+grupoH[3].pais;
     ptos1H.innerHTML=grupoH[0].puntos;
     ptos2H.innerHTML=grupoH[1].puntos;
     ptos3H.innerHTML=grupoH[2].puntos;

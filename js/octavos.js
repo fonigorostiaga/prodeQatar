@@ -16,8 +16,42 @@ const ganadorG = JSON.parse(localStorage.getItem("ganadorG"));
 const segundoG = JSON.parse(localStorage.getItem("runnerG"));
 const partidos=[[1,ganadorA,segundoB],[2,ganadorB,segundoA],[3,ganadorC, segundoD],[4,ganadorD, segundoC], [5, ganadorE, segundoF], [6, ganadorF, segundoE], [7, ganadorG, segundoH], [8,ganadorH, segundoG]]
 console.log(ganadorG)
+function crearPrimerosOctavos(array,numero){
+    const seleccionesOctavos=document.getElementById("seleccionesPrimerasOctavos");
+    const seccionSeleccionesOctavos=document.createElement('section')
+    seccionSeleccionesOctavos.innerHTML=
+    `<div class="seleccionesprimeras d-flex">
+    <div class="d-flex">    
+        <div class="bandera">
+            <img class="bandera" src="${array[numero][1].bandera}" alt="">
+        </div>
+            <h5 class="seleccion">${array[numero][1].pais}</h5>
+    </div>        
+    </div>
+    `
+    seleccionesOctavos.appendChild(seccionSeleccionesOctavos)}
 
-
+function crearSegundosOctavos(array,numero){
+    const seleccionesSegundasOctavos=document.getElementById("seleccionesSegundasOctavos");
+    const seccionSegundosOctavos=document.createElement('section')
+    seccionSegundosOctavos.innerHTML=
+    `<section class="seleccionesSegundas d-flex">
+        <div class="bandera">
+            <img class="bandera" src="${array[numero][2].bandera}" alt="">
+        </div>
+            <h5 class="seleccion">${array[numero][2].pais}</h5>
+    </section>
+    `
+    seleccionesSegundasOctavos.appendChild(seccionSegundosOctavos)
+}
+if(localStorage.length=16){
+    for(numero of [0,1,2,3,4,5,6,7]){
+    crearPrimerosOctavos(partidos,numero)}
+}
+if(localStorage.length=16){
+    for(numero of [0,1,2,3,4,5,6,7]){
+    crearSegundosOctavos(partidos,numero)}
+}
 const partidosOctavos = [{
         npartido: 1,
         fecha: "18/01",
@@ -59,14 +93,11 @@ const partidosOctavos = [{
         estadio: "bombonera",
     }
 ]
-function partidoOctavos(golesL,golesV,equipoL,equipoV){
-    
-    if(parseInt(golesL)>parseInt(golesV)){
-        equipoL.puntos=equipoL.puntos+puntosganador;
-        alert("ganador equipo" +equipoL)
+function partidoOctavos(equipoL,equipoV){
+    if(parseInt(golesL1)>parseInt(golesV1)){
+        alert("ganador equipo" +equipoL.pais)
     }else{
-        equipoV.puntos=equipoV.puntos+puntosganador;
-        alert("ganador equipo"+equipoV)
+        alert("ganador equipo"+equipoV.pais)
     }
 }
 
@@ -74,9 +105,10 @@ function crearPartidOctavos(local, visita, npartido) {
     const seccionOctavos = document.getElementById('seccionOctavos')
     const partido18final = document.createElement('section')
     partido18final.innerHTML =
-        `<div class="mt-3 col-lg-4 col-md-6 col-sm-12  alignmentPartidoGrupos">
-    <div class="partidoGrupos ">
-        <div class="fechaHora mt-2">
+        `<div class="alineacionOctavos">
+        <div class="contenedorOctavos">
+    <div class="partidoOctavos">
+        <div class="fechaHora">
             <h5>${partidosOctavos[npartido-1].fecha}</h5>
         </div>
         <div class="estadio">
@@ -96,19 +128,41 @@ function crearPartidOctavos(local, visita, npartido) {
                             <p id="ganador${npartido}" class="mx-3"></p>
                         </div>
                         <div class="botones">
-                            <button type="button" id="botonprueba" class="btn btn-outline-success">Enviar</button>
+                            <button type="button" id="botonprueba" onclick=partidoOctavos(${local},${visita},${npartido}) class="btn btn-outline-success">Enviar</button>
                         </div>
     </div>
+</div>
 </div>`
     seccionOctavos.appendChild(partido18final)
-    const golesLocal1=`golesL${npartido}`.value;
-    const golesVisitante1=`golesV${npartido}`.value;
-    return golesLocal1, golesVisitante1;
 }
-
 
 const botonOctavos=document.querySelector("#botonOctavos");
 botonOctavos.addEventListener("click",()=>{
 for (let partido of [1,2,3,4,5,6,7,8]){
     crearPartidOctavos(partidos[partido-1][1], partidos[partido-1][2],partido)
 }})
+botonprueba.addEventListener("click",()=>{
+    // const golesL1=document.querySelector("#golesL1");
+    // const golesV1=document.querySelector("#golesV1");
+    // const golesL2=document.querySelector("#golesL2");
+    // const golesV2=document.querySelector("#golesV2");
+    // const golesL3=document.querySelector("#golesL3");
+    // const golesV3=document.querySelector("#golesV3");
+    // const golesL4=document.querySelector("#golesL4");
+    // const golesV4=document.querySelector("#golesV4");
+    // const golesL5=document.querySelector("#golesL5");
+    // const golesV5=document.querySelector("#golesV5");
+    // const golesL6=document.querySelector("#golesL6");
+    // const golesV6=document.querySelector("#golesV6");
+    // const golesL7=document.querySelector("#golesL7");
+    // const golesV7=document.querySelector("#golesV7");
+    // const golesL8=document.querySelector("#golesL7");
+    // const golesV8=document.querySelector("#golesV7");
+    for(let numero of [1,2,3,4,5,6,7,8]){
+        let golesL=document.querySelector(`#golesL${numero}`);
+        let golesV=document.querySelector(`#golesV${numero}`);
+        let ganador=document.querySelector(`#ganador${numero}`)
+        if(golesL>golesV){
+            ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][1].bandera}" alt="" />`+partidos[numero-1][1].pais
+        }else{
+            ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais}}})

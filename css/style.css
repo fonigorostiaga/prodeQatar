@@ -1,24 +1,17 @@
 *{
-    color: aliceblue;
-
+    color:aliceblue;
 }
 header{
     position: sticky;
     top: 0;
 }
 body{   
+
     background-image: url(../img/back.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
-.formulario{
-    margin-top: 100px;
-    padding: 10px;
-    border: solid 0.5px black;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 .collapse ul li a{
     color: aliceblue;
 }
@@ -54,6 +47,7 @@ body{
     border: solid 2px black;
     margin-left: 25px;
     }
+
 .fechaHora, .estadio{
     width: fit-content;
     margin-left: auto;
@@ -99,6 +93,31 @@ input{
     margin-right: auto;
     margin-top: 15px
 }
+.seleccion{
+    margin-left: 10px;
+}
+.seccionOctavos{
+    display: flex;
+    flex-wrap: wrap;
+    }
+#seleccionesPrimerasOctavos, #seleccionesSegundasOctavos{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contenedorOctavos{
+    border:solid 2px rgb(39, 37, 37);
+    margin: 15px;
+    width: 350px;
+}
+.partidoOctavos{
+    margin: 15px;
+}
+
 @media screen and (max-width: 768px) {
     .banderas{
         flex-wrap: wrap;
