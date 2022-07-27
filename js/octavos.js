@@ -127,24 +127,19 @@ function crearPartidOctavos(local, visita, npartido) {
                             <p>Ganador:</p>
                             <p id="ganador${npartido}" class="mx-3"></p>
                         </div>
-                        <div class="botones">
-                            <button type="button" id="jorge"  class="btn btn-outline-success">Enviar</button>
-                        </div>
+
     </div>
 </div>
 </div>`
     seccionOctavos.appendChild(partido18final)
 }
-const botonprueba=document.querySelector("#jorge")
-botonprueba.addEventListener("click",()=>{
-    alert("hola Jor")
-})
+
 const botonOctavos=document.querySelector("#botonOctavos");
 botonOctavos.addEventListener("click",()=>{
 for (let partido of [1,2,3,4,5,6,7,8]){
     crearPartidOctavos(partidos[partido-1][1], partidos[partido-1][2],partido)
 }})
-// botonprueba.addEventListener("click",()=>{
+botonprueba.addEventListener("click",()=>{
 //     // const golesL1=document.querySelector("#golesL1");
 //     // const golesV1=document.querySelector("#golesV1");
 //     // const golesL2=document.querySelector("#golesL2");
@@ -161,11 +156,26 @@ for (let partido of [1,2,3,4,5,6,7,8]){
 //     // const golesV7=document.querySelector("#golesV7");
 //     // const golesL8=document.querySelector("#golesL7");
 //     // const golesV8=document.querySelector("#golesV7");
-//     for(let numero of [1,2,3,4,5,6,7,8]){
-//         let golesL=document.querySelector(`#golesL${numero}`);
-//         let golesV=document.querySelector(`#golesV${numero}`);
-//         let ganador=document.querySelector(`#ganador${numero}`)
-//         if(golesL.value>golesV.value){
-//             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][1].bandera}" alt="" />`+partidos[numero-1][1].pais
-//         }else{
-//             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais}}})
+    for(let numero of [1,2,3,4,5,6,7,8]){
+        let golesL=document.querySelector(`#golesL${numero}`);
+        let golesV=document.querySelector(`#golesV${numero}`);
+        let ganador=document.querySelector(`#ganador${numero}`)
+        if(golesL.value==""||golesV.value==""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Palo!!',
+                text: 'Parece que te olvidaste los Goles!',
+                });
+                break;
+        }else if(golesL.value==golesV.value){
+            Swal.fire({
+                icon: 'error',
+                title: 'A penales???',
+                text: 'Pone el resultado de los penales!',
+                });
+                break;
+        }else if
+        (golesL.value>golesV.value){
+            ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][1].bandera}" alt="" />`+partidos[numero-1][1].pais;
+        }else{
+            ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais}}})

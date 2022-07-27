@@ -344,7 +344,13 @@ const btngH=document.querySelector("#botongH");
 //funciones
 //modifica Objetos del partido
 function partidoGrupo(golesL,golesV,equipoL,equipoV){
-    if(parseInt(golesL)>parseInt(golesV)){
+    if(golesL==""||golesV==""){
+        Swal.fire({
+            icon: 'error',
+            title: 'Palo!!',
+            text: 'Te olvidaste los goles Mostro',
+            });
+    }else if(parseInt(golesL)>parseInt(golesV)){
         equipoL.puntos=equipoL.puntos+puntosganador;
         equipoL.difgol=equipoL.difgol+(golesL-golesV);
         equipoV.difgol=equipoV.difgol-(golesL-golesV);
@@ -374,7 +380,7 @@ function ordenar(grupo){
     })}
 //trae al ganador al campo correcto
 function ganador(ganador,posicion){
-    posicion.innerText=ganador.pais
+    posicion.innerHTML=`<img class="bandera" src="${ganador.bandera}" alt="" />`+ganador.pais
 }
 //trae "empate"
 function empate(posicion){
@@ -385,6 +391,7 @@ btnp1.addEventListener("click",partido=(golesL,golesV)=>{
     partidoGrupo(resL1.value,resV1.value,senegal, holanda)
     golesL=parseInt(resL1.value);
     golesV=parseInt(resV1.value);
+
     golesL>golesV ? ganador(senegal,ganador1) : golesL==golesV ? empate(ganador1) : ganador(holanda,ganador1)})
     
 btnp2.addEventListener("click",partido=(golesL,golesV)=>{
@@ -414,6 +421,18 @@ btnp6.addEventListener("click",partido=(golesL,golesV)=>{
     golesL>golesV ?   ganador(ecuador,ganador6) : golesL==golesV ? empate(ganador6) : ganador(senegal,ganador6)})
 btngA.addEventListener("click",()=>{
     ordenar(grupoA)
+    Toastify({
+        text: grupoA[0].pais+" y "+grupoA[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
     console.log(grupoA)
     sele1A.innerHTML=`<img src="${grupoA[0].bandera}" class="banderaGrupo bandera">`+grupoA[0].pais;
     sele2A.innerHTML=`<img src="${grupoA[1].bandera}" class="banderaGrupo bandera">`+grupoA[1].pais;
@@ -471,6 +490,17 @@ btnp12.addEventListener("click",partido=(golesL,golesV)=>{
     golesL>golesV ? ganador(iran,ganador12) : golesL==golesV ? empate(ganador12) : ganador(eeuu,ganador12)})
 btngB.addEventListener("click",()=>{
     ordenar(grupoB)
+    Toastify({
+        text: grupoB[0].pais+" y "+grupoB[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     console.log(grupoA)
     sele1B.innerHTML=`<img src="${grupoB[0].bandera}" class="banderaGrupo bandera">`+grupoB[0].pais;
     sele2B.innerHTML=`<img src="${grupoB[1].bandera}" class="banderaGrupo bandera">`+grupoB[1].pais;
@@ -526,6 +556,17 @@ btnp18.addEventListener("click",partido=(golesL,golesV)=>{
     golesL>golesV ?ganador(arabia,ganador18) : golesL==golesV ? empate(ganador18):ganador(mexico,ganador18)})
 btngC.addEventListener("click",()=>{
     ordenar(grupoC)
+    Toastify({
+        text: grupoC[0].pais+" y "+grupoC[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     console.log(grupoA)
     sele1C.innerHTML=`<img src="${grupoC[0].bandera}" class="banderaGrupo bandera">`+grupoC[0].pais;
     sele2C.innerHTML=`<img src="${grupoC[1].bandera}" class="banderaGrupo bandera">`+grupoC[1].pais;
@@ -581,6 +622,17 @@ btnp24.addEventListener("click",partido=(golesL,golesV)=>{
     golesL>golesV ? ganador(francia,ganador24): golesL==golesV ?  empate(ganador24): ganador(tunez,ganador24)})
 btngD.addEventListener("click",()=>{
     ordenar(grupoD)
+    Toastify({
+        text: grupoD[0].pais+" y "+grupoD[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     console.log(grupoA)
     sele1D.innerHTML=`<img src="${grupoD[0].bandera}" class="banderaGrupo bandera">`+grupoD[0].pais;
     sele2D.innerHTML=`<img src="${grupoD[1].bandera}" class="banderaGrupo bandera">`+grupoD[1].pais;
@@ -636,6 +688,17 @@ btnp30.addEventListener("click",partido=(golesL,golesV)=>{
     golesL>golesV ? ganador(costarica,ganador30): golesL==golesV ? empate(ganador30): ganador(alemania,ganador30)})
 btngE.addEventListener("click",()=>{
     ordenar(grupoE)
+    Toastify({
+        text: grupoE[0].pais+" y "+grupoE[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     console.log(grupoA)
     sele1E.innerHTML=`<img src="${grupoE[0].bandera}" class="banderaGrupo bandera">`+grupoE[0].pais;
     sele2E.innerHTML=`<img src="${grupoE[1].bandera}" class="banderaGrupo bandera">`+grupoE[1].pais;
@@ -691,6 +754,17 @@ btnp36.addEventListener("click",partido=(golesL,golesV)=>{
     golesL>golesV ?  ganador(canada,ganador36): golesL==golesV ? empate(ganador36): ganador(marruecos,ganador36)})
 btngF.addEventListener("click",()=>{
     ordenar(grupoF)
+    Toastify({
+        text: grupoF[0].pais+" y "+grupoF[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     console.log(grupoA)
     sele1F.innerHTML=`<img src="${grupoF[0].bandera}" class="banderaGrupo bandera">`+grupoF[0].pais;
     sele2F.innerHTML=`<img src="${grupoF[1].bandera}" class="banderaGrupo bandera">`+grupoF[1].pais;
@@ -746,6 +820,17 @@ btnp42.addEventListener("click",partido=(golesL,golesV)=>{
     golesL>golesV ? ganador(serbia,ganador42): golesL==golesV ? empate(ganador42): ganador(suiza,ganador42)})
 btngG.addEventListener("click",()=>{
     ordenar(grupoG)
+    Toastify({
+        text: grupoG[0].pais+" y "+grupoG[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     console.log(grupoG)
     sele1G.innerHTML=`<img src="${grupoG[0].bandera}" class="banderaGrupo bandera">`+grupoG[0].pais;
     sele2G.innerHTML=`<img src="${grupoG[1].bandera}" class="banderaGrupo bandera">`+grupoG[1].pais;
@@ -801,6 +886,17 @@ btnp48.addEventListener("click",partido=(golesL,golesV)=>{
     golesL>golesV ? ganador(ghana,ganador48): golesL==golesV ? empate(ganador48): ganador(uruguay,ganador48)})
 btngH.addEventListener("click",()=>{
     ordenar(grupoH)
+    Toastify({
+        text: grupoH[0].pais+" y "+grupoH[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     console.log(grupoH)
     sele1H.innerHTML=`<img src="${grupoH[0].bandera}" class="banderaGrupo bandera">`+grupoH[0].pais;
     sele2H.innerHTML=`<img src="${grupoH[1].bandera}" class="banderaGrupo bandera">`+grupoH[1].pais;
