@@ -93,13 +93,13 @@ const partidosOctavos = [{
         estadio: "bombonera",
     }
 ]
-function partidoOctavos(equipoL,equipoV){
-    if(parseInt(golesL1)>parseInt(golesV1)){
-        alert("ganador equipo" +equipoL.pais)
-    }else{
-        alert("ganador equipo"+equipoV.pais)
-    }
-}
+// function partidoOctavos(equipoL,equipoV){
+//     if(parseInt(golesL1)>parseInt(golesV1)){
+//         alert("ganador equipo" +equipoL.pais)
+//     }else{
+//         alert("ganador equipo"+equipoV.pais)
+//     }
+// }
 
 function crearPartidOctavos(local, visita, npartido) {
     const seccionOctavos = document.getElementById('seccionOctavos')
@@ -128,41 +128,44 @@ function crearPartidOctavos(local, visita, npartido) {
                             <p id="ganador${npartido}" class="mx-3"></p>
                         </div>
                         <div class="botones">
-                            <button type="button" id="botonprueba" onclick=partidoOctavos(${local},${visita},${npartido}) class="btn btn-outline-success">Enviar</button>
+                            <button type="button" id="jorge"  class="btn btn-outline-success">Enviar</button>
                         </div>
     </div>
 </div>
 </div>`
     seccionOctavos.appendChild(partido18final)
 }
-
+const botonprueba=document.querySelector("#jorge")
+botonprueba.addEventListener("click",()=>{
+    alert("hola Jor")
+})
 const botonOctavos=document.querySelector("#botonOctavos");
 botonOctavos.addEventListener("click",()=>{
 for (let partido of [1,2,3,4,5,6,7,8]){
     crearPartidOctavos(partidos[partido-1][1], partidos[partido-1][2],partido)
 }})
-botonprueba.addEventListener("click",()=>{
-    // const golesL1=document.querySelector("#golesL1");
-    // const golesV1=document.querySelector("#golesV1");
-    // const golesL2=document.querySelector("#golesL2");
-    // const golesV2=document.querySelector("#golesV2");
-    // const golesL3=document.querySelector("#golesL3");
-    // const golesV3=document.querySelector("#golesV3");
-    // const golesL4=document.querySelector("#golesL4");
-    // const golesV4=document.querySelector("#golesV4");
-    // const golesL5=document.querySelector("#golesL5");
-    // const golesV5=document.querySelector("#golesV5");
-    // const golesL6=document.querySelector("#golesL6");
-    // const golesV6=document.querySelector("#golesV6");
-    // const golesL7=document.querySelector("#golesL7");
-    // const golesV7=document.querySelector("#golesV7");
-    // const golesL8=document.querySelector("#golesL7");
-    // const golesV8=document.querySelector("#golesV7");
-    for(let numero of [1,2,3,4,5,6,7,8]){
-        let golesL=document.querySelector(`#golesL${numero}`);
-        let golesV=document.querySelector(`#golesV${numero}`);
-        let ganador=document.querySelector(`#ganador${numero}`)
-        if(golesL>golesV){
-            ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][1].bandera}" alt="" />`+partidos[numero-1][1].pais
-        }else{
-            ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais}}})
+// botonprueba.addEventListener("click",()=>{
+//     // const golesL1=document.querySelector("#golesL1");
+//     // const golesV1=document.querySelector("#golesV1");
+//     // const golesL2=document.querySelector("#golesL2");
+//     // const golesV2=document.querySelector("#golesV2");
+//     // const golesL3=document.querySelector("#golesL3");
+//     // const golesV3=document.querySelector("#golesV3");
+//     // const golesL4=document.querySelector("#golesL4");
+//     // const golesV4=document.querySelector("#golesV4");
+//     // const golesL5=document.querySelector("#golesL5");
+//     // const golesV5=document.querySelector("#golesV5");
+//     // const golesL6=document.querySelector("#golesL6");
+//     // const golesV6=document.querySelector("#golesV6");
+//     // const golesL7=document.querySelector("#golesL7");
+//     // const golesV7=document.querySelector("#golesV7");
+//     // const golesL8=document.querySelector("#golesL7");
+//     // const golesV8=document.querySelector("#golesV7");
+//     for(let numero of [1,2,3,4,5,6,7,8]){
+//         let golesL=document.querySelector(`#golesL${numero}`);
+//         let golesV=document.querySelector(`#golesV${numero}`);
+//         let ganador=document.querySelector(`#ganador${numero}`)
+//         if(golesL.value>golesV.value){
+//             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][1].bandera}" alt="" />`+partidos[numero-1][1].pais
+//         }else{
+//             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais}}})

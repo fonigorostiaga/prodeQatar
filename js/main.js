@@ -348,6 +348,7 @@ function partidoGrupo(golesL,golesV,equipoL,equipoV){
         equipoL.puntos=equipoL.puntos+puntosganador;
         equipoL.difgol=equipoL.difgol+(golesL-golesV);
         equipoV.difgol=equipoV.difgol-(golesL-golesV);
+        
     }else if(golesL==golesV){
         equipoL.puntos=equipoL.puntos+puntosempate;
         equipoV.puntos=equipoV.puntos+puntosempate;
@@ -356,6 +357,8 @@ function partidoGrupo(golesL,golesV,equipoL,equipoV){
         equipoV.difgol=equipoV.difgol+(golesV-golesL);
         equipoL.difgol=equipoL.difgol-(golesV-golesL);
     }
+    
+    
 }
 
 // //ordenar grupo post zona Grupos
