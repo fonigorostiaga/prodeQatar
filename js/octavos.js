@@ -54,43 +54,43 @@ if(localStorage.length=16){
 }
 const partidosOctavos = [{
         npartido: 1,
-        fecha: "18/01",
-        estadio: "bombonera",
+        fecha: "Sabado 3/12 12:00 hs",
+        estadio: "Estadio Al Thumama",
     },
     {
         npartido: 2,
-        fecha: "18/02",
-        estadio: "bombonera",
+        fecha: "Domingo 4/12 16:00 hs",
+        estadio: "Estadio Al Bayt",
     },
     {
         npartido: 3,
-        fecha: "18/03",
-        estadio: "bombonera",
+        fecha: "Sabado 3/12 16:00 hs",
+        estadio: "Estadio Int Khalifa",
     },
     {
         npartido: 4,
-        fecha: "18/04",
-        estadio: "bombonera",
+        fecha: "Domingo 4/12 12:00 hs",
+        estadio: "Estadio Ahmad Bin Ali",
     },
     {
         npartido: 5,
-        fecha: "18/05",
-        estadio: "bombonera",
+        fecha: "Lunes 05/12 12:00 hs",
+        estadio: "Estadio Al Bayt",
     },
     {
         npartido: 6,
-        fecha: "18/06",
-        estadio: "bombonera",
+        fecha: "Martes 06/12 12:00",
+        estadio: "Estadio 974",
     },
     {
         npartido: 7,
-        fecha: "18/07",
-        estadio: "bombonera",
+        fecha: "Lunes 05/12 16:00 hs",
+        estadio: "Estadio Ciudad Educacion",
     },
     {
         npartido: 8,
-        fecha: "18/08",
-        estadio: "bombonera",
+        fecha: "Martes 06/12 16:00",
+        estadio: "Estadio Lusail",
     }
 ]
 // function partidoOctavos(equipoL,equipoV){
@@ -156,7 +156,8 @@ botonprueba.addEventListener("click",()=>{
 //     // const golesV7=document.querySelector("#golesV7");
 //     // const golesL8=document.querySelector("#golesL7");
 //     // const golesV8=document.querySelector("#golesV7");
-    for(let numero of [1,2,3,4,5,6,7,8]){
+    
+for(let numero of [1,2,3,4,5,6,7,8]){
         let golesL=document.querySelector(`#golesL${numero}`);
         let golesV=document.querySelector(`#golesV${numero}`);
         let ganador=document.querySelector(`#ganador${numero}`)
@@ -169,9 +170,9 @@ botonprueba.addEventListener("click",()=>{
                 break;
         }else if(golesL.value==golesV.value){
             Swal.fire({
-                icon: 'error',
-                title: 'A penales???',
-                text: 'Pone el resultado de los penales!',
+                icon: 'info',
+                title:partidos[numero-1][1].pais +' y '+ partidos[numero-1][2].pais+' A penales???',
+                text: innerHTML='Pone el resultado de los penales!',
                 });
                 break;
         }else if
