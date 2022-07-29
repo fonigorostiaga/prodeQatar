@@ -93,17 +93,12 @@ const partidosOctavos = [{
         estadio: "Estadio Lusail",
     }
 ]
-// function partidoOctavos(equipoL,equipoV){
-//     if(parseInt(golesL1)>parseInt(golesV1)){
-//         alert("ganador equipo" +equipoL.pais)
-//     }else{
-//         alert("ganador equipo"+equipoV.pais)
-//     }
-// }
+
 
 function crearPartidOctavos(local, visita, npartido) {
     const seccionOctavos = document.getElementById('seccionOctavos')
-    const partido18final = document.createElement('section')
+    const partido18final = document.createElement('section');
+
     partido18final.innerHTML =
         `<div class="alineacionOctavos">
         <div class="contenedorOctavos">
@@ -178,5 +173,10 @@ for(let numero of [1,2,3,4,5,6,7,8]){
         }else if
         (golesL.value>golesV.value){
             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][1].bandera}" alt="" />`+partidos[numero-1][1].pais;
+            const semifinalista=JSON.stringify(partidos[numero-1][1]);
+            localStorage.setItem(`semifinalista${numero}`,semifinalista);
         }else{
-            ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais}}})
+            ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais;
+            const semifinalista=JSON.stringify(partidos[numero-1][2]);
+            localStorage.setItem(`semifinalista${numero}`,semifinalista);
+        }}})

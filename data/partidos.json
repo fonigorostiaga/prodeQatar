@@ -1,0 +1,42 @@
+[
+    {
+       "npartido":1,
+       "fecha":"Sabado 3/12 12:00 hs",
+       "estadio":"Estadio Al Thumama"
+    },
+    {
+       "npartido":2,
+       "fecha":"Domingo 4/12 16:00 hs",
+       "estadio":"Estadio Al Bayt"
+    },
+    {
+       "npartido":3,
+       "fecha":"Sabado 3/12 16:00 hs",
+       "estadio":"Estadio Int Khalifa"
+    },
+    {
+       "npartido":4,
+       "fecha":"Domingo 4/12 12:00 hs",
+       "estadio":"Estadio Ahmad Bin Ali"
+    },
+    {
+       "npartido":5,
+       "fecha":"Lunes 05/12 12:00 hs",
+       "estadio":"Estadio Al Bayt"
+    },
+    {
+       "npartido":6,
+       "fecha":"Martes 06/12 12:00",
+       "estadio":"Estadio 974"
+    },
+    {
+       "npartido":7,
+       "fecha":"Lunes 05/12 16:00 hs",
+       "estadio":"Estadio Ciudad Educacion"
+    },
+    {
+       "npartido":8,
+       "fecha":"Martes 06/12 16:00",
+       "estadio":"Estadio Lusail"
+    }
+ ]

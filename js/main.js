@@ -350,6 +350,7 @@ function partidoGrupo(golesL,golesV,equipoL,equipoV){
             title: 'Palo!!',
             text: 'Te olvidaste los goles Mostro',
             });
+            
     }else if(parseInt(golesL)>parseInt(golesV)){
         equipoL.puntos=equipoL.puntos+puntosganador;
         equipoL.difgol=equipoL.difgol+(golesL-golesV);
