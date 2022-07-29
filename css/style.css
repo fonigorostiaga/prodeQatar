@@ -87,7 +87,7 @@ input{
     margin-right: auto;
     margin-bottom:10px;
 }
-.octavos{
+.octavos, .cuartos{
     width: fit-content;
     margin-left: auto;
     margin-right: auto;

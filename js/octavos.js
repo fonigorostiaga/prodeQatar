@@ -173,10 +173,10 @@ for(let numero of [1,2,3,4,5,6,7,8]){
         }else if
         (golesL.value>golesV.value){
             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][1].bandera}" alt="" />`+partidos[numero-1][1].pais;
-            const semifinalista=JSON.stringify(partidos[numero-1][1]);
-            localStorage.setItem(`semifinalista${numero}`,semifinalista);
+            const ganadorOctavos=JSON.stringify(partidos[numero-1][1]);
+            localStorage.setItem(`ganadorOctavos${numero}`,ganadorOctavos);
         }else{
             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais;
-            const semifinalista=JSON.stringify(partidos[numero-1][2]);
-            localStorage.setItem(`semifinalista${numero}`,semifinalista);
+            const ganadorOctavos=JSON.stringify(partidos[numero-1][2]);
+            localStorage.setItem(`ganadorOctavos${numero}`,ganadorOctavos);
         }}})
