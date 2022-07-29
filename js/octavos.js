@@ -44,7 +44,7 @@ function crearSegundosOctavos(array,numero){
     `
     seleccionesSegundasOctavos.appendChild(seccionSegundosOctavos)
 }
-if(localStorage.length=16){
+if(localStorage.length>=16){
     for(numero of [0,1,2,3,4,5,6,7]){
     crearPrimerosOctavos(partidos,numero)}
 }
@@ -110,13 +110,13 @@ function crearPartidOctavos(local, visita, npartido) {
             <h5>${partidosOctavos[npartido-1].estadio}</h5>
         </div>
         <div class="partido d-flex">
-            <h6 class="equipoL">${local.pais}</h6>
-            <img class="bandera" src="${local.bandera}" alt="banderasenegal" />
-            <input type="value" id="golesL${npartido}" size="1"/>
-            <p class="guion">-</p>
-            <input id="golesV${npartido}" type="value" size="1" />
-            <img class="bandera" src="${visita.bandera}" alt="banderaHolanda" />
-            <h6 class="equipoV">${visita.pais}</h6>
+                    <h6 class="equipoL">${local.pais}</h6>
+                    <img class="bandera" src="${local.bandera}" alt="bandera${local.pais}" />
+                    <input type="value" id="golesL${npartido}" size="1"/>
+                    <p class="guion">-</p>
+                    <input id="golesV${npartido}" type="value" size="1" />
+                    <img class="bandera" src="${visita.bandera}" alt="bandera${visita.pais}" />
+                    <h6 class="equipoV">${visita.pais}</h6>
         </div>
         <div class="ganador d-flex">
                             <p>Ganador:</p>
@@ -135,23 +135,7 @@ for (let partido of [1,2,3,4,5,6,7,8]){
     crearPartidOctavos(partidos[partido-1][1], partidos[partido-1][2],partido)
 }})
 botonprueba.addEventListener("click",()=>{
-//     // const golesL1=document.querySelector("#golesL1");
-//     // const golesV1=document.querySelector("#golesV1");
-//     // const golesL2=document.querySelector("#golesL2");
-//     // const golesV2=document.querySelector("#golesV2");
-//     // const golesL3=document.querySelector("#golesL3");
-//     // const golesV3=document.querySelector("#golesV3");
-//     // const golesL4=document.querySelector("#golesL4");
-//     // const golesV4=document.querySelector("#golesV4");
-//     // const golesL5=document.querySelector("#golesL5");
-//     // const golesV5=document.querySelector("#golesV5");
-//     // const golesL6=document.querySelector("#golesL6");
-//     // const golesV6=document.querySelector("#golesV6");
-//     // const golesL7=document.querySelector("#golesL7");
-//     // const golesV7=document.querySelector("#golesV7");
-//     // const golesL8=document.querySelector("#golesL7");
-//     // const golesV8=document.querySelector("#golesV7");
-    
+
 for(let numero of [1,2,3,4,5,6,7,8]){
         let golesL=document.querySelector(`#golesL${numero}`);
         let golesV=document.querySelector(`#golesV${numero}`);
@@ -180,3 +164,4 @@ for(let numero of [1,2,3,4,5,6,7,8]){
             const ganadorOctavos=JSON.stringify(partidos[numero-1][2]);
             localStorage.setItem(`ganadorOctavos${numero}`,ganadorOctavos);
         }}})
+        console.log(partidos)

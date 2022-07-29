@@ -87,7 +87,7 @@ input{
     margin-right: auto;
     margin-bottom:10px;
 }
-.octavos, .cuartos{
+.octavos, .cuartos, .semi{
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
@@ -96,11 +96,11 @@ input{
 .seleccion{
     margin-left: 10px;
 }
-.seccionOctavos{
+.seccionOctavos, .seccionCuartos, .seccionSemi{
     display: flex;
     flex-wrap: wrap;
     }
-#seleccionesPrimerasOctavos, #seleccionesSegundasOctavos{
+#seleccionesPrimerasOctavos, #seleccionesSegundasOctavos, #seleccionesCuartos, #seleccionesSemiFinal{
     margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -112,9 +112,16 @@ input{
 .contenedorOctavos{
     border:solid 2px rgb(39, 37, 37);
     margin: 15px;
-    width: 350px;
+    width: 325px;
 }
-.partidoOctavos{
+.contenedorCuartos, .contenedorSemis{
+    border:solid 2px rgb(39, 37, 37);
+    margin: 15px;
+    width: 600px;
+
+}
+
+.partidoOctavos, .partidoCuartos, .partidoSemis{
     margin: 15px;
 }
 
@@ -140,5 +147,11 @@ input{
     }
     .estadio{
         display: none;
+    }
+    .contenedorCuartos{
+        border:solid 2px rgb(39, 37, 37);
+        margin: 15px;
+        width: 325px;
+    
     }
 }

@@ -170,12 +170,15 @@ btngA.addEventListener("click",()=>{
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL==""||golesV==""){
+        if(golesL.value==""||golesV.value==""){
+
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
-                })}else if(golesL.value>golesV.value){
+                })
+                
+            }else if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
@@ -188,11 +191,13 @@ btngA.addEventListener("click",()=>{
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais
-        }
-    }
-    ordenar(grupoA)
-    Toastify({
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+
+    
+
+        ordenar(grupoA)
+    
+        Toastify({
         text: grupoA[0].pais+" y "+grupoA[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
@@ -226,6 +231,7 @@ btngA.addEventListener("click",()=>{
     const runnerA=JSON.parse(segundoA);
     localStorage.getItem("runnerA");
     // A1.innerText=ganadorA.pais
+    
 
 })
 btngB.addEventListener("click",()=>{
@@ -233,12 +239,15 @@ btngB.addEventListener("click",()=>{
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL==""||golesV==""){
+        if(golesL.value==""||golesV.value==""){
+
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
-                })}else if(golesL.value>golesV.value){
+                })
+                
+            }else if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
@@ -251,9 +260,12 @@ btngB.addEventListener("click",()=>{
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}}
-    ordenar(grupoB)
-    Toastify({
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+
+    
+        ordenar(grupoB)
+    
+        Toastify({
         text: grupoB[0].pais+" y "+grupoB[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
@@ -293,12 +305,15 @@ btngC.addEventListener("click",()=>{
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL==""||golesV==""){
+        if(golesL.value==""||golesV.value==""){
+
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
-                })}else if(golesL.value>golesV.value){
+                })
+                
+            }else if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
@@ -311,9 +326,13 @@ btngC.addEventListener("click",()=>{
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}}
-    ordenar(grupoC)
-    Toastify({
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+
+    
+
+        ordenar(grupoC)
+    
+        Toastify({
         text: grupoC[0].pais+" y "+grupoC[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
@@ -353,12 +372,15 @@ btngD.addEventListener("click",()=>{
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL==""||golesV==""){
+        if(golesL.value==""||golesV.value==""){
+
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
-                })}else if(golesL.value>golesV.value){
+                })
+                
+            }else if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
@@ -371,9 +393,12 @@ btngD.addEventListener("click",()=>{
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}}
-    ordenar(grupoD)
-    Toastify({
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+
+    
+        ordenar(grupoD)
+    
+        Toastify({
         text: grupoD[0].pais+" y "+grupoD[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
@@ -413,12 +438,15 @@ btngE.addEventListener("click",()=>{
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL==""||golesV==""){
+        if(golesL.value==""||golesV.value==""){
+
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
-                })}else if(golesL.value>golesV.value){
+                })
+                
+            }else if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
@@ -431,9 +459,13 @@ btngE.addEventListener("click",()=>{
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}}
-    ordenar(grupoE)
-    Toastify({
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+
+    
+
+        ordenar(grupoE)
+    
+        Toastify({
         text: grupoE[0].pais+" y "+grupoE[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
@@ -473,12 +505,15 @@ btngF.addEventListener("click",()=>{
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL==""||golesV==""){
+        if(golesL.value==""||golesV.value==""){
+
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
-                })}else if(golesL.value>golesV.value){
+                })
+                
+            }else if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
@@ -491,9 +526,12 @@ btngF.addEventListener("click",()=>{
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}}
-    ordenar(grupoF)
-    Toastify({
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+
+    
+        ordenar(grupoF)
+    
+        Toastify({
         text: grupoF[0].pais+" y "+grupoF[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
@@ -528,17 +566,19 @@ btngF.addEventListener("click",()=>{
     // F1.innerText=ganadorF.pais
 })
 
-btngG.addEventListener("click",()=>{
-    for(partido of [37,38,39,40,41,42]){
+btngG.addEventListener("click",()=>{for(partido of [37,38,39,40,41,42]){
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL==""||golesV==""){
+
+        if(golesL.value==""||golesV.value==""){
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
-                })}else if(golesL.value>golesV.value){
+                })
+                
+            }else if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
@@ -551,16 +591,18 @@ btngG.addEventListener("click",()=>{
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}}
-    ordenar(grupoG)
-    Toastify({
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+
+    
+        ordenar(grupoG)
+    
+        Toastify({
         text: grupoG[0].pais+" y "+grupoG[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        style: {background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
         },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -585,20 +627,23 @@ btngG.addEventListener("click",()=>{
     localStorage.setItem("runnerG",segundoG);
     const runnerG=JSON.parse(segundoG)
     localStorage.getItem("runnerG");
-    // G1.innerText=ganadorG.pais;
 })
+
 
 btngH.addEventListener("click",()=>{
     for(partido of [43,44,45,46,47,48]){
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL==""||golesV==""){
+        if(golesL.value==""||golesV.value==""){
+
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
-                })}else if(golesL.value>golesV.value){
+                })
+                
+            }else if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
@@ -611,16 +656,18 @@ btngH.addEventListener("click",()=>{
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}}
-    ordenar(grupoH)
-    Toastify({
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+
+    
+        ordenar(grupoH)
+    
+        Toastify({
         text: grupoH[0].pais+" y "+grupoH[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-          background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        style: {background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
         },
         onClick: function(){} // Callback after click
       }).showToast();
