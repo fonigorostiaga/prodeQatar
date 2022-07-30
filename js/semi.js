@@ -13,6 +13,7 @@ const datosPartidos=[
         estadio:"Estadio Al Bayt",
     }
 ]
+let botonApretado=false
 const partidos= [[1,ganadorCuartos1,ganadorCuartos2],[2, ganadorCuartos3, ganadorCuartos4]];
 function crearSeleccionesSemis(array,numero){
     const seleccionesSemis=document.getElementById("seleccionesSemiFinal");
@@ -36,11 +37,33 @@ function crearSeleccionesSemis(array,numero){
 </div>
     `
     seleccionesSemis.appendChild(seccionSeleccionesSemis)}
-    if(localStorage.length>=28){
+    if((localStorage.length)>=28){
         for(const numero of [0,1]){
             crearSeleccionesSemis(partidos,numero)
+        }}else{
+            setTimeout(()=>{
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Para Wanchankein!!',
+                    text: 'Todavia no clasificaste a nadie a Semi',
+                    background:"linear-gradient(#3d1723da,#050002dc)",
+                    color:"rgb(161, 165, 168)",
+                    iconColor:"e7077793",
+                    confirmButtonColor:"#e7077793",
+                    confirmButtonText:"Mala mia!",
+                    }).then((result)=>{
+                        if(result.isConfirmed){
+                            if((localStorage.length)>=24){
+                                window.location.href="../pages/cuartos.html"
+                            }else if((localStorage.length)==16){
+                                window.location.href="../pages/octavos.html"
+                            }else{window.location.href="../pages/grupos.html"}
+                        }
+                    })
+            },150)
         }
-    }
+    const botonResultadoSemis=document.querySelector("#botonResultadoSemi");
+
     function crearPartidoSemis(local, visita, npartido){
         const seccionSemis=document.getElementById('seccionSemi');
         const partidoSemi=document.createElement('section');
@@ -71,14 +94,28 @@ function crearSeleccionesSemis(array,numero){
             </div>
         </div>`
         seccionSemis.appendChild(partidoSemi);
+        botonResultadoSemis.classList.remove("display-none")
+        botonApretado=true
     }
     const botonSemis=document.querySelector("#botonSemis");
-    const botonResultadoSemis=document.querySelector("#botonResultadoSemi");
+
     botonSemis.addEventListener("click", ()=>{
+        if(botonApretado==true){
+            Swal.fire({
+                icon: 'error',
+                title: 'PARAAAA Emocionado!!',
+                text: "Cuanto partido' quere' jugar?",
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!",
+                })
+        }else{
         for(let partido of [1,2]){
             crearPartidoSemis(partidos[partido-1][1],partidos[partido-1][2],partido)
         }
-    })
+    }})
     botonResultadoSemis.addEventListener("click", ()=>{
         for(let numero of [1,2]){
             let golesL=document.querySelector(`#golesL${numero}`);
@@ -88,7 +125,12 @@ function crearSeleccionesSemis(array,numero){
                 Swal.fire({
                     icon: 'error',
                     title: 'Palo!!',
-                    text: 'Parece que te olvidaste los Goles!',
+                    text: 'Te olvidaste los goles Mostro',
+                    background:"linear-gradient(#3d1723da,#050002dc)",
+                    color:"rgb(161, 165, 168)",
+                    iconColor:"e7077793",
+                    confirmButtonColor:"#e7077793",
+                    confirmButtonText:"Mala mia!"
                     });
                     break;
             }else if(golesL.value==golesV.value){
@@ -96,6 +138,10 @@ function crearSeleccionesSemis(array,numero){
                     icon: 'info',
                     title:partidos[numero-1][1].pais +' y '+ partidos[numero-1][2].pais+' A penales???',
                     text: innerHTML='Pone el resultado de los penales!',
+                    background:"linear-gradient(#3d1723da,#050002dc)",
+                    confirmButtonColor:"#e7077793",
+                    iconColor:"e7077793",
+                    color:"rgb(161, 165, 168)",
                     });
                     break;
             }else if

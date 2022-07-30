@@ -15,13 +15,14 @@ const segundoH = JSON.parse(localStorage.getItem("runnerH"));
 const ganadorG = JSON.parse(localStorage.getItem("ganadorG"));
 const segundoG = JSON.parse(localStorage.getItem("runnerG"));
 const partidos=[[1,ganadorA,segundoB],[2,ganadorB,segundoA],[3,ganadorC, segundoD],[4,ganadorD, segundoC], [5, ganadorE, segundoF], [6, ganadorF, segundoE], [7, ganadorG, segundoH], [8,ganadorH, segundoG]]
-console.log(ganadorG)
+console.log(ganadorG);
+const botonOctavos=document.querySelector("#botonOctavos");
 function crearPrimerosOctavos(array,numero){
     const seleccionesOctavos=document.getElementById("seleccionesPrimerasOctavos");
     const seccionSeleccionesOctavos=document.createElement('section')
     seccionSeleccionesOctavos.innerHTML=
     `<div class="seleccionesprimeras d-flex">
-    <div class="d-flex">    
+    <div class="d-flex clasificadas">    
         <div class="bandera">
             <img class="bandera" src="${array[numero][1].bandera}" alt="">
         </div>
@@ -35,18 +36,38 @@ function crearSegundosOctavos(array,numero){
     const seleccionesSegundasOctavos=document.getElementById("seleccionesSegundasOctavos");
     const seccionSegundosOctavos=document.createElement('section')
     seccionSegundosOctavos.innerHTML=
-    `<section class="seleccionesSegundas d-flex">
+    `<div class="seleccionesSegundas d-flex">
+    <div class="d-flex clasificadas"> 
         <div class="bandera">
             <img class="bandera" src="${array[numero][2].bandera}" alt="">
         </div>
             <h5 class="seleccion">${array[numero][2].pais}</h5>
-    </section>
+            </div>
+    </div>
     `
     seleccionesSegundasOctavos.appendChild(seccionSegundosOctavos)
+    botonOctavos.classList.remove("display-none")
 }
 if(localStorage.length>=16){
     for(numero of [0,1,2,3,4,5,6,7]){
     crearPrimerosOctavos(partidos,numero)}
+}else{
+    setTimeout(()=>{
+        Swal.fire({
+            icon: 'error',
+            title: 'Para Wanchankein!!',
+            text: 'Todavia no clasificaste a nadie a Octavos',
+            background:"linear-gradient(#3d1723da,#050002dc)",
+            color:"rgb(161, 165, 168)",
+            iconColor:"e7077793",
+            confirmButtonColor:"#e7077793",
+            confirmButtonText:"Mala mia!",
+            }).then((result)=>{
+                if(result.isConfirmed){
+                    window.location.href="../pages/grupos.html"
+                }
+            })
+    },150)
 }
 if(localStorage.length=16){
     for(numero of [0,1,2,3,4,5,6,7]){
@@ -94,8 +115,9 @@ const partidosOctavos = [{
     }
 ]
 
-
+let botonApretado=false
 function crearPartidOctavos(local, visita, npartido) {
+    
     const seccionOctavos = document.getElementById('seccionOctavos')
     const partido18final = document.createElement('section');
 
@@ -127,14 +149,30 @@ function crearPartidOctavos(local, visita, npartido) {
 </div>
 </div>`
     seccionOctavos.appendChild(partido18final)
+    botonResultadosOctavos.classList.remove("display-none")
+    botonApretado=true
 }
 
-const botonOctavos=document.querySelector("#botonOctavos");
+
+const botonResultadosOctavos=document.querySelector("#botonResultadoOctavos")
 botonOctavos.addEventListener("click",()=>{
+if(botonApretado==true){
+    Swal.fire({
+        icon: 'error',
+        title: 'PARAAAA Emocionado!!',
+        text: "Cuanto partido' quere' jugar?",
+        background:"linear-gradient(#3d1723da,#050002dc)",
+        color:"rgb(161, 165, 168)",
+        iconColor:"e7077793",
+        confirmButtonColor:"#e7077793",
+        confirmButtonText:"Mala mia!",
+        })
+    
+}else{
 for (let partido of [1,2,3,4,5,6,7,8]){
     crearPartidOctavos(partidos[partido-1][1], partidos[partido-1][2],partido)
-}})
-botonprueba.addEventListener("click",()=>{
+}}})
+botonResultadosOctavos.addEventListener("click",()=>{
 
 for(let numero of [1,2,3,4,5,6,7,8]){
         let golesL=document.querySelector(`#golesL${numero}`);
@@ -144,14 +182,23 @@ for(let numero of [1,2,3,4,5,6,7,8]){
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text: 'Parece que te olvidaste los Goles!',
-                });
+                text: 'Te olvidaste los goles Mostro',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
+                })
                 break;
         }else if(golesL.value==golesV.value){
             Swal.fire({
                 icon: 'info',
                 title:partidos[numero-1][1].pais +' y '+ partidos[numero-1][2].pais+' A penales???',
                 text: innerHTML='Pone el resultado de los penales!',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                confirmButtonColor:"#e7077793",
+                iconColor:"e7077793",
+                color:"rgb(161, 165, 168)",
                 });
                 break;
         }else if

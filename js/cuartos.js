@@ -34,7 +34,7 @@ function crearSeleccionesCuartos(array,numero){
     const seccionSeleccionesCuartos=document.createElement('section')
     seccionSeleccionesCuartos.innerHTML=
     `<div class="seleccionesprimeras d-flex">
-    <div class="d-flex">    
+    <div class="d-flex clasificadas">    
         <div class="bandera">
             <img class="bandera" src="${array[numero][1].bandera}" alt="">
         </div>
@@ -42,7 +42,7 @@ function crearSeleccionesCuartos(array,numero){
     </div>        
     </div>
     <p></p>
-    <div class="d-flex">    
+    <div class="d-flex clasificadas">    
     <div class="bandera">
         <img class="bandera" src="${array[numero][2].bandera}" alt="">
     </div>
@@ -55,8 +55,30 @@ if(localStorage.length>=24){
     for (const numero of [0,1,2,3]) {
         crearSeleccionesCuartos(partidos,numero)
         
+    }}else{
+        setTimeout(()=>{
+            Swal.fire({
+                icon: 'error',
+                title: 'Para Wanchankein!!',
+                text: 'Todavia no clasificaste a nadie a Cuartos',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!",
+                }).then((result)=>{
+                    if(result.isConfirmed){
+                        if((localStorage.length)==16){
+                            window.location.href="../pages/octavos.html"
+                        }else{window.location.href="../pages/grupos.html"}
+                    }
+                })
+        },150)
     }
-}
+let botonApretado=false
+
+const botonCuartos=document.querySelector("#botonCuartos");
+const botonResultadosCuartos=document.querySelector("#botonresultadocuartos")
 function crearPartidoCuartos(local, visita, npartido){
     const seccionCuartos=document.getElementById('seccionCuartos');
     const partido14final=document.createElement('section');
@@ -87,14 +109,29 @@ function crearPartidoCuartos(local, visita, npartido){
         </div>
     </div>`
     seccionCuartos.appendChild(partido14final);
+    botonResultadosCuartos.classList.remove("display-none")
+    botonApretado=true
+
 }
-const botonCuartos=document.querySelector("#botonCuartos");
+
 botonCuartos.addEventListener("click", ()=>{
+    if(botonApretado==true){
+        Swal.fire({
+            icon: 'error',
+            title: 'PARAAAA Emocionado!!',
+            text: "Cuanto partido' quere' jugar?",
+            background:"linear-gradient(#3d1723da,#050002dc)",
+            color:"rgb(161, 165, 168)",
+            iconColor:"e7077793",
+            confirmButtonColor:"#e7077793",
+            confirmButtonText:"Mala mia!",
+            })
+    }else{
     for(let partido of [1,2,3,4]){
         crearPartidoCuartos(partidos[partido-1][1],partidos[partido-1][2],partido)
     }
-})
-const botonResultadosCuartos=document.querySelector("#botonresultadocuartos")
+}})
+
 botonResultadosCuartos.addEventListener("click", ()=>{
     for(let numero of [1,2,3,4]){
         let golesL=document.querySelector(`#golesL${numero}`);
@@ -104,7 +141,12 @@ botonResultadosCuartos.addEventListener("click", ()=>{
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text: 'Parece que te olvidaste los Goles!',
+                text: 'Te olvidaste los goles Mostro',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
                 });
                 break;
         }else if(golesL.value==golesV.value){
@@ -112,6 +154,11 @@ botonResultadosCuartos.addEventListener("click", ()=>{
                 icon: 'info',
                 title:partidos[numero-1][1].pais +' y '+ partidos[numero-1][2].pais+' A penales???',
                 text: innerHTML='Pone el resultado de los penales!',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                confirmButtonColor:"#e7077793",
+                iconColor:"e7077793",
+                color:"rgb(161, 165, 168)",
+
                 });
                 break;
         }else if

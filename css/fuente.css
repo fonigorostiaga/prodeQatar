@@ -1,0 +1,12 @@
+@font-face {
+    font-family: qatarHeavy;
+    src: url(../fonts/Qatar2022Arabic-Heavy.ttf);
+}
+@font-face {
+    font-family: qatarBold;
+       src: url(../fonts/Qatar2022Arabic-Bold.ttf);
+}
+@font-face {
+    font-family: qatarGraphic;
+    src: url(../fonts/Graphik\ Arabic\ Medium.otf);
+}

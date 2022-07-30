@@ -176,6 +176,11 @@ btngA.addEventListener("click",()=>{
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
                 })
                 
             }else if(golesL.value>golesV.value){
@@ -204,7 +209,7 @@ btngA.addEventListener("click",()=>{
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+            background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -245,6 +250,11 @@ btngB.addEventListener("click",()=>{
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
                 })
                 
             }else if(golesL.value>golesV.value){
@@ -272,7 +282,7 @@ btngB.addEventListener("click",()=>{
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+            background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -311,6 +321,11 @@ btngC.addEventListener("click",()=>{
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
                 })
                 
             }else if(golesL.value>golesV.value){
@@ -339,7 +354,7 @@ btngC.addEventListener("click",()=>{
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+            background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -378,6 +393,11 @@ btngD.addEventListener("click",()=>{
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
                 })
                 
             }else if(golesL.value>golesV.value){
@@ -405,7 +425,7 @@ btngD.addEventListener("click",()=>{
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+            background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -444,6 +464,11 @@ btngE.addEventListener("click",()=>{
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
                 })
                 
             }else if(golesL.value>golesV.value){
@@ -472,7 +497,7 @@ btngE.addEventListener("click",()=>{
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+            background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -511,6 +536,11 @@ btngF.addEventListener("click",()=>{
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
                 })
                 
             }else if(golesL.value>golesV.value){
@@ -538,7 +568,7 @@ btngF.addEventListener("click",()=>{
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-            background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+            background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -576,6 +606,11 @@ btngG.addEventListener("click",()=>{for(partido of [37,38,39,40,41,42]){
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
                 })
                 
             }else if(golesL.value>golesV.value){
@@ -602,7 +637,7 @@ btngG.addEventListener("click",()=>{for(partido of [37,38,39,40,41,42]){
                 gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        style: {background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
       }).showToast();
@@ -636,11 +671,15 @@ btngH.addEventListener("click",()=>{
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
         if(golesL.value==""||golesV.value==""){
-
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
                 text: 'Te olvidaste los goles Mostro',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
                 })
                 
             }else if(golesL.value>golesV.value){
@@ -667,7 +706,7 @@ btngH.addEventListener("click",()=>{
                 gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {background: "linear-gradient(to right, rgb(122, 32, 32), rgb(48, 27, 27))",
+        style: {background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
       }).showToast();
