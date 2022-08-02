@@ -1,6 +1,7 @@
 const puntosganador=3
 const puntosempate=1;
 
+
 //array [Pais, grupo, Puntos, DifGoles!]
 const arabia= {pais:"Arabia", grupo:"C", puntos:0,difgol:0, bandera:'../img/arabiasaudita.png'};
 const alemania={pais:"Alemania",grupo:"E",puntos:0,difgol:0, bandera:'../img/alemania.png'};
@@ -150,6 +151,36 @@ const dif2H= document.querySelector("#difH2");
 const dif3H= document.querySelector("#difH3");
 const dif4H= document.querySelector("#difH4");
 const btngH=document.querySelector("#botongH");
+
+const user=JSON.parse(localStorage.getItem("ingreso"))
+const user2=JSON.parse(sessionStorage.getItem("ingreso"))
+if(user){
+    Toastify({
+        text: "Bienvenido "+user.user,
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(#3d17236b,#0500026b)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast()
+}else if(user2){
+    Toastify({
+        text: "Bienvenido "+user2.user,
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(#3d17236b,#0500026b)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast()
+}
+
+
 
 function ordenar(grupo){
     grupo.sort((a,b)=>{

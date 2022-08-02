@@ -6,6 +6,7 @@ const datosFinal={
     fecha:"Domingo 18/12 12:00hs",
     estadio:"Estadio Al Thumama"
 }
+
 let botonApretado=false
 
 function finalistas(local, visitante){
@@ -218,15 +219,19 @@ botonCampeon.addEventListener("click",()=>{
                             confirmButtonText:"Soy una Basura"
                             })
                     }else{
-                        Swal.fire({
-                            icon: 'info',
-                            title:finaldelMundo[1].pais +' y '+ finaldelMundo[2].pais+' A penales???',
-                            text: innerHTML='Pone el resultado de los penales!',
-                            background:"linear-gradient(#3d1723da,#050002dc)",
-                            confirmButtonColor:"#e7077793",
-                            iconColor:"e7077793",
-                            color:"rgb(161, 165, 168)",
-                            });
+
+                            Swal.fire({
+                                imageUrl:'../img/copaFinal.jpg',
+                                imageWidth:"450px",
+                                imageHeight:"250px",
+                                title:finaldelMundo[2].pais + " es el Campeon del Mundo",
+                                text: 'gracias por participar',
+                                background:"linear-gradient(#3d1723da,#050002dc)",
+                                color:"rgb(161, 165, 168)",
+                                iconColor:"e7077793",
+                                confirmButtonColor:"#e7077793",
+                                confirmButtonText:"Gracias por todo"
+                                })
 
                     }}
 

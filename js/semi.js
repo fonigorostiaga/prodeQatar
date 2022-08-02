@@ -2,6 +2,8 @@ const ganadorCuartos1=JSON.parse(localStorage.getItem("ganadorCuartos1"));
 const ganadorCuartos2=JSON.parse(localStorage.getItem("ganadorCuartos2"));
 const ganadorCuartos3=JSON.parse(localStorage.getItem("ganadorCuartos3"));
 const ganadorCuartos4=JSON.parse(localStorage.getItem("ganadorCuartos4"));
+const footer=document.querySelector("footer")
+
 console.log(ganadorCuartos4, ganadorCuartos2, ganadorCuartos3, ganadorCuartos1)
 const datosPartidos=[
     {

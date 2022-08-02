@@ -8,9 +8,105 @@ header{
     position: sticky;
     top: 0;
 }
+.formulario{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(#3d17236b,#0500026b);
+    padding-left:15px ;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-top: 3%;
+    border-radius: 15px;
+    font-family: qatarBold;
+}
+.titulo-form{
+    padding-top: 15px;
+    font-family: qatarBold;
+}
+.header-index{
+    display: none;
+}
+.titulo{
+    font-family: QatarHeavy;
+    font-size: 75px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right:auto ;
+    margin-top: 10%;
+}
 body{   
-
+    
     background-image: url(../img/back.jpg);
+}
+.footerIndex{
+    width: fit-content;
+    margin-left: auto;
+    margin-right:auto ;
+    font-family: qatarBold;
+    position: absolute;
+    bottom: 3%;
+    right: 0%;
+    left: 0%;
+}
+footer{
+    width: fit-content;
+    margin-left: auto;
+    margin-right:auto ;
+    font-family: qatarBold;
+    bottom: 3%;
+    right: 0%;
+    left: 0%;
+}
+.footerIndex a{
+    text-decoration: none;
+    color: aliceblue !important ;
+}
+.footerIndex a:hover{
+    text-decoration: none;
+    color: rgb(123, 131, 138) !important ;
+}
+.mainContador{
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;   
+    margin-top: 3%;
+}
+.divhoras{
+    
+    justify-content: center;
+    align-items: center;
+}
+.dias, .horas, .minutos, .segundos{
+    vertical-align: center;
+    font-family: qatarBold;
+    font-size: 45px;
+    margin-left: 25px;
+    width: fit-content !important;
+    text-align: center;
+    align-self: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    
+}
+
+
+#dias, #horas, #minutos, #segundos{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-family: qatarHeavy;
+    font-size: 75px;
+    margin-left: 25px !important;
+    background: linear-gradient(#3d17236b,#0500026b);
+    border-radius: 15px;
+    margin-top: 10px;
+    text-align: center;
+    padding: 15px 25px;
+    width:140px ;
+
+    
 }
 
 
@@ -164,6 +260,19 @@ button:hover{
 background-color: #e70777f6!important;
 transform: scale(1.03,1.03);
 transition:0.3s;
+}
+.botoningreso{
+    width: 10% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 25px;
+}
+button a{
+    text-decoration: none;
+    color: #FAEBD7;
+}
+button a:hover{
+    color: aliceblue;
 }
 
 .octavos, .cuartos, .semi{

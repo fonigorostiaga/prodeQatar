@@ -14,6 +14,7 @@ const ganadorH = JSON.parse(localStorage.getItem("ganadorH"));
 const segundoH = JSON.parse(localStorage.getItem("runnerH"));
 const ganadorG = JSON.parse(localStorage.getItem("ganadorG"));
 const segundoG = JSON.parse(localStorage.getItem("runnerG"));
+const footer=document.querySelector("footer")
 const partidos=[[1,ganadorA,segundoB],[2,ganadorB,segundoA],[3,ganadorC, segundoD],[4,ganadorD, segundoC], [5, ganadorE, segundoF], [6, ganadorF, segundoE], [7, ganadorG, segundoH], [8,ganadorH, segundoG]]
 console.log(ganadorG);
 const botonOctavos=document.querySelector("#botonOctavos");
@@ -186,10 +187,10 @@ for(let numero of [1,2,3,4,5,6,7,8]){
                 background:"linear-gradient(#3d1723da,#050002dc)",
                 color:"rgb(161, 165, 168)",
                 iconColor:"e7077793",
-                confirmButtonColor:"#e7077793",
+                confirmButtonColor:"#e7077793",       
                 confirmButtonText:"Mala mia!"
-                })
-                break;
+                });
+                break;  
         }else if(golesL.value==golesV.value){
             Swal.fire({
                 icon: 'info',

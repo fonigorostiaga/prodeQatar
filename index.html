@@ -15,7 +15,7 @@
 
 <body>
 
-    <header>
+    <header class="header-index">
         <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html"><img class="icono" src="./img/icono.png" alt="icono"></a>
@@ -42,19 +42,46 @@
                             <a class="nav-link" href="./pages/final.html">Final</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+
                 </div>
             </div>
         </nav>
     </header>
-    
+    <main>  
+    <div class="titulo">Bienvenido!</div>
+    <div class="mainContador">
+        <div class="contador d-flex">
+            <div class="divdias">
+                <p class="dias">Dias</p>
+                <div  id="dias"></div>
+            </div>
+            <div class="divhoras">
+                <p class="horas">Horas</p>
+                <div id="horas"></div>
+            </div>
+            <div class="divminutos">
+                <p class="minutos">Min</p>
+                <div id="minutos"></div>
+            </div>
+            <div class="divsegundos">
+                <p class="segundos">Seg</p>
+                <div id="segundos"></div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="botoningreso">
+    <button id="botonContador">Ingresar</button></div>
+</main>
+    <footer class="footerIndex">Developed by <a href="https://www.instagram.com/fonigorostiaga/">Foni Gorostiaga</a></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1/build/global/luxon.min.js" integrity="sha256-uQ0RrcqAQ8NxzNqZH11eXx3qFLAgwEgSQN1V0N1+UlM=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
-    <script src="./js/main.js"></script>
+
+    <script src="./js/contador.js"></script>
 
 </body>
 
