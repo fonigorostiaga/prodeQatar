@@ -77,9 +77,9 @@ function crearFinaldelMundo(local, visitante,npartido){
             <div class="partido d-flex">
                 <h5 class="equipoL">${local.pais}</h5>
                 <img class="bandera" src="${local.bandera}" alt="bandera${local.pais}" />
-                <input type="value" id="golesL${npartido}" size="1"/>
+                <input type="number" id="golesL${npartido}" size="1"/>
                 <img class="copa" src="../img/copa.png" alt="copadelmundo"/>
-                <input id="golesV${npartido}" type="value" size="1" />
+                <input id="golesV${npartido}" type="number" size="1" />
                 <img class="bandera" src="${visitante.bandera}" alt="bandera${visitante.pais}" />
                 <h5 class="equipoV">${visitante.pais}</h5>
             </div>

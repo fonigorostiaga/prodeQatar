@@ -4,46 +4,45 @@
 
     
 }
-
+/*estilos generales*/
 body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-header{
-    position: sticky;
-    top: 0;
-}
-.formulario{
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    background: linear-gradient(#3d17236b,#0500026b);
-    padding-left:15px ;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    margin-top: 3%;
-    border-radius: 15px;
-    font-family: qatarBold;
-}
-.titulo-form{
-    padding-top: 15px;
-    font-family: qatarBold;
-}
-.header-index{
-    display: none;
-}
-.titulo{
-    font-family: QatarHeavy;
-    font-size: 75px;
-    width: fit-content;
-    margin-left: auto;
-    margin-right:auto ;
-    margin-top: 10%;
-}
 body{   
     
     background-image: url(../img/back.jpg);
+}
+.collapse ul li a{
+    color: aliceblue;
+    font-size: 25px !important;
+    font-family: qatarBold !important;
+    margin-left: 15px !important;
+}
+.collapse ul li a:hover{
+    color:#a70c3df8;
+}
+
+h1{
+    font-family: qatarHeavy ;
+    font-size: 75px;
+}
+h2,h3{
+    font-family: qatarBold;
+    font-size: 35px;
+    letter-spacing: 3px !important;
+}
+h4,h5,h6,p{
+    font-family: qatarGraphic;
+    align-items: center !important;
+    justify-content: center !important;
+
+}
+/*header y footer*/
+header{
+    position: sticky;
+    top: 0;
 }
 .footerIndex{
     width: fit-content;
@@ -70,6 +69,44 @@ footer a:hover{
     text-decoration: none;
     color: rgb(123, 131, 138) !important ;
 }
+.icono{
+    width: 50px;
+    height: 50px;
+}
+.header-index{
+    display: none;
+}
+h4
+{font-size: 35px  !important;}
+
+/*counter e inicios de sesion/registro*/
+.formulario{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(#3d17236b,#0500026b);
+    padding-left:15px ;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-top: 3%;
+    border-radius: 15px;
+    font-family: qatarBold;
+}
+.titulo-form{
+    padding-top: 15px;
+    font-family: qatarBold;
+}
+
+.titulo{
+    font-family: QatarHeavy;
+    font-size: 75px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right:auto ;
+    margin-top: 10%;
+}
+
+
 .mainContador{
     height: 100%;
     display: flex;
@@ -96,7 +133,7 @@ footer a:hover{
     
 }
 #dias{
-    width: 160px !important;
+    width: 180px !important;
 }
 
 #dias, #horas, #minutos, #segundos{
@@ -115,30 +152,10 @@ footer a:hover{
     
 }
 
-
-.collapse ul li a{
-    color: aliceblue;
-    font-size: 25px !important;
-    font-family: qatarBold !important;
-    margin-left: 15px !important;
-}
-.collapse ul li a:hover{
-    color:#a70c3df8;
-}
-h1{
-    font-family: qatarHeavy ;
-    font-size: 75px;
-}
-h2,h3{
-    font-family: qatarBold;
-    font-size: 35px;
-    letter-spacing: 3px !important;
-}
-h4,h5,h6,p{
-    font-family: qatarGraphic;
-    align-items: center !important;
-    justify-content: center !important;
-
+/*partidos*/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
 }
 .bandera{
     width: 30px;
@@ -146,22 +163,51 @@ h4,h5,h6,p{
     margin-left: 8px;
     margin-right: 8px;
 }
+input{
+    height: 25px;
+    width: 25px;
+    color: rgb(252, 249, 249);
+    background-color: rgba(0, 0, 0, 0.397);
+    border:none
+}
+.guion{
+    margin-left: 4px !important;
+    margin-right: 4px  !important;
+}
 .copa{
     height: 50px; width: 35px;
     margin-left:10px ;
     margin-right:10px ;
 }
-.icono{
-    width: 50px;
-    height: 50px;
-}
+.caja{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 30px !important;
+    }
+    .fechaHora{
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .partido{
+        justify-content: center;
+        height: 40px;
+        align-items: center;
+    }
 .estadio{
 
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
+.ganador{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+
+/*GRUPOS*/
 .grupo{
     width: fit-content;
     margin-left: auto;
@@ -185,11 +231,7 @@ h4,h5,h6,p{
     margin-left: auto;
     margin-right: auto;
 }
-.caja{
-margin-left: auto !important;
-margin-right: auto !important;
-margin-top: 30px !important;
-}
+
 .partidoGrupos{
     background-color: #2208106b;
     background: linear-gradient(#3d17236b,#0500026b);
@@ -210,39 +252,18 @@ margin-top: 30px !important;
     transform: scale(1.05,1.05);
     transition:0.3s;
 }
-.fechaHora{
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-.partido{
-    justify-content: center;
-    height: 40px;
-    align-items: center;
-}
+
+.Senegal, .holanda, .Qatar, .Ecuador, .inglaterra, .iran, .eeuu, .gales, .argentina, .arabiaSaudita, .mexico, .polonia, .espana, .costarica, .japon, .alemania, .marruecos, .croacia, .belgica, .canada, .Suiza, .Camerun, .Brasil, .Serbia, .uruguay, .corea, .portugal, .ghana{
+    margin-left:25px !important;
+align-items: center;}
 
 
-input{
-    height: 25px;
-    width: 25px;
-    color: rgb(252, 249, 249);
-    background-color: rgba(0, 0, 0, 0.397);
-    border:none
-}
-.guion{
-    margin-left: 4px !important;
-    margin-right: 4px  !important;
-}
 .alignmentPartidoGrupos{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
-.ganador{
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
+/*botones*/
 .botones{
     width:95% !important;
 
@@ -280,6 +301,7 @@ button a{
 button a:hover{
     color: aliceblue;
 }
+/*PARTIDOS ELIMIMNACION DIRECTA*/
 
 .octavos, .cuartos, .semi{
     width: fit-content;
@@ -290,8 +312,7 @@ button a:hover{
 .seleccion{
     margin-left: 10px;
 }
-h4
-{font-size: 35px  !important;}
+
 .seccionOctavos, .seccionCuartos, .seccionSemi{
     display: flex;
     flex-wrap: wrap;
@@ -307,9 +328,7 @@ h4
 
 }
 .clasificadas{margin-left:10px}
-.Senegal, .holanda, .Qatar, .Ecuador, .inglaterra, .iran, .eeuu, .gales, .argentina, .arabiaSaudita, .mexico, .polonia, .espana, .costarica, .japon, .alemania, .marruecos, .croacia, .belgica, .canada, .Suiza, .Camerun, .Brasil, .Serbia, .uruguay, .corea, .portugal, .ghana{
-    margin-left:25px !important;
-align-items: center;}
+
 #seleccionesPrimerasOctavos, #seleccionesSegundasOctavos, #seleccionesCuartos, #seleccionesSemiFinal, #finalistas{
     margin-top: 15px;
     display: flex;
@@ -343,6 +362,8 @@ align-items: center;}
     transform: scale(1.05,1.05);
     transition:0.15s
 }
+
+/*RESPONSIVE*/
 @media screen and (max-width: 1400px){
     .fechaHora h5, .estadio h5{
         font-size: smaller;
@@ -350,7 +371,7 @@ align-items: center;}
 }
 @media screen and (max-width:1000px){
     .botonNav{
-        width: 50px !important;
+        width: 75px !important;
     }
 }
 @media screen and (max-width: 768px) {
@@ -362,12 +383,23 @@ align-items: center;}
 
         
     }
+    .contador{
+        flex-wrap: wrap;
+    }
+    .botoningreso{
+        width: 115px !important;
+    }
     .banderaGrupo{
         border: solid 0.15px black;
         height: 25px;
         width:35px
         
+        
     }
+    .Senegal, .holanda, .Qatar, .Ecuador, .inglaterra, .iran, .eeuu, .gales, .argentina, .arabiaSaudita, .mexico, .polonia, .espana, .costarica, .japon, .alemania, .marruecos, .croacia, .belgica, .canada, .Suiza, .Camerun, .Brasil, .Serbia, .uruguay, .corea, .portugal, .ghana{
+        margin-top: 5px;
+        align-items: center;}
+
 
     .Senegal h4, .holanda h4, .Qatar h4, .Ecuador h4, .inglaterra h4, .iran h4, .eeuu h4, .gales h4, .argentina h4, .arabiaSaudita h4, .mexico h4, .polonia h4, .espana h4, .costarica h4, .japon h4, .alemania h4, .marruecos h4, .croacia h4, .belgica h4, .canada h4, .Suiza h4, .Camerun h4, .Brasil h4, .Serbia h4, .uruguay h4, .corea h4, .portugal h4, .ghana h4{
         font-size: smaller !important;}
@@ -392,10 +424,14 @@ align-items: center;}
     .estadio{
         display: none;
     }
-    .contenedorCuartos{
-        border:solid 2px rgb(39, 37, 37);
-        margin: 15px;
-        width: 325px;
+    .partidoOctavos, .partidoCuartos, .partidoSemis{
+        background-color: #2208106b;
+        background: linear-gradient(#3d17236b,#0500026b);
+        margin-left: 25px;
+        border-radius: 15px;
+        padding: 15px;
+        border:none;
+        width: 95%;
     
     }
     

@@ -82,9 +82,9 @@ function crearSeleccionesSemis(array,numero){
                     <div class="partido d-flex">
                         <h6 class="equipoL">${local.pais}</h6>
                         <img class="bandera" src="${local.bandera}" alt="bandera${local.pais}" />
-                        <input type="value" id="golesL${npartido}" size="1"/>
+                        <input type="number" id="golesL${npartido}" size="1"/>
                         <p class="guion">-</p>
-                        <input id="golesV${npartido}" type="value" size="1" />
+                        <input id="golesV${npartido}" type="number" size="1" />
                         <img class="bandera" src="${visita.bandera}" alt="bandera${visita.pais}" />
                         <h6 class="equipoV">${visita.pais}</h6>
                     </div>

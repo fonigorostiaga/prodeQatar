@@ -206,7 +206,7 @@ btngA.addEventListener("click",()=>{
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text: 'Te olvidaste los goles Mostro',
+                text: 'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
                 background:"linear-gradient(#3d1723da,#050002dc)",
                 color:"rgb(161, 165, 168)",
                 iconColor:"e7077793",
@@ -270,6 +270,7 @@ btngA.addEventListener("click",()=>{
     
 
 })
+
 btngB.addEventListener("click",()=>{
     for(partido of [7,8,9,10,11,12]){
         let golesL=document.querySelector(`#resultadoL${partido}`);
@@ -280,7 +281,7 @@ btngB.addEventListener("click",()=>{
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text: 'Te olvidaste los goles Mostro',
+                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
                 background:"linear-gradient(#3d1723da,#050002dc)",
                 color:"rgb(161, 165, 168)",
                 iconColor:"e7077793",
@@ -351,7 +352,7 @@ btngC.addEventListener("click",()=>{
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text: 'Te olvidaste los goles Mostro',
+                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
                 background:"linear-gradient(#3d1723da,#050002dc)",
                 color:"rgb(161, 165, 168)",
                 iconColor:"e7077793",
@@ -423,7 +424,7 @@ btngD.addEventListener("click",()=>{
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text: 'Te olvidaste los goles Mostro',
+                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
                 background:"linear-gradient(#3d1723da,#050002dc)",
                 color:"rgb(161, 165, 168)",
                 iconColor:"e7077793",
@@ -494,7 +495,7 @@ btngE.addEventListener("click",()=>{
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text: 'Te olvidaste los goles Mostro',
+                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
                 background:"linear-gradient(#3d1723da,#050002dc)",
                 color:"rgb(161, 165, 168)",
                 iconColor:"e7077793",
@@ -566,7 +567,7 @@ btngF.addEventListener("click",()=>{
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text: 'Te olvidaste los goles Mostro',
+                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
                 background:"linear-gradient(#3d1723da,#050002dc)",
                 color:"rgb(161, 165, 168)",
                 iconColor:"e7077793",
@@ -636,7 +637,7 @@ btngG.addEventListener("click",()=>{for(partido of [37,38,39,40,41,42]){
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text: 'Te olvidaste los goles Mostro',
+                text: 'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
                 background:"linear-gradient(#3d1723da,#050002dc)",
                 color:"rgb(161, 165, 168)",
                 iconColor:"e7077793",
@@ -705,7 +706,7 @@ btngH.addEventListener("click",()=>{
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text: 'Te olvidaste los goles Mostro',
+                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
                 background:"linear-gradient(#3d1723da,#050002dc)",
                 color:"rgb(161, 165, 168)",
                 iconColor:"e7077793",
