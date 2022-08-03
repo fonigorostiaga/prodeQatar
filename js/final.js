@@ -2,12 +2,10 @@ const finalista1=JSON.parse(localStorage.getItem("ganadorSemis1"));
 const finalista2=JSON.parse(localStorage.getItem("ganadorSemis2"));
 const argentina= {pais:"Argentina", grupo:"C", puntos:0,difgol:0, bandera:'../img/argentina.png'};
 const finaldelMundo=[1,finalista1,finalista2];
-const datosFinal={
-    fecha:"Domingo 18/12 12:00hs",
-    estadio:"Estadio Al Thumama"
-}
-
+const datosFinal={fecha:"Domingo 18/12 12:00hs", estadio:"Estadio Al Thumama"}
 let botonApretado=false
+const botonCampeon=document.querySelector("#botonCampeon")
+const botonFinal=document.querySelector("#botonFinal")
 
 function finalistas(local, visitante){
     
@@ -59,7 +57,6 @@ if((localStorage.length)>=30){
             })
     },150)
 }
-const botonCampeon=document.querySelector("#botonCampeon")
 function crearFinaldelMundo(local, visitante,npartido){
     
     const seccionFinal=document.getElementById("seccionFinal")
@@ -96,7 +93,6 @@ function crearFinaldelMundo(local, visitante,npartido){
     botonApretado=true
 
 }
-const botonFinal=document.querySelector("#botonFinal")
 botonFinal.addEventListener("click", ()=>{
     if(botonApretado==true){
         Swal.fire({
@@ -238,18 +234,5 @@ botonCampeon.addEventListener("click",()=>{
 
     }
 )
-let html
-const prueba=document.querySelector(".prueba")
-function cargarEstadio(numero,posicion){
-    fetch("../data/partidos.json")
-    .then(respuesta=>respuesta.json())
-    .then(data=>{
-           const estadio =data.find((el)=>el.npartido===numero)
-posicion.innerHTML=estadio.estadio   }); 
 
-    
-}
-
-
-cargarEstadio(1,prueba)
  

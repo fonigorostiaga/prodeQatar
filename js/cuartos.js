@@ -7,7 +7,10 @@ const ganadorOctavos6 = JSON.parse(localStorage.getItem("ganadorOctavos6"));
 const ganadorOctavos7 = JSON.parse(localStorage.getItem("ganadorOctavos7"));
 const ganadorOctavos8 = JSON.parse(localStorage.getItem("ganadorOctavos8"));
 const footer=document.querySelector("footer")
-
+let botonApretado=false
+const botonCuartos=document.querySelector("#botonCuartos");
+const botonResultadosCuartos=document.querySelector("#botonresultadocuartos")
+const botonsiguiente=document.querySelector("#botonsiguiente")
 const partidos=[[1,ganadorOctavos5,ganadorOctavos7],[2,ganadorOctavos1,ganadorOctavos3],[3,ganadorOctavos6,ganadorOctavos8],[4,ganadorOctavos2,ganadorOctavos4]];
 
 function crearSeleccionesCuartos(array,numero){
@@ -56,10 +59,8 @@ if(localStorage.length>=24){
                 })
         },150)
     }
-let botonApretado=false
 
-const botonCuartos=document.querySelector("#botonCuartos");
-const botonResultadosCuartos=document.querySelector("#botonresultadocuartos")
+
 function crearPartidoCuartos(local, visita, npartido){
 
     function cargarEstadio(numero,posicion,posicion2){
@@ -125,7 +126,6 @@ botonCuartos.addEventListener("click", ()=>{
         crearPartidoCuartos(partidos[partido-1][1],partidos[partido-1][2],partido)
     }
 };})
-const botonsiguiente=document.querySelector("#botonsiguiente")
 botonResultadosCuartos.addEventListener("click", ()=>{
     for(let numero of [1,2,3,4]){
         let golesL=document.querySelector(`#golesL${numero}`);
@@ -167,9 +167,8 @@ botonResultadosCuartos.addEventListener("click", ()=>{
             localStorage.setItem(`ganadorCuartos${numero}`,ganadorCuartos);
             botonsiguiente.classList.remove("display-none")
         }}})
-        botonsiguiente.addEventListener("click",()=>{
-            setTimeout(()=>{
-                window.location.href="../pages/semi.html"
-            },500)
-        })
-console.log(partidos)
+botonsiguiente.addEventListener("click",()=>{
+    setTimeout(()=>{
+        window.location.href="../pages/semi.html"
+    },500)
+})

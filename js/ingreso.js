@@ -4,6 +4,8 @@ const ingresoMail=document.querySelector("#mail");
 const ingresoPass=document.querySelector("#pass");
 const botonIngreso=document.querySelector("#botonIngreso");
 const check=document.querySelector("#check")
+const botonRegistro=document.querySelector("#botonRegistro");
+
 function Ingresar(){
     if(user){
         if(ingresoMail.value==""||ingresoPass.value==""){
@@ -68,7 +70,6 @@ function Ingresar(){
 botonIngreso.addEventListener("click", ()=>{
 Ingresar()
 })
-const botonRegistro=document.querySelector("#botonRegistro");
 botonRegistro.addEventListener("click",()=>{
     setTimeout(()=>{
         window.location.href="../pages/registro.html"

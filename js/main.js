@@ -245,7 +245,7 @@ btngA.addEventListener("click",()=>{
         onClick: function(){} // Callback after click
       }).showToast();
 
-    console.log(grupoA)
+    
     sele1A.innerHTML=`<img src="${grupoA[0].bandera}" class="banderaGrupo bandera">`+grupoA[0].pais;
     sele2A.innerHTML=`<img src="${grupoA[1].bandera}" class="banderaGrupo bandera">`+grupoA[1].pais;
     sele3A.innerHTML=`<img src="${grupoA[2].bandera}" class="banderaGrupo bandera">`+grupoA[2].pais;
@@ -318,7 +318,7 @@ btngB.addEventListener("click",()=>{
         },
         onClick: function(){} // Callback after click
       }).showToast();
-    console.log(grupoA)
+    
     sele1B.innerHTML=`<img src="${grupoB[0].bandera}" class="banderaGrupo bandera">`+grupoB[0].pais;
     sele2B.innerHTML=`<img src="${grupoB[1].bandera}" class="banderaGrupo bandera">`+grupoB[1].pais;
     sele3B.innerHTML=`<img src="${grupoB[2].bandera}" class="banderaGrupo bandera">`+grupoB[2].pais;
@@ -390,7 +390,7 @@ btngC.addEventListener("click",()=>{
         },
         onClick: function(){} // Callback after click
       }).showToast();
-    console.log(grupoA)
+    
     sele1C.innerHTML=`<img src="${grupoC[0].bandera}" class="banderaGrupo bandera">`+grupoC[0].pais;
     sele2C.innerHTML=`<img src="${grupoC[1].bandera}" class="banderaGrupo bandera">`+grupoC[1].pais;
     sele3C.innerHTML=`<img src="${grupoC[2].bandera}" class="banderaGrupo bandera">`+grupoC[2].pais;
@@ -461,7 +461,7 @@ btngD.addEventListener("click",()=>{
         },
         onClick: function(){} // Callback after click
       }).showToast();
-    console.log(grupoA)
+    
     sele1D.innerHTML=`<img src="${grupoD[0].bandera}" class="banderaGrupo bandera">`+grupoD[0].pais;
     sele2D.innerHTML=`<img src="${grupoD[1].bandera}" class="banderaGrupo bandera">`+grupoD[1].pais;
     sele3D.innerHTML=`<img src="${grupoD[2].bandera}" class="banderaGrupo bandera">`+grupoD[2].pais;
@@ -533,7 +533,7 @@ btngE.addEventListener("click",()=>{
         },
         onClick: function(){} // Callback after click
       }).showToast();
-    console.log(grupoA)
+    
     sele1E.innerHTML=`<img src="${grupoE[0].bandera}" class="banderaGrupo bandera">`+grupoE[0].pais;
     sele2E.innerHTML=`<img src="${grupoE[1].bandera}" class="banderaGrupo bandera">`+grupoE[1].pais;
     sele3E.innerHTML=`<img src="${grupoE[2].bandera}" class="banderaGrupo bandera">`+grupoE[2].pais;
@@ -604,7 +604,7 @@ btngF.addEventListener("click",()=>{
         },
         onClick: function(){} // Callback after click
       }).showToast();
-    console.log(grupoA)
+    
     sele1F.innerHTML=`<img src="${grupoF[0].bandera}" class="banderaGrupo bandera">`+grupoF[0].pais;
     sele2F.innerHTML=`<img src="${grupoF[1].bandera}" class="banderaGrupo bandera">`+grupoF[1].pais;
     sele3F.innerHTML=`<img src="${grupoF[2].bandera}" class="banderaGrupo bandera">`+grupoF[2].pais;
@@ -673,7 +673,7 @@ btngG.addEventListener("click",()=>{for(partido of [37,38,39,40,41,42]){
         },
         onClick: function(){} // Callback after click
       }).showToast();
-    console.log(grupoG)
+    
     sele1G.innerHTML=`<img src="${grupoG[0].bandera}" class="banderaGrupo bandera">`+grupoG[0].pais;
     sele2G.innerHTML=`<img src="${grupoG[1].bandera}" class="banderaGrupo bandera">`+grupoG[1].pais;
     sele3G.innerHTML=`<img src="${grupoG[2].bandera}" class="banderaGrupo bandera">`+grupoG[2].pais;
@@ -742,7 +742,7 @@ btngH.addEventListener("click",()=>{
         },
         onClick: function(){} // Callback after click
       }).showToast();
-    console.log(grupoH)
+    
     sele1H.innerHTML=`<img src="${grupoH[0].bandera}" class="banderaGrupo bandera">`+grupoH[0].pais;
     sele2H.innerHTML=`<img src="${grupoH[1].bandera}" class="banderaGrupo bandera">`+grupoH[1].pais;
     sele3H.innerHTML=`<img src="${grupoH[2].bandera}" class="banderaGrupo bandera">`+grupoH[2].pais;

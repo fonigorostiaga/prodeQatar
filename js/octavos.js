@@ -14,10 +14,13 @@ const ganadorH = JSON.parse(localStorage.getItem("ganadorH"));
 const segundoH = JSON.parse(localStorage.getItem("runnerH"));
 const ganadorG = JSON.parse(localStorage.getItem("ganadorG"));
 const segundoG = JSON.parse(localStorage.getItem("runnerG"));
+let botonApretado=false
+const botonOctavos=document.querySelector("#botonOctavos");
+const botonResultadosOctavos=document.querySelector("#botonResultadoOctavos")
+const botonsiguiente=document.querySelector("#botonsiguiente")
 const footer=document.querySelector("footer")
 const partidos=[[1,ganadorA,segundoB],[2,ganadorB,segundoA],[3,ganadorC, segundoD],[4,ganadorD, segundoC], [5, ganadorE, segundoF], [6, ganadorF, segundoE], [7, ganadorG, segundoH], [8,ganadorH, segundoG]]
-console.log(ganadorG);
-const botonOctavos=document.querySelector("#botonOctavos");
+
 function crearPrimerosOctavos(array,numero){
     const seleccionesOctavos=document.getElementById("seleccionesPrimerasOctavos");
     const seccionSeleccionesOctavos=document.createElement('section')
@@ -70,22 +73,12 @@ if(localStorage.length>=16){
             })
     },150)
 }
-if(localStorage.length=16){
+if(localStorage.length>=16){
     for(numero of [0,1,2,3,4,5,6,7]){
     crearSegundosOctavos(partidos,numero)}
 }
 
 
-let botonApretado=false
-function cargarPartido(numero){
-    fetch("../data/partidos.json")
-    .then(respuesta=>respuesta.json())
-    .then(data=>{
-           const estadio =data.find((el)=>el.npartido===numero)
-console.log(estadio.estadio)  }); 
-    
-}
-cargarPartido(2)
 
 function crearPartidOctavos(local, visita, npartido) {
     function cargarEstadio(numero,posicion,posicion2){
@@ -135,7 +128,6 @@ function crearPartidOctavos(local, visita, npartido) {
 }
 
 
-const botonResultadosOctavos=document.querySelector("#botonResultadoOctavos")
 botonOctavos.addEventListener("click",()=>{
     footer.classList.remove("footerIndex")
 if(botonApretado==true){
@@ -154,7 +146,6 @@ if(botonApretado==true){
 for (let partido of [1,2,3,4,5,6,7,8]){
     crearPartidOctavos(partidos[partido-1][1], partidos[partido-1][2],partido)
 }}})
-const botonsiguiente=document.querySelector("#botonsiguiente")
 botonResultadosOctavos.addEventListener("click",()=>{
 for(let numero of [1,2,3,4,5,6,7,8]){
         let golesL=document.querySelector(`#golesL${numero}`);
@@ -197,9 +188,8 @@ for(let numero of [1,2,3,4,5,6,7,8]){
             botonsiguiente.classList.remove("display-none")
 
         }}})
-        botonsiguiente.addEventListener("click", ()=>{
-            setTimeout(() => {
-                window.location.href="../pages/cuartos.html"
-            }, 1000);
-        })
-        console.log(partidos)
+botonsiguiente.addEventListener("click", ()=>{
+    setTimeout(() => {
+        window.location.href="../pages/cuartos.html"
+    }, 1000);
+})
