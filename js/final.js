@@ -239,14 +239,17 @@ botonCampeon.addEventListener("click",()=>{
     }
 )
 let html
-function cargarEstadio(numero){
+const prueba=document.querySelector(".prueba")
+function cargarEstadio(numero,posicion){
     fetch("../data/partidos.json")
     .then(respuesta=>respuesta.json())
     .then(data=>{
            const estadio =data.find((el)=>el.npartido===numero)
-return estadio.estadio    }); 
+posicion.innerHTML=estadio.estadio   }); 
+
     
 }
 
-cargarPartido(1)
+
+cargarEstadio(1,prueba)
  

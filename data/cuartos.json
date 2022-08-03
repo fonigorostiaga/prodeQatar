@@ -1,0 +1,21 @@
+[{  
+    "npartido":1,
+    "fecha":"Viernes 9/12 12:00hs",
+    "estadio":"Estadio Al Thumama"
+ },
+ {  
+    "npartido":2,
+    "fecha":"Viernes 9/12 16:00hs",
+    "estadio":"Estadio Al Bayt"
+ },
+ {  
+    "npartido":3,
+    "fecha":"Sabado 10/12 12:00hs",
+    "estadio":"Estadio Int Khalifa"
+ },
+ {  
+    "npartido":4,
+    "fecha":"Sabado 10/12 16:00hs",
+    "estadio":"Estadio Ciudad Educacion"
+ }
+]

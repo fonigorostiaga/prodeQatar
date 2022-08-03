@@ -9,28 +9,7 @@ const ganadorOctavos8 = JSON.parse(localStorage.getItem("ganadorOctavos8"));
 const footer=document.querySelector("footer")
 
 const partidos=[[1,ganadorOctavos5,ganadorOctavos7],[2,ganadorOctavos1,ganadorOctavos3],[3,ganadorOctavos6,ganadorOctavos8],[4,ganadorOctavos2,ganadorOctavos4]];
-partidosCuartos=[
-    {
-        fecha:"Viernes 9/12 12:00hs",
-        estadio:"Estadio Al Thumama",
 
-    },
-    {
-        fecha:"Viernes 9/12 16:00hs",
-        estadio:"Estadio Al Bayt",
-        
-    },
-    {
-        fecha:"Sabado 10/12 12:00hs",
-        estadio:"Estadio Int Khalifa",
-        
-    },
-    {
-        fecha:"Sabado 10/12 16:00hs",
-        estadio:"Estadio Ciudad Educacion",
-        
-    }
-]
 function crearSeleccionesCuartos(array,numero){
     const seleccionesCuartos=document.getElementById("seleccionesCuartos");
     const seccionSeleccionesCuartos=document.createElement('section')
@@ -82,6 +61,15 @@ let botonApretado=false
 const botonCuartos=document.querySelector("#botonCuartos");
 const botonResultadosCuartos=document.querySelector("#botonresultadocuartos")
 function crearPartidoCuartos(local, visita, npartido){
+
+    function cargarEstadio(numero,posicion,posicion2){
+        fetch("../data/cuartos.json")
+        .then(respuesta=>respuesta.json())
+        .then(data=>{
+               const estadio =data.find((el)=>el.npartido===numero)
+    posicion.innerHTML=estadio.estadio   
+    posicion2.innerHTML=estadio.fecha});
+}
     const seccionCuartos=document.getElementById('seccionCuartos');
     const partido14final=document.createElement('section');
     partido14final.innerHTML=
@@ -89,10 +77,10 @@ function crearPartidoCuartos(local, visita, npartido){
         <div class="contenedorCuartos">
             <div class="partidoCuartos">
                 <div class="fechaHora">
-                    <h5>${partidosCuartos[npartido-1].fecha}</h5>
+                    <h5 class="fecha${npartido}"></h5>
                 </div>
                 <div class="estadio">
-                    <h5>${partidosCuartos[npartido-1].estadio}</h5>
+                    <h5 class="estadio${npartido}"></h5>
                 </div>
                 <div class="partido d-flex">
                     <h6 class="equipoL">${local.pais}</h6>
@@ -112,6 +100,9 @@ function crearPartidoCuartos(local, visita, npartido){
     </div>`
     seccionCuartos.appendChild(partido14final);
     botonResultadosCuartos.classList.remove("display-none")
+    const estadio=document.querySelector(`.estadio${npartido}`);
+    const fecha=document.querySelector(`.fecha${npartido}`)
+    cargarEstadio(npartido,estadio,fecha)
     botonApretado=true
 
 }

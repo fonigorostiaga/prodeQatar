@@ -343,11 +343,36 @@ align-items: center;}
     transform: scale(1.05,1.05);
     transition:0.15s
 }
-
+@media screen and (max-width: 1400px){
+    .fechaHora h5, .estadio h5{
+        font-size: smaller;
+    }
+}
+@media screen and (max-width:1000px){
+    .botonNav{
+        width: 50px !important;
+    }
+}
 @media screen and (max-width: 768px) {
-    .banderas{
+    .banderasgrupo{
         flex-wrap: wrap;
         justify-content: center;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+
+        
+    }
+    .banderaGrupo{
+        border: solid 0.15px black;
+        height: 25px;
+        width:35px
+        
+    }
+
+    .Senegal h4, .holanda h4, .Qatar h4, .Ecuador h4, .inglaterra h4, .iran h4, .eeuu h4, .gales h4, .argentina h4, .arabiaSaudita h4, .mexico h4, .polonia h4, .espana h4, .costarica h4, .japon h4, .alemania h4, .marruecos h4, .croacia h4, .belgica h4, .canada h4, .Suiza h4, .Camerun h4, .Brasil h4, .Serbia h4, .uruguay h4, .corea h4, .portugal h4, .ghana h4{
+        font-size: smaller !important;}
+    .partidoGrupos{
+        margin-top: 25px;
     }
     .fechaHora{
         display: flex;

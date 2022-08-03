@@ -1,0 +1,12 @@
+[
+    {  
+        "npartido":1,
+       "fecha":"Martes 13/12 16:00hs",
+       "estadio":"Estadio Lusail"
+    },
+    {
+        "npartido":2,
+       "fecha":"Miercoles 14/12 16:00hs",
+       "estadio":"Estadio Al Bayt"
+    }
+ ]

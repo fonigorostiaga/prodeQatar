@@ -74,47 +74,7 @@ if(localStorage.length=16){
     for(numero of [0,1,2,3,4,5,6,7]){
     crearSegundosOctavos(partidos,numero)}
 }
-const partidosOctavos = [{
-        npartido: 1,
-        fecha: "Sabado 3/12 12:00 hs",
-        estadio: "Estadio Al Thumama",
-    },
-    {
-        npartido: 2,
-        fecha: "Domingo 4/12 16:00 hs",
-        estadio: "Estadio Al Bayt",
-    },
-    {
-        npartido: 3,
-        fecha: "Sabado 3/12 16:00 hs",
-        estadio: "Estadio Int Khalifa",
-    },
-    {
-        npartido: 4,
-        fecha: "Domingo 4/12 12:00 hs",
-        estadio: "Estadio Ahmad Bin Ali",
-    },
-    {
-        npartido: 5,
-        fecha: "Lunes 05/12 12:00 hs",
-        estadio: "Estadio Al Bayt",
-    },
-    {
-        npartido: 6,
-        fecha: "Martes 06/12 12:00",
-        estadio: "Estadio 974",
-    },
-    {
-        npartido: 7,
-        fecha: "Lunes 05/12 16:00 hs",
-        estadio: "Estadio Ciudad Educacion",
-    },
-    {
-        npartido: 8,
-        fecha: "Martes 06/12 16:00",
-        estadio: "Estadio Lusail",
-    }
-]
+
 
 let botonApretado=false
 function cargarPartido(numero){
@@ -128,14 +88,14 @@ console.log(estadio.estadio)  });
 cargarPartido(2)
 
 function crearPartidOctavos(local, visita, npartido) {
-    function cargarEstadio(numero){
+    function cargarEstadio(numero,posicion,posicion2){
         fetch("../data/partidos.json")
         .then(respuesta=>respuesta.json())
         .then(data=>{
                const estadio =data.find((el)=>el.npartido===numero)
-    return estadio.estadio  }); 
-        
-    }
+    posicion.innerHTML=estadio.estadio   
+    posicion2.innerHTML=estadio.fecha});
+}
     const seccionOctavos = document.getElementById('seccionOctavos')
     const partido18final = document.createElement('section');
 
@@ -144,10 +104,10 @@ function crearPartidOctavos(local, visita, npartido) {
         <div class="contenedorOctavos">
     <div class="partidoOctavos">
         <div class="fechaHora">
-            <h5>${partidosOctavos[npartido-1].fecha}</h5>
+            <h5 class="fecha${npartido}"></h5>
         </div>
         <div class="estadio">
-            <h5>${cargarEstadio(npartido)}</h5>
+            <h5 class="estadio${npartido}"></h5>
         </div>
         <div class="partido d-flex">
                     <h6 class="equipoL">${local.pais}</h6>
@@ -169,6 +129,9 @@ function crearPartidOctavos(local, visita, npartido) {
     seccionOctavos.appendChild(partido18final)
     botonResultadosOctavos.classList.remove("display-none")
     botonApretado=true
+    const estadio=document.querySelector(`.estadio${npartido}`);
+    const fecha=document.querySelector(`.fecha${npartido}`)
+    cargarEstadio(npartido,estadio, fecha)
 }
 
 
