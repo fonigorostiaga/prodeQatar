@@ -117,6 +117,7 @@ function crearPartidoCuartos(local, visita, npartido){
 }
 
 botonCuartos.addEventListener("click", ()=>{
+    footer.classList.remove("footerIndex")
     if(botonApretado==true){
         Swal.fire({
             icon: 'error',
@@ -133,7 +134,7 @@ botonCuartos.addEventListener("click", ()=>{
         crearPartidoCuartos(partidos[partido-1][1],partidos[partido-1][2],partido)
     }
 };})
-
+const botonsiguiente=document.querySelector("#botonsiguiente")
 botonResultadosCuartos.addEventListener("click", ()=>{
     for(let numero of [1,2,3,4]){
         let golesL=document.querySelector(`#golesL${numero}`);
@@ -168,9 +169,16 @@ botonResultadosCuartos.addEventListener("click", ()=>{
             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][1].bandera}" alt="" />`+partidos[numero-1][1].pais;
             const ganadorCuartos=JSON.stringify(partidos[numero-1][1]);
             localStorage.setItem(`ganadorCuartos${numero}`,ganadorCuartos);
+            botonsiguiente.classList.remove("display-none")
         }else{
             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais;
             const ganadorCuartos=JSON.stringify(partidos[numero-1][2]);
             localStorage.setItem(`ganadorCuartos${numero}`,ganadorCuartos);
+            botonsiguiente.classList.remove("display-none")
         }}})
+        botonsiguiente.addEventListener("click",()=>{
+            setTimeout(()=>{
+                window.location.href="../pages/semi.html"
+            },500)
+        })
 console.log(partidos)

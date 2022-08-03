@@ -117,8 +117,25 @@ const partidosOctavos = [{
 ]
 
 let botonApretado=false
-function crearPartidOctavos(local, visita, npartido) {
+function cargarPartido(numero){
+    fetch("../data/partidos.json")
+    .then(respuesta=>respuesta.json())
+    .then(data=>{
+           const estadio =data.find((el)=>el.npartido===numero)
+console.log(estadio.estadio)  }); 
     
+}
+cargarPartido(2)
+
+function crearPartidOctavos(local, visita, npartido) {
+    function cargarEstadio(numero){
+        fetch("../data/partidos.json")
+        .then(respuesta=>respuesta.json())
+        .then(data=>{
+               const estadio =data.find((el)=>el.npartido===numero)
+    return estadio.estadio  }); 
+        
+    }
     const seccionOctavos = document.getElementById('seccionOctavos')
     const partido18final = document.createElement('section');
 
@@ -130,7 +147,7 @@ function crearPartidOctavos(local, visita, npartido) {
             <h5>${partidosOctavos[npartido-1].fecha}</h5>
         </div>
         <div class="estadio">
-            <h5>${partidosOctavos[npartido-1].estadio}</h5>
+            <h5>${cargarEstadio(npartido)}</h5>
         </div>
         <div class="partido d-flex">
                     <h6 class="equipoL">${local.pais}</h6>
@@ -157,6 +174,7 @@ function crearPartidOctavos(local, visita, npartido) {
 
 const botonResultadosOctavos=document.querySelector("#botonResultadoOctavos")
 botonOctavos.addEventListener("click",()=>{
+    footer.classList.remove("footerIndex")
 if(botonApretado==true){
     Swal.fire({
         icon: 'error',
@@ -173,8 +191,8 @@ if(botonApretado==true){
 for (let partido of [1,2,3,4,5,6,7,8]){
     crearPartidOctavos(partidos[partido-1][1], partidos[partido-1][2],partido)
 }}})
+const botonsiguiente=document.querySelector("#botonsiguiente")
 botonResultadosOctavos.addEventListener("click",()=>{
-
 for(let numero of [1,2,3,4,5,6,7,8]){
         let golesL=document.querySelector(`#golesL${numero}`);
         let golesV=document.querySelector(`#golesV${numero}`);
@@ -207,9 +225,18 @@ for(let numero of [1,2,3,4,5,6,7,8]){
             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][1].bandera}" alt="" />`+partidos[numero-1][1].pais;
             const ganadorOctavos=JSON.stringify(partidos[numero-1][1]);
             localStorage.setItem(`ganadorOctavos${numero}`,ganadorOctavos);
+            botonsiguiente.classList.remove("display-none")
+
         }else{
             ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais;
             const ganadorOctavos=JSON.stringify(partidos[numero-1][2]);
             localStorage.setItem(`ganadorOctavos${numero}`,ganadorOctavos);
+            botonsiguiente.classList.remove("display-none")
+
         }}})
+        botonsiguiente.addEventListener("click", ()=>{
+            setTimeout(() => {
+                window.location.href="../pages/cuartos.html"
+            }, 1000);
+        })
         console.log(partidos)

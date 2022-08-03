@@ -4,6 +4,12 @@
 
     
 }
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 header{
     position: sticky;
     top: 0;
@@ -44,25 +50,23 @@ body{
     margin-left: auto;
     margin-right:auto ;
     font-family: qatarBold;
-    position: absolute;
-    bottom: 3%;
-    right: 0%;
-    left: 0%;
+
 }
 footer{
     width: fit-content;
     margin-left: auto;
     margin-right:auto ;
     font-family: qatarBold;
-    bottom: 3%;
     right: 0%;
     left: 0%;
+    margin-top: auto;
+    margin-bottom: 15px;
 }
-.footerIndex a{
+footer a{
     text-decoration: none;
     color: aliceblue !important ;
 }
-.footerIndex a:hover{
+footer a:hover{
     text-decoration: none;
     color: rgb(123, 131, 138) !important ;
 }
@@ -91,7 +95,9 @@ footer{
     
     
 }
-
+#dias{
+    width: 160px !important;
+}
 
 #dias, #horas, #minutos, #segundos{
     margin-left: auto !important;
@@ -332,6 +338,10 @@ align-items: center;}
     padding: 15px;
     border:none;
 
+}
+.partidoOctavos:hover, .partidoCuartos:hover, .partidoSemis:hover{
+    transform: scale(1.05,1.05);
+    transition:0.15s
 }
 
 @media screen and (max-width: 768px) {

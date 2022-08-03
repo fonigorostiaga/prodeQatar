@@ -61,6 +61,7 @@ if((localStorage.length)>=30){
 }
 const botonCampeon=document.querySelector("#botonCampeon")
 function crearFinaldelMundo(local, visitante,npartido){
+    
     const seccionFinal=document.getElementById("seccionFinal")
     const partidoFinal=document.createElement('section');
     partidoFinal.innerHTML=
@@ -237,3 +238,15 @@ botonCampeon.addEventListener("click",()=>{
 
     }
 )
+let html
+function cargarEstadio(numero){
+    fetch("../data/partidos.json")
+    .then(respuesta=>respuesta.json())
+    .then(data=>{
+           const estadio =data.find((el)=>el.npartido===numero)
+return estadio.estadio    }); 
+    
+}
+
+cargarPartido(1)
+ 

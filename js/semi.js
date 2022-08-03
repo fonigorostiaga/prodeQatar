@@ -66,7 +66,17 @@ function crearSeleccionesSemis(array,numero){
         }
     const botonResultadoSemis=document.querySelector("#botonResultadoSemi");
 
+    function cargarEstadio(numero){
+        fetch("../data/partidos.json")
+        .then(respuesta=>respuesta.json())
+        .then(data=>{
+               const estadio =data.find((el)=>el.npartido===numero)
+    return estadio.estadio  }); 
+        
+    }
+    
     function crearPartidoSemis(local, visita, npartido){
+        
         const seccionSemis=document.getElementById('seccionSemi');
         const partidoSemi=document.createElement('section');
         partidoSemi.innerHTML=
@@ -118,6 +128,8 @@ function crearSeleccionesSemis(array,numero){
             crearPartidoSemis(partidos[partido-1][1],partidos[partido-1][2],partido)
         }
     }})
+    const botonsiguiente=document.querySelector("#botonsiguiente");
+
     botonResultadoSemis.addEventListener("click", ()=>{
         for(let numero of [1,2]){
             let golesL=document.querySelector(`#golesL${numero}`);
@@ -151,8 +163,27 @@ function crearSeleccionesSemis(array,numero){
                 ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][1].bandera}" alt="" />`+partidos[numero-1][1].pais;
                 const ganadorSemis=JSON.stringify(partidos[numero-1][1]);
                 localStorage.setItem(`ganadorSemis${numero}`,ganadorSemis);
+                botonsiguiente.classList.remove("display-none")
+
             }else{
                 ganador.innerHTML=`<img class="bandera" src="${partidos[numero-1][2].bandera}" alt="" />`+partidos[numero-1][2].pais;
                 const ganadorSemis=JSON.stringify(partidos[numero-1][2]);
                 localStorage.setItem(`ganadorSemis${numero}`,ganadorSemis);
+                botonsiguiente.classList.remove("display-none")
+
             }}})
+            botonsiguiente.addEventListener("click",()=>{
+                setTimeout(()=>{
+                    window.location.href="../pages/final.html"
+                },500)
+            })
+
+            function cargarEstadio(numero){
+                fetch("../data/partidos.json")
+                .then(respuesta=>respuesta.json())
+                .then(data=>{
+                       const estadio =data.find((el)=>el.npartido===numero)
+            return estadio.estadio  }); 
+                
+            }
+            cargarEstadio(1)

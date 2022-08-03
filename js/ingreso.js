@@ -68,3 +68,9 @@ function Ingresar(){
 botonIngreso.addEventListener("click", ()=>{
 Ingresar()
 })
+const botonRegistro=document.querySelector("#botonRegistro");
+botonRegistro.addEventListener("click",()=>{
+    setTimeout(()=>{
+        window.location.href="../pages/registro.html"
+    },1000)
+})

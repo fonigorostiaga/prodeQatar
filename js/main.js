@@ -763,3 +763,9 @@ btngH.addEventListener("click",()=>{
     const runnerH=JSON.parse(segundoH)
     localStorage.getItem("runnerH");
 })
+const botonsiguiente=document.querySelector("#botonsiguiente")
+botonsiguiente.addEventListener("click",()=>{
+    setTimeout(() => {
+        window.location.href="../pages/octavos.html"
+    },1000)
+})
