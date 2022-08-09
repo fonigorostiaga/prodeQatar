@@ -32,11 +32,11 @@ counter()
 
 function ingresar(){
     if(user){
-        setInterval(()=>{
+        setTimeout(() => {
             window.location.href="./pages/grupos.html"
         },1000)
     }else if(user2){
-        setInterval(()=>{
+        setTimeout(() => {
             window.location.href="./pages/grupos.html"
         },1000)
     }else{

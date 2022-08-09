@@ -197,12 +197,12 @@ function ordenar(grupo){
 //PARTIDOS DE GRUPO A
 
 btngA.addEventListener("click",()=>{
+    let sinGoles=false;
     for(partido of [1,2,3,4,5,6]){
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
         if(golesL.value==""||golesV.value==""){
-
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
@@ -212,28 +212,58 @@ btngA.addEventListener("click",()=>{
                 iconColor:"e7077793",
                 confirmButtonColor:"#e7077793",
                 confirmButtonText:"Mala mia!"
-                })
-                
-            }else if(golesL.value>golesV.value){
+                });
+                sinGoles=true;
+                break;
+        }
+    }
+    if(sinGoles==false){
+        for(partido of [1,2,3,4,5,6]){
+            let golesL=document.querySelector(`#resultadoL${partido}`);
+            let golesV=document.querySelector(`#resultadoV${partido}`);
+            let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais;
         }else if(golesL.value==golesV.value){
-            ganador.innerText="Empate";
-            partidos[partido-1][1].puntos++;
-            partidos[partido-1][2].puntos++;
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosempate;
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosempate;
+            ganador.innerHTML="Empate"
+
         }else if(golesL.value<golesV.value){
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol+(golesV.value-golesL.value)
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol-(golesV.value-golesL.value)
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais;
+        };
+        ordenar(grupoA);
 
-    
+            sele1A.innerHTML=`<img src="${grupoA[0].bandera}" class="banderaGrupo bandera">`+grupoA[0].pais;
+            sele2A.innerHTML=`<img src="${grupoA[1].bandera}" class="banderaGrupo bandera">`+grupoA[1].pais;
+            sele3A.innerHTML=`<img src="${grupoA[2].bandera}" class="banderaGrupo bandera">`+grupoA[2].pais;
+            sele4A.innerHTML=`<img src="${grupoA[3].bandera}" class="banderaGrupo bandera">`+grupoA[3].pais;
+            ptos1A.innerHTML=grupoA[0].puntos;
+            ptos2A.innerHTML=grupoA[1].puntos;
+            ptos3A.innerHTML=grupoA[2].puntos;
+            ptos4A.innerHTML=grupoA[3].puntos;
+            dif1A.innerHTML=grupoA[0].difgol;
+            dif2A.innerHTML=grupoA[1].difgol;
+            dif3A.innerHTML=grupoA[2].difgol;
+            dif4A.innerHTML=grupoA[3].difgol;
+            const primeroA=JSON.stringify(grupoA[0]);
+            localStorage.setItem("ganadorA",primeroA);
+            const ganadorA=JSON.parse(primeroA);
+            localStorage.getItem("ganadorA");
+            const segundoA=JSON.stringify(grupoA[1]);
+            localStorage.setItem("runnerA",segundoA);
+            const runnerA=JSON.parse(segundoA);
+            localStorage.getItem("runnerA");
 
-        ordenar(grupoA)
-    
-        Toastify({
+    }};
+    if(sinGoles==false){
+    Toastify({
         text: grupoA[0].pais+" y "+grupoA[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
@@ -243,396 +273,88 @@ btngA.addEventListener("click",()=>{
             background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
-      }).showToast();
-
-    
-    sele1A.innerHTML=`<img src="${grupoA[0].bandera}" class="banderaGrupo bandera">`+grupoA[0].pais;
-    sele2A.innerHTML=`<img src="${grupoA[1].bandera}" class="banderaGrupo bandera">`+grupoA[1].pais;
-    sele3A.innerHTML=`<img src="${grupoA[2].bandera}" class="banderaGrupo bandera">`+grupoA[2].pais;
-    sele4A.innerHTML=`<img src="${grupoA[3].bandera}" class="banderaGrupo bandera">`+grupoA[3].pais;
-    ptos1A.innerHTML=grupoA[0].puntos;
-    ptos2A.innerHTML=grupoA[1].puntos;
-    ptos3A.innerHTML=grupoA[2].puntos;
-    ptos4A.innerHTML=grupoA[3].puntos;
-    dif1A.innerHTML=grupoA[0].difgol;
-    dif2A.innerHTML=grupoA[1].difgol;
-    dif3A.innerHTML=grupoA[2].difgol;
-    dif4A.innerHTML=grupoA[3].difgol;
-    const primeroA=JSON.stringify(grupoA[0]);
-    localStorage.setItem("ganadorA",primeroA);
-    const ganadorA=JSON.parse(primeroA);
-    localStorage.getItem("ganadorA");
-    const segundoA=JSON.stringify(grupoA[1]);
-    localStorage.setItem("runnerA",segundoA);
-    const runnerA=JSON.parse(segundoA);
-    localStorage.getItem("runnerA");
-    // A1.innerText=ganadorA.pais
-    
-
+        }).showToast();}
 })
+//     for(partido of [1,2,3,4,5,6]){
+//         let golesL=document.querySelector(`#resultadoL${partido}`);
+//         let golesV=document.querySelector(`#resultadoV${partido}`);
+//         let ganador=document.querySelector(`#ganador${partido}`);
+//         if(golesL.value==""||golesV.value==""){
+
+//             Swal.fire({
+//                 icon: 'error',
+//                 title: 'Palo!!',
+//                 text: 'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
+//                 background:"linear-gradient(#3d1723da,#050002dc)",
+//                 color:"rgb(161, 165, 168)",
+//                 iconColor:"e7077793",
+//                 confirmButtonColor:"#e7077793",
+//                 confirmButtonText:"Mala mia!"
+//                 })
+                
+//             }else if(golesL.value>golesV.value){
+//             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
+//             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
+//             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
+//             ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais
+//         }else if(golesL.value==golesV.value){
+//             ganador.innerText="Empate";
+//             partidos[partido-1][1].puntos++;
+//             partidos[partido-1][2].puntos++;
+//         }else if(golesL.value<golesV.value){
+//             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
+//             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
+//             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
+//             ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+
+    
+
+//         ordenar(grupoA)
+    
+//         Toastify({
+//         text: grupoA[0].pais+" y "+grupoA[1].pais+" a Octavos",
+//         duration: 3000,
+//                 gravity: "top", // `top` or `bottom`
+//         position: "right", // `left`, `center` or `right`
+//         stopOnFocus: true, // Prevents dismissing of toast on hover
+//         style: {
+//             background: "linear-gradient(#3d17236b,#0500026b)",
+//         },
+//         onClick: function(){} // Callback after click
+//       }).showToast();
+
+    
+//     sele1A.innerHTML=`<img src="${grupoA[0].bandera}" class="banderaGrupo bandera">`+grupoA[0].pais;
+//     sele2A.innerHTML=`<img src="${grupoA[1].bandera}" class="banderaGrupo bandera">`+grupoA[1].pais;
+//     sele3A.innerHTML=`<img src="${grupoA[2].bandera}" class="banderaGrupo bandera">`+grupoA[2].pais;
+//     sele4A.innerHTML=`<img src="${grupoA[3].bandera}" class="banderaGrupo bandera">`+grupoA[3].pais;
+//     ptos1A.innerHTML=grupoA[0].puntos;
+//     ptos2A.innerHTML=grupoA[1].puntos;
+//     ptos3A.innerHTML=grupoA[2].puntos;
+//     ptos4A.innerHTML=grupoA[3].puntos;
+//     dif1A.innerHTML=grupoA[0].difgol;
+//     dif2A.innerHTML=grupoA[1].difgol;
+//     dif3A.innerHTML=grupoA[2].difgol;
+//     dif4A.innerHTML=grupoA[3].difgol;
+//     const primeroA=JSON.stringify(grupoA[0]);
+//     localStorage.setItem("ganadorA",primeroA);
+//     const ganadorA=JSON.parse(primeroA);
+//     localStorage.getItem("ganadorA");
+//     const segundoA=JSON.stringify(grupoA[1]);
+//     localStorage.setItem("runnerA",segundoA);
+//     const runnerA=JSON.parse(segundoA);
+//     localStorage.getItem("runnerA");
+//     // A1.innerText=ganadorA.pais
+    
+
+// })
 
 btngB.addEventListener("click",()=>{
+    let sinGoles=false;
     for(partido of [7,8,9,10,11,12]){
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
         let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL.value==""||golesV.value==""){
-
-            Swal.fire({
-                icon: 'error',
-                title: 'Palo!!',
-                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
-                background:"linear-gradient(#3d1723da,#050002dc)",
-                color:"rgb(161, 165, 168)",
-                iconColor:"e7077793",
-                confirmButtonColor:"#e7077793",
-                confirmButtonText:"Mala mia!"
-                })
-                
-            }else if(golesL.value>golesV.value){
-            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais
-        }else if(golesL.value==golesV.value){
-            ganador.innerText="Empate";
-            partidos[partido-1][1].puntos++;
-            partidos[partido-1][2].puntos++;
-        }else if(golesL.value<golesV.value){
-            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
-
-    
-        ordenar(grupoB)
-    
-        Toastify({
-        text: grupoB[0].pais+" y "+grupoB[1].pais+" a Octavos",
-        duration: 3000,
-                gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "linear-gradient(#3d17236b,#0500026b)",
-        },
-        onClick: function(){} // Callback after click
-      }).showToast();
-    
-    sele1B.innerHTML=`<img src="${grupoB[0].bandera}" class="banderaGrupo bandera">`+grupoB[0].pais;
-    sele2B.innerHTML=`<img src="${grupoB[1].bandera}" class="banderaGrupo bandera">`+grupoB[1].pais;
-    sele3B.innerHTML=`<img src="${grupoB[2].bandera}" class="banderaGrupo bandera">`+grupoB[2].pais;
-    sele4B.innerHTML=`<img src="${grupoB[3].bandera}" class="banderaGrupo bandera">`+grupoB[3].pais;
-    ptos1B.innerHTML=grupoB[0].puntos;
-    ptos2B.innerHTML=grupoB[1].puntos;
-    ptos3B.innerHTML=grupoB[2].puntos;
-    ptos4B.innerHTML=grupoB[3].puntos;
-    dif1B.innerHTML=grupoB[0].difgol;
-    dif2B.innerHTML=grupoB[1].difgol;
-    dif3B.innerHTML=grupoB[2].difgol;
-    dif4B.innerHTML=grupoB[3].difgol;
-    const primeroB=JSON.stringify(grupoB[0])
-    localStorage.setItem("ganadorB",primeroB);
-    const ganadorB=JSON.parse(primeroB)
-    localStorage.getItem("ganadorB")
-    const segundoB=JSON.stringify(grupoB[1])
-    localStorage.setItem("runnerB",segundoB);
-    const runnerB=JSON.parse(segundoB)
-    localStorage.getItem("runnerB")
-    // B1.innerText=ganadorB.pais
-})
-
-btngC.addEventListener("click",()=>{
-    for(partido of [13,14,15,16,17,18]){
-        let golesL=document.querySelector(`#resultadoL${partido}`);
-        let golesV=document.querySelector(`#resultadoV${partido}`);
-        let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL.value==""||golesV.value==""){
-
-            Swal.fire({
-                icon: 'error',
-                title: 'Palo!!',
-                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
-                background:"linear-gradient(#3d1723da,#050002dc)",
-                color:"rgb(161, 165, 168)",
-                iconColor:"e7077793",
-                confirmButtonColor:"#e7077793",
-                confirmButtonText:"Mala mia!"
-                })
-                
-            }else if(golesL.value>golesV.value){
-            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais
-        }else if(golesL.value==golesV.value){
-            ganador.innerText="Empate";
-            partidos[partido-1][1].puntos++;
-            partidos[partido-1][2].puntos++;
-        }else if(golesL.value<golesV.value){
-            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
-
-    
-
-        ordenar(grupoC)
-    
-        Toastify({
-        text: grupoC[0].pais+" y "+grupoC[1].pais+" a Octavos",
-        duration: 3000,
-                gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "linear-gradient(#3d17236b,#0500026b)",
-        },
-        onClick: function(){} // Callback after click
-      }).showToast();
-    
-    sele1C.innerHTML=`<img src="${grupoC[0].bandera}" class="banderaGrupo bandera">`+grupoC[0].pais;
-    sele2C.innerHTML=`<img src="${grupoC[1].bandera}" class="banderaGrupo bandera">`+grupoC[1].pais;
-    sele3C.innerHTML=`<img src="${grupoC[2].bandera}" class="banderaGrupo bandera">`+grupoC[2].pais;
-    sele4C.innerHTML=`<img src="${grupoC[3].bandera}" class="banderaGrupo bandera">`+grupoC[3].pais;
-    ptos1C.innerHTML=grupoC[0].puntos;
-    ptos2C.innerHTML=grupoC[1].puntos;
-    ptos3C.innerHTML=grupoC[2].puntos;
-    ptos4C.innerHTML=grupoC[3].puntos;
-    dif1C.innerHTML=grupoC[0].difgol;
-    dif2C.innerHTML=grupoC[1].difgol;
-    dif3C.innerHTML=grupoC[2].difgol;
-    dif4C.innerHTML=grupoC[3].difgol;
-    const primeroC=JSON.stringify(grupoC[0])
-    localStorage.setItem("ganadorC",primeroC);
-    const ganadorC=JSON.parse(primeroC)
-    localStorage.getItem("ganadorC")
-    const segundoC=JSON.stringify(grupoC[1])
-    localStorage.setItem("runnerC",segundoC);
-    const runnerC=JSON.parse(segundoC)
-    localStorage.getItem("runnerC")
-    // C1.innerText=ganadorC.pais
-})
-
-btngD.addEventListener("click",()=>{
-    for(partido of [19,20,21,22,23,24]){
-        let golesL=document.querySelector(`#resultadoL${partido}`);
-        let golesV=document.querySelector(`#resultadoV${partido}`);
-        let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL.value==""||golesV.value==""){
-
-            Swal.fire({
-                icon: 'error',
-                title: 'Palo!!',
-                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
-                background:"linear-gradient(#3d1723da,#050002dc)",
-                color:"rgb(161, 165, 168)",
-                iconColor:"e7077793",
-                confirmButtonColor:"#e7077793",
-                confirmButtonText:"Mala mia!"
-                })
-                
-            }else if(golesL.value>golesV.value){
-            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais
-        }else if(golesL.value==golesV.value){
-            ganador.innerText="Empate";
-            partidos[partido-1][1].puntos++;
-            partidos[partido-1][2].puntos++;
-        }else if(golesL.value<golesV.value){
-            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
-
-    
-        ordenar(grupoD)
-    
-        Toastify({
-        text: grupoD[0].pais+" y "+grupoD[1].pais+" a Octavos",
-        duration: 3000,
-                gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "linear-gradient(#3d17236b,#0500026b)",
-        },
-        onClick: function(){} // Callback after click
-      }).showToast();
-    
-    sele1D.innerHTML=`<img src="${grupoD[0].bandera}" class="banderaGrupo bandera">`+grupoD[0].pais;
-    sele2D.innerHTML=`<img src="${grupoD[1].bandera}" class="banderaGrupo bandera">`+grupoD[1].pais;
-    sele3D.innerHTML=`<img src="${grupoD[2].bandera}" class="banderaGrupo bandera">`+grupoD[2].pais;
-    sele4D.innerHTML=`<img src="${grupoD[3].bandera}" class="banderaGrupo bandera">`+grupoD[3].pais;
-    ptos1D.innerHTML=grupoD[0].puntos;
-    ptos2D.innerHTML=grupoD[1].puntos;
-    ptos3D.innerHTML=grupoD[2].puntos;
-    ptos4D.innerHTML=grupoD[3].puntos;
-    dif1D.innerHTML=grupoD[0].difgol;
-    dif2D.innerHTML=grupoD[1].difgol;
-    dif3D.innerHTML=grupoD[2].difgol;
-    dif4D.innerHTML=grupoD[3].difgol;
-    const primeroD=JSON.stringify(grupoD[0])
-    localStorage.setItem("ganadorD",primeroD);
-    const ganadorD=JSON.parse(primeroD)
-    localStorage.getItem("ganadorD")
-    const segundoD=JSON.stringify(grupoD[1])
-    localStorage.setItem("runnerD",segundoD);
-    const runnerD=JSON.parse(segundoD)
-    localStorage.getItem("runnerD");
-    // D1.innerText=ganadorD.pais
-})
-
-btngE.addEventListener("click",()=>{
-    for(partido of [25,26,27,28,29,30]){
-        let golesL=document.querySelector(`#resultadoL${partido}`);
-        let golesV=document.querySelector(`#resultadoV${partido}`);
-        let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL.value==""||golesV.value==""){
-
-            Swal.fire({
-                icon: 'error',
-                title: 'Palo!!',
-                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
-                background:"linear-gradient(#3d1723da,#050002dc)",
-                color:"rgb(161, 165, 168)",
-                iconColor:"e7077793",
-                confirmButtonColor:"#e7077793",
-                confirmButtonText:"Mala mia!"
-                })
-                
-            }else if(golesL.value>golesV.value){
-            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais
-        }else if(golesL.value==golesV.value){
-            ganador.innerText="Empate";
-            partidos[partido-1][1].puntos++;
-            partidos[partido-1][2].puntos++;
-        }else if(golesL.value<golesV.value){
-            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
-
-    
-
-        ordenar(grupoE)
-    
-        Toastify({
-        text: grupoE[0].pais+" y "+grupoE[1].pais+" a Octavos",
-        duration: 3000,
-                gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "linear-gradient(#3d17236b,#0500026b)",
-        },
-        onClick: function(){} // Callback after click
-      }).showToast();
-    
-    sele1E.innerHTML=`<img src="${grupoE[0].bandera}" class="banderaGrupo bandera">`+grupoE[0].pais;
-    sele2E.innerHTML=`<img src="${grupoE[1].bandera}" class="banderaGrupo bandera">`+grupoE[1].pais;
-    sele3E.innerHTML=`<img src="${grupoE[2].bandera}" class="banderaGrupo bandera">`+grupoE[2].pais;
-    sele4E.innerHTML=`<img src="${grupoE[3].bandera}" class="banderaGrupo bandera">`+grupoE[3].pais;
-    ptos1E.innerHTML=grupoE[0].puntos;
-    ptos2E.innerHTML=grupoE[1].puntos;
-    ptos3E.innerHTML=grupoE[2].puntos;
-    ptos4E.innerHTML=grupoE[3].puntos;
-    dif1E.innerHTML=grupoE[0].difgol;
-    dif2E.innerHTML=grupoE[1].difgol;
-    dif3E.innerHTML=grupoE[2].difgol;
-    dif4E.innerHTML=grupoE[3].difgol;
-    const primeroE=JSON.stringify(grupoE[0])
-    localStorage.setItem("ganadorE",primeroE);
-    const ganadorE=JSON.parse(primeroE)
-    localStorage.getItem("ganadorE")
-    const segundoE=JSON.stringify(grupoE[1])
-    localStorage.setItem("runnerE",segundoE);
-    const runnerE=JSON.parse(segundoE)
-    localStorage.getItem("runnerE");
-    // E1.innerText=ganadorE.pais
-})
-
-btngF.addEventListener("click",()=>{
-    for(partido of [31,32,33,34,35,36]){
-        let golesL=document.querySelector(`#resultadoL${partido}`);
-        let golesV=document.querySelector(`#resultadoV${partido}`);
-        let ganador=document.querySelector(`#ganador${partido}`);
-        if(golesL.value==""||golesV.value==""){
-
-            Swal.fire({
-                icon: 'error',
-                title: 'Palo!!',
-                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
-                background:"linear-gradient(#3d1723da,#050002dc)",
-                color:"rgb(161, 165, 168)",
-                iconColor:"e7077793",
-                confirmButtonColor:"#e7077793",
-                confirmButtonText:"Mala mia!"
-                })
-                
-            }else if(golesL.value>golesV.value){
-            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais
-        }else if(golesL.value==golesV.value){
-            ganador.innerText="Empate";
-            partidos[partido-1][1].puntos++;
-            partidos[partido-1][2].puntos++;
-        }else if(golesL.value<golesV.value){
-            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
-
-    
-        ordenar(grupoF)
-    
-        Toastify({
-        text: grupoF[0].pais+" y "+grupoF[1].pais+" a Octavos",
-        duration: 3000,
-                gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "linear-gradient(#3d17236b,#0500026b)",
-        },
-        onClick: function(){} // Callback after click
-      }).showToast();
-    
-    sele1F.innerHTML=`<img src="${grupoF[0].bandera}" class="banderaGrupo bandera">`+grupoF[0].pais;
-    sele2F.innerHTML=`<img src="${grupoF[1].bandera}" class="banderaGrupo bandera">`+grupoF[1].pais;
-    sele3F.innerHTML=`<img src="${grupoF[2].bandera}" class="banderaGrupo bandera">`+grupoF[2].pais;
-    sele4F.innerHTML=`<img src="${grupoF[3].bandera}" class="banderaGrupo bandera">`+grupoF[3].pais;
-    ptos1F.innerHTML=grupoF[0].puntos;
-    ptos2F.innerHTML=grupoF[1].puntos;
-    ptos3F.innerHTML=grupoF[2].puntos;
-    ptos4F.innerHTML=grupoF[3].puntos;
-    dif1F.innerHTML=grupoF[0].difgol;
-    dif2F.innerHTML=grupoF[1].difgol;
-    dif3F.innerHTML=grupoF[2].difgol;
-    dif4F.innerHTML=grupoF[3].difgol;
-    const primeroF=JSON.stringify(grupoF[0])
-    localStorage.setItem("ganadorF",primeroF);
-    const ganadorF=JSON.parse(primeroF)
-    localStorage.getItem("ganadorA")
-    const segundoF=JSON.stringify(grupoF[1])
-    localStorage.setItem("runnerF",segundoF);
-    const runnerF=JSON.parse(segundoF);
-    localStorage.getItem("runnerF");
-    // F1.innerText=ganadorF.pais
-})
-
-btngG.addEventListener("click",()=>{for(partido of [37,38,39,40,41,42]){
-        let golesL=document.querySelector(`#resultadoL${partido}`);
-        let golesV=document.querySelector(`#resultadoV${partido}`);
-        let ganador=document.querySelector(`#ganador${partido}`);
-
         if(golesL.value==""||golesV.value==""){
             Swal.fire({
                 icon: 'error',
@@ -643,61 +365,474 @@ btngG.addEventListener("click",()=>{for(partido of [37,38,39,40,41,42]){
                 iconColor:"e7077793",
                 confirmButtonColor:"#e7077793",
                 confirmButtonText:"Mala mia!"
-                })
-                
-            }else if(golesL.value>golesV.value){
+                });
+                sinGoles=true;
+                break;
+        }
+    }
+    if(sinGoles==false){
+        for(partido of [7,8,9,10,11,12]){
+            let golesL=document.querySelector(`#resultadoL${partido}`);
+            let golesV=document.querySelector(`#resultadoV${partido}`);
+            let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais;
         }else if(golesL.value==golesV.value){
-            ganador.innerText="Empate";
-            partidos[partido-1][1].puntos++;
-            partidos[partido-1][2].puntos++;
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosempate;
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosempate;
+            ganador.innerHTML="Empate"
+
         }else if(golesL.value<golesV.value){
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol+(golesV.value-golesL.value)
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol-(golesV.value-golesL.value)
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais;
+        };
+        ordenar(grupoB);
 
-    
-        ordenar(grupoG)
-    
-        Toastify({
+            sele1B.innerHTML=`<img src="${grupoB[0].bandera}" class="banderaGrupo bandera">`+grupoB[0].pais;
+            sele2B.innerHTML=`<img src="${grupoB[1].bandera}" class="banderaGrupo bandera">`+grupoB[1].pais;
+            sele3B.innerHTML=`<img src="${grupoB[2].bandera}" class="banderaGrupo bandera">`+grupoB[2].pais;
+            sele4B.innerHTML=`<img src="${grupoB[3].bandera}" class="banderaGrupo bandera">`+grupoB[3].pais;
+            ptos1B.innerHTML=grupoB[0].puntos;
+            ptos2B.innerHTML=grupoB[1].puntos;
+            ptos3B.innerHTML=grupoB[2].puntos;
+            ptos4B.innerHTML=grupoB[3].puntos;
+            dif1B.innerHTML=grupoB[0].difgol;
+            dif2B.innerHTML=grupoB[1].difgol;
+            dif3B.innerHTML=grupoB[2].difgol;
+            dif4B.innerHTML=grupoB[3].difgol;
+            const primeroB=JSON.stringify(grupoB[0]);
+            localStorage.setItem("ganadorB",primeroB);
+            const ganadorB=JSON.parse(primeroB);
+            localStorage.getItem("ganadorB");
+            const segundoB=JSON.stringify(grupoB[1]);
+            localStorage.setItem("runnerB",segundoB);
+            const runnerB=JSON.parse(segundoB);
+            localStorage.getItem("runnerB");
+
+    }};
+    if(sinGoles==false){
+    Toastify({
+        text: grupoB[0].pais+" y "+grupoB[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(#3d17236b,#0500026b)",
+        },
+        onClick: function(){} // Callback after click
+        }).showToast();}
+})
+
+btngC.addEventListener("click",()=>{
+    let sinGoles=false;
+    for(partido of [13,14,15,16,17,18]){
+        let golesL=document.querySelector(`#resultadoL${partido}`);
+        let golesV=document.querySelector(`#resultadoV${partido}`);
+        let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value==""||golesV.value==""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Palo!!',
+                text: 'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
+                });
+                sinGoles=true;
+                break;
+        }
+    }
+    if(sinGoles==false){
+        for(partido of [13,14,15,16,17,18]){
+            let golesL=document.querySelector(`#resultadoL${partido}`);
+            let golesV=document.querySelector(`#resultadoV${partido}`);
+            let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value>golesV.value){
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais;
+        }else if(golesL.value==golesV.value){
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosempate;
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosempate;
+            ganador.innerHTML="Empate"
+
+        }else if(golesL.value<golesV.value){
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol+(golesV.value-golesL.value)
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol-(golesV.value-golesL.value)
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais;
+        };
+        ordenar(grupoC);
+
+            sele1C.innerHTML=`<img src="${grupoC[0].bandera}" class="banderaGrupo bandera">`+grupoC[0].pais;
+            sele2C.innerHTML=`<img src="${grupoC[1].bandera}" class="banderaGrupo bandera">`+grupoC[1].pais;
+            sele3C.innerHTML=`<img src="${grupoC[2].bandera}" class="banderaGrupo bandera">`+grupoC[2].pais;
+            sele4C.innerHTML=`<img src="${grupoC[3].bandera}" class="banderaGrupo bandera">`+grupoC[3].pais;
+            ptos1C.innerHTML=grupoC[0].puntos;
+            ptos2C.innerHTML=grupoC[1].puntos;
+            ptos3C.innerHTML=grupoC[2].puntos;
+            ptos4C.innerHTML=grupoC[3].puntos;
+            dif1C.innerHTML=grupoC[0].difgol;
+            dif2C.innerHTML=grupoC[1].difgol;
+            dif3C.innerHTML=grupoC[2].difgol;
+            dif4C.innerHTML=grupoC[3].difgol;
+            const primeroC=JSON.stringify(grupoC[0]);
+            localStorage.setItem("ganadorC",primeroC);
+            const ganadorC=JSON.parse(primeroC);
+            localStorage.getItem("ganadorC");
+            const segundoC=JSON.stringify(grupoC[1]);
+            localStorage.setItem("runnerC",segundoC);
+            const runnerC=JSON.parse(segundoC);
+            localStorage.getItem("runnerC");
+
+    }};
+    if(sinGoles==false){
+    Toastify({
+        text: grupoC[0].pais+" y "+grupoC[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(#3d17236b,#0500026b)",
+        },
+        onClick: function(){} // Callback after click
+        }).showToast();}
+})
+
+btngD.addEventListener("click",()=>{
+    let sinGoles=false;
+    for(partido of [19,20,21,22,23,24]){
+        let golesL=document.querySelector(`#resultadoL${partido}`);
+        let golesV=document.querySelector(`#resultadoV${partido}`);
+        let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value==""||golesV.value==""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Palo!!',
+                text: 'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
+                });
+                sinGoles=true;
+                break;
+        }
+    }
+    if(sinGoles==false){
+        for(partido of [19,20,21,22,23,24]){
+            let golesL=document.querySelector(`#resultadoL${partido}`);
+            let golesV=document.querySelector(`#resultadoV${partido}`);
+            let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value>golesV.value){
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais;
+        }else if(golesL.value==golesV.value){
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosempate;
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosempate;
+            ganador.innerHTML="Empate"
+
+        }else if(golesL.value<golesV.value){
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol+(golesV.value-golesL.value)
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol-(golesV.value-golesL.value)
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais;
+        };
+        ordenar(grupoD);
+
+            sele1D.innerHTML=`<img src="${grupoD[0].bandera}" class="banderaGrupo bandera">`+grupoD[0].pais;
+            sele2D.innerHTML=`<img src="${grupoD[1].bandera}" class="banderaGrupo bandera">`+grupoD[1].pais;
+            sele3D.innerHTML=`<img src="${grupoD[2].bandera}" class="banderaGrupo bandera">`+grupoD[2].pais;
+            sele4D.innerHTML=`<img src="${grupoD[3].bandera}" class="banderaGrupo bandera">`+grupoD[3].pais;
+            ptos1D.innerHTML=grupoD[0].puntos;
+            ptos2D.innerHTML=grupoD[1].puntos;
+            ptos3D.innerHTML=grupoD[2].puntos;
+            ptos4D.innerHTML=grupoD[3].puntos;
+            dif1D.innerHTML=grupoD[0].difgol;
+            dif2D.innerHTML=grupoD[1].difgol;
+            dif3D.innerHTML=grupoD[2].difgol;
+            dif4D.innerHTML=grupoD[3].difgol;
+            const primeroD=JSON.stringify(grupoD[0]);
+            localStorage.setItem("ganadorD",primeroD);
+            const ganadorD=JSON.parse(primeroD);
+            localStorage.getItem("ganadorD");
+            const segundoD=JSON.stringify(grupoD[1]);
+            localStorage.setItem("runnerD",segundoD);
+            const runnerD=JSON.parse(segundoD);
+            localStorage.getItem("runnerD");
+
+    }};
+    if(sinGoles==false){
+    Toastify({
+        text: grupoD[0].pais+" y "+grupoD[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(#3d17236b,#0500026b)",
+        },
+        onClick: function(){} // Callback after click
+        }).showToast();}
+})
+
+
+btngE.addEventListener("click",()=>{
+    let sinGoles=false;
+    for(partido of [25,26,27,28,29,30]){
+        let golesL=document.querySelector(`#resultadoL${partido}`);
+        let golesV=document.querySelector(`#resultadoV${partido}`);
+        let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value==""||golesV.value==""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Palo!!',
+                text: 'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
+                });
+                sinGoles=true;
+                break;
+        }
+    }
+    if(sinGoles==false){
+        for(partido of [25,26,27,28,29,30]){
+            let golesL=document.querySelector(`#resultadoL${partido}`);
+            let golesV=document.querySelector(`#resultadoV${partido}`);
+            let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value>golesV.value){
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais;
+        }else if(golesL.value==golesV.value){
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosempate;
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosempate;
+            ganador.innerHTML="Empate"
+
+        }else if(golesL.value<golesV.value){
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol+(golesV.value-golesL.value)
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol-(golesV.value-golesL.value)
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais;
+        };
+        ordenar(grupoE);
+
+            sele1E.innerHTML=`<img src="${grupoE[0].bandera}" class="banderaGrupo bandera">`+grupoE[0].pais;
+            sele2E.innerHTML=`<img src="${grupoE[1].bandera}" class="banderaGrupo bandera">`+grupoE[1].pais;
+            sele3E.innerHTML=`<img src="${grupoE[2].bandera}" class="banderaGrupo bandera">`+grupoE[2].pais;
+            sele4E.innerHTML=`<img src="${grupoE[3].bandera}" class="banderaGrupo bandera">`+grupoE[3].pais;
+            ptos1E.innerHTML=grupoE[0].puntos;
+            ptos2E.innerHTML=grupoE[1].puntos;
+            ptos3E.innerHTML=grupoE[2].puntos;
+            ptos4E.innerHTML=grupoE[3].puntos;
+            dif1E.innerHTML=grupoE[0].difgol;
+            dif2E.innerHTML=grupoE[1].difgol;
+            dif3E.innerHTML=grupoE[2].difgol;
+            dif4E.innerHTML=grupoE[3].difgol;
+            const primeroE=JSON.stringify(grupoE[0]);
+            localStorage.setItem("ganadorE",primeroE);
+            const ganadorE=JSON.parse(primeroE);
+            localStorage.getItem("ganadorE");
+            const segundoE=JSON.stringify(grupoE[1]);
+            localStorage.setItem("runnerE",segundoE);
+            const runnerE=JSON.parse(segundoE);
+            localStorage.getItem("runnerE");
+
+    }};
+    if(sinGoles==false){
+    Toastify({
+        text: grupoE[0].pais+" y "+grupoE[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(#3d17236b,#0500026b)",
+        },
+        onClick: function(){} // Callback after click
+        }).showToast();}
+})
+
+
+btngF.addEventListener("click",()=>{
+    let sinGoles=false;
+    for(partido of [31,32,33,34,35,36]){
+        let golesL=document.querySelector(`#resultadoL${partido}`);
+        let golesV=document.querySelector(`#resultadoV${partido}`);
+        let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value==""||golesV.value==""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Palo!!',
+                text: 'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
+                });
+                sinGoles=true;
+                break;
+        }
+    }
+    if(sinGoles==false){
+        for(partido of [31,32,33,34,35,36]){
+            let golesL=document.querySelector(`#resultadoL${partido}`);
+            let golesV=document.querySelector(`#resultadoV${partido}`);
+            let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value>golesV.value){
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais;
+        }else if(golesL.value==golesV.value){
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosempate;
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosempate;
+            ganador.innerHTML="Empate"
+
+        }else if(golesL.value<golesV.value){
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol+(golesV.value-golesL.value)
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol-(golesV.value-golesL.value)
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais;
+        };
+        ordenar(grupoF);
+
+            sele1F.innerHTML=`<img src="${grupoF[0].bandera}" class="banderaGrupo bandera">`+grupoF[0].pais;
+            sele2F.innerHTML=`<img src="${grupoF[1].bandera}" class="banderaGrupo bandera">`+grupoF[1].pais;
+            sele3F.innerHTML=`<img src="${grupoF[2].bandera}" class="banderaGrupo bandera">`+grupoF[2].pais;
+            sele4F.innerHTML=`<img src="${grupoF[3].bandera}" class="banderaGrupo bandera">`+grupoF[3].pais;
+            ptos1F.innerHTML=grupoF[0].puntos;
+            ptos2F.innerHTML=grupoF[1].puntos;
+            ptos3F.innerHTML=grupoF[2].puntos;
+            ptos4F.innerHTML=grupoF[3].puntos;
+            dif1F.innerHTML=grupoF[0].difgol;
+            dif2F.innerHTML=grupoF[1].difgol;
+            dif3F.innerHTML=grupoF[2].difgol;
+            dif4F.innerHTML=grupoF[3].difgol;
+            const primeroF=JSON.stringify(grupoF[0]);
+            localStorage.setItem("ganadorF",primeroF);
+            const ganadorF=JSON.parse(primeroF);
+            localStorage.getItem("ganadorF");
+            const segundoF=JSON.stringify(grupoF[1]);
+            localStorage.setItem("runnerF",segundoF);
+            const runnerF=JSON.parse(segundoF);
+            localStorage.getItem("runnerF");
+
+    }};
+    if(sinGoles==false){
+    Toastify({
+        text: grupoF[0].pais+" y "+grupoF[1].pais+" a Octavos",
+        duration: 3000,
+                gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(#3d17236b,#0500026b)",
+        },
+        onClick: function(){} // Callback after click
+        }).showToast();}
+})
+btngG.addEventListener("click",()=>{
+    let sinGoles=false;
+    for(partido of [37,38,39,40,41,42]){
+        let golesL=document.querySelector(`#resultadoL${partido}`);
+        let golesV=document.querySelector(`#resultadoV${partido}`);
+        let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value==""||golesV.value==""){
+            Swal.fire({
+                icon: 'error',
+                title: 'Palo!!',
+                text: 'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
+                background:"linear-gradient(#3d1723da,#050002dc)",
+                color:"rgb(161, 165, 168)",
+                iconColor:"e7077793",
+                confirmButtonColor:"#e7077793",
+                confirmButtonText:"Mala mia!"
+                });
+                sinGoles=true;
+                break;
+        }
+    }
+    if(sinGoles==false){
+        for(partido of [37,38,39,40,41,42]){
+            let golesL=document.querySelector(`#resultadoL${partido}`);
+            let golesV=document.querySelector(`#resultadoV${partido}`);
+            let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value>golesV.value){
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais;
+        }else if(golesL.value==golesV.value){
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosempate;
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosempate;
+            ganador.innerHTML="Empate"
+
+        }else if(golesL.value<golesV.value){
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol+(golesV.value-golesL.value)
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol-(golesV.value-golesL.value)
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais;
+        };
+        ordenar(grupoG);
+
+            sele1G.innerHTML=`<img src="${grupoG[0].bandera}" class="banderaGrupo bandera">`+grupoG[0].pais;
+            sele2G.innerHTML=`<img src="${grupoG[1].bandera}" class="banderaGrupo bandera">`+grupoG[1].pais;
+            sele3G.innerHTML=`<img src="${grupoG[2].bandera}" class="banderaGrupo bandera">`+grupoG[2].pais;
+            sele4G.innerHTML=`<img src="${grupoG[3].bandera}" class="banderaGrupo bandera">`+grupoG[3].pais;
+            ptos1G.innerHTML=grupoG[0].puntos;
+            ptos2G.innerHTML=grupoG[1].puntos;
+            ptos3G.innerHTML=grupoG[2].puntos;
+            ptos4G.innerHTML=grupoG[3].puntos;
+            dif1G.innerHTML=grupoG[0].difgol;
+            dif2G.innerHTML=grupoG[1].difgol;
+            dif3G.innerHTML=grupoG[2].difgol;
+            dif4G.innerHTML=grupoG[3].difgol;
+            const primeroG=JSON.stringify(grupoG[0]);
+            localStorage.setItem("ganadorG",primeroG);
+            const ganadorG=JSON.parse(primeroG);
+            localStorage.getItem("ganadorG");
+            const segundoG=JSON.stringify(grupoG[1]);
+            localStorage.setItem("runnerG",segundoG);
+            const runnerG=JSON.parse(segundoG);
+            localStorage.getItem("runnerG");
+
+    }};
+    if(sinGoles==false){
+    Toastify({
         text: grupoG[0].pais+" y "+grupoG[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {background: "linear-gradient(#3d17236b,#0500026b)",
+        style: {
+            background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
-      }).showToast();
-    
-    sele1G.innerHTML=`<img src="${grupoG[0].bandera}" class="banderaGrupo bandera">`+grupoG[0].pais;
-    sele2G.innerHTML=`<img src="${grupoG[1].bandera}" class="banderaGrupo bandera">`+grupoG[1].pais;
-    sele3G.innerHTML=`<img src="${grupoG[2].bandera}" class="banderaGrupo bandera">`+grupoG[2].pais;
-    sele4G.innerHTML=`<img src="${grupoG[3].bandera}" class="banderaGrupo bandera">`+grupoG[3].pais;
-    ptos1G.innerHTML=grupoG[0].puntos;
-    ptos2G.innerHTML=grupoG[1].puntos;
-    ptos3G.innerHTML=grupoG[2].puntos;
-    ptos4G.innerHTML=grupoG[3].puntos;
-    dif1G.innerHTML=grupoG[0].difgol;
-    dif2G.innerHTML=grupoG[1].difgol;
-    dif3G.innerHTML=grupoG[2].difgol;
-    dif4G.innerHTML=grupoG[3].difgol;
-    const primeroG=JSON.stringify(grupoG[0])
-    localStorage.setItem("ganadorG",primeroG);
-    const ganadorG=JSON.parse(primeroG)
-    localStorage.getItem("ganadorG")
-    const segundoG=JSON.stringify(grupoG[1])
-    localStorage.setItem("runnerG",segundoG);
-    const runnerG=JSON.parse(segundoG)
-    localStorage.getItem("runnerG");
+        }).showToast();}
 })
 
 
 btngH.addEventListener("click",()=>{
+    let sinGoles=false;
     for(partido of [43,44,45,46,47,48]){
         let golesL=document.querySelector(`#resultadoL${partido}`);
         let golesV=document.querySelector(`#resultadoV${partido}`);
@@ -706,63 +841,74 @@ btngH.addEventListener("click",()=>{
             Swal.fire({
                 icon: 'error',
                 title: 'Palo!!',
-                text:  'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
+                text: 'Te olvidaste los goles Mostro. Completa todos los goles del grupo nuevamente por favor',
                 background:"linear-gradient(#3d1723da,#050002dc)",
                 color:"rgb(161, 165, 168)",
                 iconColor:"e7077793",
                 confirmButtonColor:"#e7077793",
                 confirmButtonText:"Mala mia!"
-                })
-                
-            }else if(golesL.value>golesV.value){
+                });
+                sinGoles=true;
+                break;
+        }
+    }
+    if(sinGoles==false){
+        for(partido of [43,44,45,46,47,48]){
+            let golesL=document.querySelector(`#resultadoL${partido}`);
+            let golesV=document.querySelector(`#resultadoV${partido}`);
+            let ganador=document.querySelector(`#ganador${partido}`);
+        if(golesL.value>golesV.value){
             partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosganador;
             partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
             partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][1].bandera}" alt="" />`+partidos[partido-1][1].pais;
         }else if(golesL.value==golesV.value){
-            ganador.innerText="Empate";
-            partidos[partido-1][1].puntos++;
-            partidos[partido-1][2].puntos++;
+            partidos[partido-1][1].puntos=partidos[partido-1][1].puntos+puntosempate;
+            partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosempate;
+            ganador.innerHTML="Empate"
+
         }else if(golesL.value<golesV.value){
             partidos[partido-1][2].puntos=partidos[partido-1][2].puntos+puntosganador;
-            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol-(golesL.value-golesV.value);
-            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol+(golesL.value-golesV.value);
-            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais}};
+            partidos[partido-1][2].difgol=partidos[partido-1][2].difgol+(golesV.value-golesL.value)
+            partidos[partido-1][1].difgol=partidos[partido-1][1].difgol-(golesV.value-golesL.value)
+            ganador.innerHTML=`<img class="bandera" src="${partidos[partido-1][2].bandera}" alt="" />`+partidos[partido-1][2].pais;
+        };
+        ordenar(grupoH);
 
-    
-        ordenar(grupoH)
-    
-        Toastify({
+            sele1H.innerHTML=`<img src="${grupoH[0].bandera}" class="banderaGrupo bandera">`+grupoH[0].pais;
+            sele2H.innerHTML=`<img src="${grupoH[1].bandera}" class="banderaGrupo bandera">`+grupoH[1].pais;
+            sele3H.innerHTML=`<img src="${grupoH[2].bandera}" class="banderaGrupo bandera">`+grupoH[2].pais;
+            sele4H.innerHTML=`<img src="${grupoH[3].bandera}" class="banderaGrupo bandera">`+grupoH[3].pais;
+            ptos1H.innerHTML=grupoH[0].puntos;
+            ptos2H.innerHTML=grupoH[1].puntos;
+            ptos3H.innerHTML=grupoH[2].puntos;
+            ptos4H.innerHTML=grupoH[3].puntos;
+            dif1H.innerHTML=grupoH[0].difgol;
+            dif2H.innerHTML=grupoH[1].difgol;
+            dif3H.innerHTML=grupoH[2].difgol;
+            dif4H.innerHTML=grupoH[3].difgol;
+            const primeroH=JSON.stringify(grupoH[0]);
+            localStorage.setItem("ganadorH",primeroH);
+            const ganadorH=JSON.parse(primeroH);
+            localStorage.getItem("ganadorH");
+            const segundoH=JSON.stringify(grupoH[1]);
+            localStorage.setItem("runnerH",segundoH);
+            const runnerH=JSON.parse(segundoH);
+            localStorage.getItem("runnerH");
+
+    }};
+    if(sinGoles==false){
+    Toastify({
         text: grupoH[0].pais+" y "+grupoH[1].pais+" a Octavos",
         duration: 3000,
                 gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {background: "linear-gradient(#3d17236b,#0500026b)",
+        style: {
+            background: "linear-gradient(#3d17236b,#0500026b)",
         },
         onClick: function(){} // Callback after click
-      }).showToast();
-    
-    sele1H.innerHTML=`<img src="${grupoH[0].bandera}" class="banderaGrupo bandera">`+grupoH[0].pais;
-    sele2H.innerHTML=`<img src="${grupoH[1].bandera}" class="banderaGrupo bandera">`+grupoH[1].pais;
-    sele3H.innerHTML=`<img src="${grupoH[2].bandera}" class="banderaGrupo bandera">`+grupoH[2].pais;
-    sele4H.innerHTML=`<img src="${grupoH[3].bandera}" class="banderaGrupo bandera">`+grupoH[3].pais;
-    ptos1H.innerHTML=grupoH[0].puntos;
-    ptos2H.innerHTML=grupoH[1].puntos;
-    ptos3H.innerHTML=grupoH[2].puntos;
-    ptos4H.innerHTML=grupoH[3].puntos;
-    dif1H.innerHTML=grupoH[0].difgol;
-    dif2H.innerHTML=grupoH[1].difgol;
-    dif3H.innerHTML=grupoH[2].difgol;
-    dif4H.innerHTML=grupoH[3].difgol;
-    const primeroH=JSON.stringify(grupoH[0])
-    localStorage.setItem("ganadorH",primeroH);
-    const ganadorH=JSON.parse(primeroH)
-    localStorage.getItem("ganadorH")
-    const segundoH=JSON.stringify(grupoH[1])
-    localStorage.setItem("runnerH",segundoH);
-    const runnerH=JSON.parse(segundoH)
-    localStorage.getItem("runnerH");
+        }).showToast();}
 })
 const botonsiguiente=document.querySelector("#botonsiguiente")
 botonsiguiente.addEventListener("click",()=>{
