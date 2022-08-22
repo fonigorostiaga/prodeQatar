@@ -12,7 +12,10 @@ const botonCuartos=document.querySelector("#botonCuartos");
 const botonResultadosCuartos=document.querySelector("#botonresultadocuartos")
 const botonsiguiente=document.querySelector("#botonsiguiente")
 const partidos=[[1,ganadorOctavos5,ganadorOctavos7],[2,ganadorOctavos1,ganadorOctavos3],[3,ganadorOctavos6,ganadorOctavos8],[4,ganadorOctavos2,ganadorOctavos4]];
-
+const botonSalir=document.querySelector("#botonSalir")
+botonSalir.addEventListener("click",()=>{
+    window.location.href="../index.html"
+})
 function crearSeleccionesCuartos(array,numero){
     const seleccionesCuartos=document.getElementById("seleccionesCuartos");
     const seccionSeleccionesCuartos=document.createElement('section')

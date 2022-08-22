@@ -4,6 +4,35 @@
 
     
 }
+/*estilos en inicio*/
+.instrucciones h1{
+    padding: 40px;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+.instruccionesGrupo>p, .instruccionesGrupo2>p{
+    padding: 15px;
+}
+
+.instrucciones p{
+    
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.partidoInicio{
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+.instrucciones ul li{
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /*estilos generales*/
 body{
     display: flex;
@@ -78,6 +107,9 @@ footer a:hover{
 }
 h4
 {font-size: 35px  !important;}
+#botonSalir{
+    width: 80px !important;
+}
 
 /*counter e inicios de sesion/registro*/
 .formulario{
@@ -375,6 +407,9 @@ button a:hover{
     }
 }
 @media screen and (max-width: 768px) {
+    .titulo{
+        font-size: 50px !important;
+    }
     .banderasgrupo{
         flex-wrap: wrap;
         justify-content: center;

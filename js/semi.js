@@ -8,7 +8,10 @@ const partidos= [[1,ganadorCuartos1,ganadorCuartos2],[2, ganadorCuartos3, ganado
 const botonResultadoSemis=document.querySelector("#botonResultadoSemi");
 const botonSemis=document.querySelector("#botonSemis");
 const botonsiguiente=document.querySelector("#botonsiguiente");
-
+const botonSalir=document.querySelector("#botonSalir")
+botonSalir.addEventListener("click",()=>{
+    window.location.href="../index.html"
+})
 
 
 function crearSeleccionesSemis(array,numero){

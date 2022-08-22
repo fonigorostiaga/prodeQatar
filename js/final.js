@@ -6,7 +6,10 @@ const datosFinal={fecha:"Domingo 18/12 12:00hs", estadio:"Estadio Al Thumama"}
 let botonApretado=false
 const botonCampeon=document.querySelector("#botonCampeon")
 const botonFinal=document.querySelector("#botonFinal")
-
+const botonSalir=document.querySelector("#botonSalir")
+botonSalir.addEventListener("click",()=>{
+    window.location.href="../index.html"
+})
 function finalistas(local, visitante){
     
     const seleccionesFinalistas=document.getElementById("finalistas");

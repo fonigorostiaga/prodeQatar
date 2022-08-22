@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/fuente.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Zona de Grupos</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="icono" src="../img/icono.png" alt="icono"></a>
+                <button class="botonNav navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navegacion" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../pages/grupos.html">Grupos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/octavos.html">Octavos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/cuartos.html">Cuartos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/semi.html">Semi Final</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/final.html">Final</a>
+                        </li>
+                    </ul>
+                    <button id="botonSalir">Salir</button>    
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="instrucciones container">
+        <h1>Modo de Juego</h1>
+        <div class="instruccionesGrupo">
+            <p>Completa el resultado de los partidos, al completar el grupo presiona el boton "Enviar grupo"</p>
+            <div class="partidoInicio">
+                <div class="partidoGrupos">
+                    <div class="fechaHora mt-2">
+                        <h5>Jornada 1 - Martes 22/11 07:00hs</h5>
+                    </div>
+                    <div class="estadio">
+                        <h5>Estadio Lusail</h5>
+                    </div>
+                    <div class="partido d-flex">
+                        <h6 class="equipoL">Argentina</h6><img class="bandera" src="../img/argentina.png"
+                            alt="banderaArgentina">
+                        <input inputmode="numeric" type="number" name="resultadoL13" id="resultadoL13" size="1">
+                        <p class="guion">-</p><input inputmode="numeric" type="number" name="resultadoV13"
+                            id="resultadoV13" size="1">
+                        <img class="bandera" src="../img/arabiasaudita.png" alt="banderaArabia">
+                        <h6 class="equipoV">Arabia Saudita</h6>
+                    </div>
+                    <div class="ganador d-flex">
+                        <p>Ganador:</p>
+                        <p id="ganador13" class="mx-3"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="botones"><button type="button" id="botongA">Enviar Grupo A</button>
+            </div>
+        </div>
+        <div class="instruccionesGrupo2">
+            <p>Una vez completados los grupos, el boton "Siguiente Ronda", te permitira avanzar a Octavos, donde tendras las selecciones clasificadas.</p>
+
+            <p>En caso de estar de acuerdo con las selecciones clasificadas, podes generar los partidos de fases eliminatorias, en caso que no estes convencido, podes volver a la fase anterior y corregir los partidos para clasificar otra seleccion</p>
+            <div class="botones"><button type="button" id="botongA">Generar Partidos Octavos</button>
+            </div>
+            <p></p>
+        </div>
+        <p>Una vez completados los resultados de la fase eliminatoria, podes enviar los resultados para generar los clasificados a la siguiente fase. Asi sucesivamente hasta completar la Final del Mundo.</p>
+        <h1>Puntajes</h1>
+        <ul>
+        <li><b>1)</b> 3 Puntos por acierto del ganador del partido</li>
+        <li><b>2)</b> 1 Punto por acertar la cantidad de goles de un equipo</li>
+        <li><b>3)</b> 1 Punto por acertar diferencia de goles (indistintamente del gnaador)</li>
+        <li><b>4)</b> 5 Puntos adicionales por acertar Ganador y resultado (10 total)</li>
+        <li><b>5)</b> 3 puntos por cada seleccion clasificada (en posicion correcta) a siguiente fase</li>
+        <li><b>6)</b> 100 Puntos por acertar TODOS los clasificados a Octavos (incluyen 48 puntos del item 5)</li>
+        <li><b>7)</b> 50 Puntos por acertar todos los clasificados a Cuartos (incluyen 24 puntos del item 5) </li>
+        <li><b>8)</b> 20 Puntos por acertar todos los clasificados a Semis (incluyen 12 puntos del item 5)</li>
+        <li><b>9)</b> 20 Puntos por acertar todos los clasificados a la Final (incluyen 6 puntos del item 5)</li>
+        <li><b>Adicional!</b> 180 Puntos adicionales por acertar ganador y resultado en mas de 15 partidos!</li>
+        </ul>
+        <h1>MUCHA SUERTE!!!</h1>
+        <div class="botones"><button type="button" id="botonInicio">Comencemos</button>
+        </div>
+    </section>
+    <script src="../js/inicio.js"></script>
+    <footer class="footerIndex">Developed by <a href="https://www.instagram.com/fonigorostiaga/">Foni Gorostiaga</a></footer>
+
+</body>
+
+</html>

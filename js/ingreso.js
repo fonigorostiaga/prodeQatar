@@ -21,13 +21,13 @@ function Ingresar(){
             })
     }else if((ingresoMail.value==user.mail && ingresoPass.value==user.pass)){
         setTimeout(()=>{
-    window.location.href="../pages/grupos.html"},1000)
+    window.location.href="../pages/inicio.html"},1000)
 }
     else if(ingresoMail.value!=user.mail || ingresoPass.value!=user.pass){
         if(user2){
         if(ingresoMail.value==user2.mail && ingresoPass.value==user2.pass){
             setTimeout(()=>{
-                window.location.href="../pages/grupos.html"},1000)
+                window.location.href="../pages/inicio.html"},1000)
         }}else{
             Swal.fire({
             icon: 'error',
@@ -42,7 +42,7 @@ function Ingresar(){
     }}else if(user2){
         if(ingresoMail.value==user2.mail && ingresoPass.value==user2.pass){
             setTimeout(()=>{
-                window.location.href="../pages/grupos.html"},1000)
+                window.location.href="../pages/inicio.html"},1000)
     }} else if(ingresoMail.value==""||ingresoPass.value==""){
         Swal.fire({
             icon: 'error',

@@ -41,6 +41,6 @@ btn.addEventListener("click",()=>{
     }else{
     registrar(registroUser.value,  mail.value, registroPais.value, pass.value)
     setTimeout(()=>{
-    window.location.href="../pages/grupos.html"},1000)}
+    window.location.href="../pages/inicio.html"},1000)}
     
 })

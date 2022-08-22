@@ -33,11 +33,11 @@ counter()
 function ingresar(){
     if(user){
         setTimeout(() => {
-            window.location.href="./pages/grupos.html"
+            window.location.href="./pages/inicio.html"
         },1000)
     }else if(user2){
         setTimeout(() => {
-            window.location.href="./pages/grupos.html"
+            window.location.href="./pages/inicio.html"
         },1000)
     }else{
         window.location.href="./pages/ingreso.html"

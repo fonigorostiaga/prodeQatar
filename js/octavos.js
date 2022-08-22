@@ -20,7 +20,10 @@ const botonResultadosOctavos=document.querySelector("#botonResultadoOctavos")
 const botonsiguiente=document.querySelector("#botonsiguiente")
 const footer=document.querySelector("footer")
 const partidos=[[1,ganadorA,segundoB],[2,ganadorB,segundoA],[3,ganadorC, segundoD],[4,ganadorD, segundoC], [5, ganadorE, segundoF], [6, ganadorF, segundoE], [7, ganadorG, segundoH], [8,ganadorH, segundoG]]
-
+const botonSalir=document.querySelector("#botonSalir")
+botonSalir.addEventListener("click",()=>{
+    window.location.href="../index.html"
+})
 function crearPrimerosOctavos(array,numero){
     const seleccionesOctavos=document.getElementById("seleccionesPrimerasOctavos");
     const seccionSeleccionesOctavos=document.createElement('section')

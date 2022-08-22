@@ -1,7 +1,9 @@
 const puntosganador=3
 const puntosempate=1;
-
-
+const botonSalir=document.querySelector("#botonSalir")
+botonSalir.addEventListener("click",()=>{
+    window.location.href="../index.html"
+})
 //array [Pais, grupo, Puntos, DifGoles!]
 const arabia= {pais:"Arabia", grupo:"C", puntos:0,difgol:0, bandera:'../img/arabiasaudita.png'};
 const alemania={pais:"Alemania",grupo:"E",puntos:0,difgol:0, bandera:'../img/alemania.png'};
