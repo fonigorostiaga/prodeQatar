@@ -17,16 +17,16 @@ const botonContador=document.querySelector("#botonContador")
 function counter(){
     setInterval(()=>{
     let diferencia=(fechaInicio).diff(DateTime.now()).milliseconds	
-let diferenciaR=parseInt(diferencia/1000)
-let diferenciaD=parseInt(diferenciaR/86400);
-let diferenciaH=parseInt((diferenciaR%86400)/3600)
-let diferenciaM=parseInt(((diferenciaR%86400)%3600)/60)
-let diferenciaS=parseInt((((diferenciaR%86400)%3600)%60))
-dias.innerText=diferenciaD
-horas.innerText=diferenciaH
-minutos.innerText=diferenciaM
-segundos.innerText=diferenciaS
-},1000)
+    let diferenciaR=parseInt(diferencia/1000)
+    let diferenciaD=parseInt(diferenciaR/86400);
+    let diferenciaH=parseInt((diferenciaR%86400)/3600)
+    let diferenciaM=parseInt(((diferenciaR%86400)%3600)/60)
+    let diferenciaS=parseInt((((diferenciaR%86400)%3600)%60))
+    dias.innerText=diferenciaD
+    horas.innerText=diferenciaH
+    minutos.innerText=diferenciaM
+    segundos.innerText=diferenciaS
+    },1000)
 }
 counter()
 
