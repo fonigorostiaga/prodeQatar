@@ -1,5 +1,5 @@
 const DateTime=luxon.DateTime
-const fechaInicio=DateTime.local(2022,11,21,07,00,00)
+const fechaInicio=DateTime.local(2022,11,20,13,00,00)
 const segundos=document.querySelector("#segundos")
 const dias=document.querySelector("#dias")
 const horas=document.querySelector("#horas")
